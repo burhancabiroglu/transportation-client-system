@@ -1,5 +1,5 @@
 import 'package:babiconsultancy/src/core/base/core_stateful_widget.dart';
-import 'package:babiconsultancy/src/core/window/size_guide.dart';
+import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends CoreStatefulWidget {
@@ -20,7 +20,7 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
             alignment: Alignment.bottomCenter,
             child: SingleChildScrollView(
               child: Padding(
-                 padding: EdgeInsets.symmetric(horizontal: SizeGuide.wall),
+                 padding: EdgeInsets.symmetric(horizontal: WindowDefaults.wall),
               ),
             ),
           ),
