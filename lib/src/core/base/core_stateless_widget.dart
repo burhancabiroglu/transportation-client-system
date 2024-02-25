@@ -1,5 +1,5 @@
 import 'package:babiconsultancy/main.dart';
-import 'package:babiconsultancy/src/core/base/app_theme.dart';
+import 'package:babiconsultancy/src/core/base/core_theme.dart';
 import 'package:babiconsultancy/src/core/localization/localization_manager.dart';
 import 'package:flutter/material.dart';
 

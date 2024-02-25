@@ -1,6 +1,6 @@
 import 'package:babiconsultancy/src/core/config/config.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
-import 'package:babiconsultancy/src/core/window/screen_size.dart';
+import 'package:babiconsultancy/src/core/window/window_size.dart';
 import 'package:flutter/material.dart';
 
 import 'src/ui/routes/index.dart';

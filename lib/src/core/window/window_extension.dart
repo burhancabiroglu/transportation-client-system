@@ -1,4 +1,4 @@
-import 'package:babiconsultancy/src/core/window/screen_size.dart';
+import 'package:babiconsultancy/src/core/window/window_size.dart';
 
 extension SizeExtension on num {
   double get w => WindowSize.instance.width / 500 * this;

@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:babiconsultancy/src/core/base/app_theme.dart';
+import 'package:babiconsultancy/src/core/base/core_theme.dart';
 
 class BabiAppColorScheme extends CoreColorScheme {
   const BabiAppColorScheme();

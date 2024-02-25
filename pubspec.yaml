@@ -35,7 +35,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/logo/
-    - assets/images/splash/
+    - assets/images/vectors/
 
 
   

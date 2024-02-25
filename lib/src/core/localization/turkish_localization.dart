@@ -1,4 +1,4 @@
-import 'package:babiconsultancy/src/core/base/app_localization.dart';
+import 'package:babiconsultancy/src/core/base/core_localization.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 
 class TurkishLocalization extends CoreLocalization {

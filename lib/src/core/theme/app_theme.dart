@@ -1,4 +1,4 @@
-import 'package:babiconsultancy/src/core/base/app_theme.dart';
+import 'package:babiconsultancy/src/core/base/core_theme.dart';
 import 'package:babiconsultancy/src/core/theme/app_color_scheme.dart';
 import 'package:babiconsultancy/src/core/theme/app_text_style.dart';
 

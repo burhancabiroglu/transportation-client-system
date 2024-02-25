@@ -1,6 +1,6 @@
 // ignore_for_file: unused_field
 
-import 'package:babiconsultancy/src/core/base/app_localization.dart';
+import 'package:babiconsultancy/src/core/base/core_localization.dart';
 import 'package:babiconsultancy/src/core/localization/turkish_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
