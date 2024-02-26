@@ -4,7 +4,7 @@ import 'package:babiconsultancy/src/ui/screens/splash/splash_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
-Route routes(RouteSettings settings) {
+Route mainRoutes(RouteSettings settings) {
   switch (settings.name) {
     case SplashScreen.route:
       return MaterialPageRoute(builder: (_) => const SplashScreen());

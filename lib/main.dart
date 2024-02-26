@@ -3,7 +3,7 @@ import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_size.dart';
 import 'package:flutter/material.dart';
 
-import 'src/ui/routes/index.dart';
+import 'src/ui/routes/main.routes.dart';
 
 const appTheme = BabiAppTheme();
 
@@ -28,7 +28,7 @@ class BabiConsultancyApp extends StatelessWidget {
     return const MaterialApp(
       title: AppConfig.APP_NAME,
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: routes
+      onGenerateRoute: mainRoutes
     );
   }
 }

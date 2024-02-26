@@ -1,5 +1,5 @@
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
-import 'package:babiconsultancy/src/core/config/images.dart';
+import 'package:babiconsultancy/src/core/config/assets.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
@@ -26,7 +26,7 @@ class SuccessScreen extends CoreStatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Lottie.asset(
-                Images.successAnim,
+                Assets.successAnim,
                 repeat: false,
                 animate: true,
                 height: 300.h

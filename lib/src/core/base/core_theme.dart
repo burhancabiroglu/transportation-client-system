@@ -13,6 +13,8 @@ abstract class CoreColorScheme {
     abstract final Color forest;
     abstract final Color success;
     abstract final Color white;
+    abstract final Color transparent;
+    abstract final Color black;
 }
 
 abstract class CoreTextStyle {
