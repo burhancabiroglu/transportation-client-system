@@ -1,7 +1,6 @@
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/ui/routes/home.routes.dart';
-import 'package:babiconsultancy/src/ui/routes/main.routes.dart';
 import 'package:babiconsultancy/src/ui/screens/home/home_screen.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/bottom_nav_bar.dart';
@@ -16,6 +15,7 @@ class MainScreen extends CoreStatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    GlobalKey navigatorKey = GlobalKey();
     return Container(
       color: theme.colorScheme.darken,
       child: Scaffold(
@@ -23,13 +23,16 @@ class MainScreen extends CoreStatelessWidget {
           appBar: CoreAppBar(
             text: localization.of(LocalizationKeys.Home_Title)
           ),
-          body: const RoundedBody(
+          body: RoundedBody(
             child: Navigator(
+              key: navigatorKey,
               initialRoute: HomeScreen.route,
               onGenerateRoute: homeRoutes
             ),
           ),
-          bottomNavigationBar: const CoreBottomNavBar()
+          bottomNavigationBar: CoreBottomNavBar(
+            navigatorKey: navigatorKey,
+          )
       ),
     );
   }

@@ -1,16 +1,14 @@
-// ignore_for_file: non_constant_identifier_names
-
 import 'package:babiconsultancy/main.dart';
 import 'package:babiconsultancy/src/core/base/core_stateful_widget.dart';
+import 'package:babiconsultancy/src/core/base/nav_bar_data.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:unicons/unicons.dart';
 
 class CoreBottomNavBar extends CoreStatefulWidget {
-  const CoreBottomNavBar({super.key});
+  final GlobalKey? navigatorKey;
+  const CoreBottomNavBar({super.key, this.navigatorKey});
 
   @override
   CoreWidgetState createState() => _CoreBottomNavBarState();
@@ -41,24 +39,28 @@ class _CoreBottomNavBarState extends CoreWidgetState<CoreBottomNavBar> {
           appTheme.colorScheme.forest.withAlpha(100)
         ]),
         tabBackgroundColor: appTheme.colorScheme.forest,
-        tabs: const [
+        onTabChange: (value) {
+          final context = widget.navigatorKey!.currentContext!;
+          Navigator.of(context).popAndPushNamed(NavBarData.get(value).route);
+        },
+        tabs: [
           GButton(
-            icon: UniconsLine.home_alt,
-            text: 'Ana Sayfa',
+            icon: NavBarData.HOME.icon,
+            text: localization.of(NavBarData.HOME.key),
             iconSize: 30,
           ),
           GButton(
-            icon: FontAwesomeIcons.bus,
-            text: 'Transferler',
+            icon: NavBarData.TRANSFERS.icon,
+            text: localization.of(NavBarData.TRANSFERS.key),
           ),
           GButton(
-            icon: UniconsLine.plane,
-            text: 'Transferler',
+            icon: NavBarData.AIRPORT_TRANSFERS.icon,
+            text: localization.of(NavBarData.AIRPORT_TRANSFERS.key),
             iconSize: 30,
           ),
           GButton(
-            icon: UniconsLine.user,
-            text: 'Profil',
+            icon: NavBarData.PROFILE.icon,
+            text: localization.of(NavBarData.PROFILE.key),
           )
         ]
       ),

@@ -19,16 +19,23 @@ class LocalizationKeys {
   static const String Home_Title = "Home.Title";
 
 
-  // ABOUT US SCREEN"
+  // ABOUT US SCREEN
   static const String About_Us_Title = "AboutUs.Title";
 
-  // AIRPORT TRANSFER SCREEN"
+  // TRANSFER SCREEN
+  static const String Transfer_Title = "Transfer.Title";
+
+  // AIRPORT TRANSFER SCREEN
   static const String Airport_Transfer_Title = "AirportTransfer.Title";
 
 
-  // TRANSFER REQUEST SCREEN"
+  // TRANSFER REQUEST SCREEN
   static const String Transfer_Request_Title = "TransferRequest.Title";
   static const String Transfer_Request_Button = "TransferRequest.Button";
   static const String Transfer_Request_Send = "TransferRequest.Send";
   static const String Transfer_Request_Choose_Seat = "TransferRequest.ChooseSeat";
+
+
+  // PROFILE SCREEN
+  static const String Profile_Title = "Profile.Title";
 }
