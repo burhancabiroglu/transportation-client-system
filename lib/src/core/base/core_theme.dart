@@ -17,6 +17,22 @@ abstract class CoreColorScheme {
 
 abstract class CoreTextStyle {
     const CoreTextStyle();
+    abstract final TextStyle title01;
+    abstract final TextStyle heading01;
+    abstract final TextStyle heading02;
+    abstract final TextStyle heading03;
+    abstract final TextStyle heading04;
+    abstract final TextStyle heading05;
+    abstract final TextStyle body01;
+    abstract final TextStyle body02;
+    abstract final TextStyle body03;
+    abstract final TextStyle body04;
+    abstract final TextStyle callout01;
+    abstract final TextStyle callout02;
+    abstract final TextStyle footnote01;
+    abstract final TextStyle footnote02;
+    abstract final TextStyle caption01;
+    abstract final TextStyle caption02;
 }
 
 abstract class CoreTheme {

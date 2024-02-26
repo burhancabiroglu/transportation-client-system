@@ -9,10 +9,10 @@ class TurkishLocalization extends CoreLocalization {
 
   @override
   Map<String, String> get map => {
-    LocalizationKeys.Splash_Description: "Babi\nğitim Koçluğu\nYurt Dışı Danışmanlık",
+    LocalizationKeys.Splash_Description: "Babi\nEğitim Koçluğu\nYurt D\u0131ş\u0131 Dan\u0131şmanl\u0131k",
     LocalizationKeys.Home_Title: "Ana Sayfa",
     LocalizationKeys.Transfer_Request_Title: "Transfer Talebi",
-    LocalizationKeys.Airport_Transfer_Title: "Havalimanı Transferleri",
-    LocalizationKeys.About_Us_Title: "Hakkımızda"
+    LocalizationKeys.Airport_Transfer_Title: "Havaliman\u0131 Transferleri",
+    LocalizationKeys.About_Us_Title: "Hakk\u0131m\u0131zda"
   };
 }

@@ -1,7 +1,9 @@
 import 'package:babiconsultancy/src/core/config/images.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
+import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/result/success_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,52 +15,56 @@ class SplashScreen extends CoreStatelessWidget {
 
   void init(BuildContext context) {
       Future.delayed(const Duration(milliseconds: 2000),() async {
-        await Navigator.of(context).popAndPushNamed(MainScreen.route);
+        await Navigator.of(context).popAndPushNamed(SuccessScreen.route);
       });
   }
 
   @override
   Widget build(BuildContext context) {
     init(context);
-    return Container(
-      color: theme.colorScheme.container,
-      child: SafeArea(
-        child: Stack(
-          children: [
-            Center(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(500),
-                child: Image.asset(
-                  Images.app_logo,
-                  width: 200,
-                  height: 200,
+    return Material(
+      child: Container(
+        color: theme.colorScheme.white,
+        child: SafeArea(
+          child: Stack(
+            children: [
+              Center(
+                heightFactor: 3,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(500),
+                  child: Image.asset(
+                    Images.app_logo,
+                    width: 300.h,
+                    height: 300.h,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(bottom: 22),
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 8),
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: theme.colorScheme.container,
-                      borderRadius: BorderRadius.circular(14)
+              Container(
+                margin: EdgeInsets.only(bottom: 30.h),
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(bottom: 8.h),
+                      padding: EdgeInsets.all(8.h),
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.container,
+                        borderRadius: BorderRadius.circular(14)
+                      ),
+                      child: SvgPicture.asset(Images.lock,width: 24.w),
                     ),
-                    child: SvgPicture.asset(Images.lock,width: 20),
-                  ),
-                  Text(
-                   localization.of(LocalizationKeys.Splash_Description),
-                   textAlign: TextAlign.center,
-                  )
-                ],
+                    Text(
+                     localization.of(LocalizationKeys.Splash_Description),
+                     textAlign: TextAlign.center,
+                     style: theme.textStyle.callout02,
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
