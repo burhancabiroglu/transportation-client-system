@@ -1,3 +1,4 @@
+import 'package:babiconsultancy/src/ui/screens/aboutus/about_us_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/result/success_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_screen.dart';
@@ -14,9 +15,9 @@ Route mainRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const MainScreen());
     case SuccessScreen.route:
       return MaterialPageRoute(builder: (_) => const SuccessScreen());
-    case '/auth':
-      //return MaterialPageRoute(builder: (_) => AuthenticationScreen());
+    case AboutUsScreen.route:
+      return MaterialPageRoute(builder: (_) => const AboutUsScreen());
     default:
-      return MaterialPageRoute(builder: (_) => const MainScreen());
+      return MaterialPageRoute(builder: (_) => const SplashScreen());
   }
 }

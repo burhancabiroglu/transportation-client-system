@@ -1,6 +1,7 @@
 import 'package:babiconsultancy/src/core/config/config.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_size.dart';
+import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/home/home_bloc.dart';
 import 'package:babiconsultancy/src/ui/screens/main/main_nav_bloc.dart';
 import 'package:flutter/material.dart';
@@ -33,10 +34,11 @@ class BabiConsultancyApp extends StatelessWidget {
         BlocProvider(create: (_) => MainNavBloc()),
         BlocProvider(create: (_) => HomeBloc())
       ],
-      child: const MaterialApp(
+      child: MaterialApp(
         title: AppConfig.APP_NAME,
         debugShowCheckedModeBanner: false,
-        onGenerateRoute: mainRoutes
+        onGenerateRoute: mainRoutes,
+        navigatorKey: CoreRouter.main.key,
       ),
     );
   }

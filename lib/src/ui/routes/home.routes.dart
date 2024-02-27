@@ -2,6 +2,7 @@ import 'package:babiconsultancy/src/ui/screens/home/home_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/airport/airport_transfer_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_screen.dart';
 import 'package:flutter/material.dart';
 
 Route homeRoutes(RouteSettings settings) {
@@ -14,6 +15,8 @@ Route homeRoutes(RouteSettings settings) {
       return UnanimatedPageRoute(builder: (_) => const AirportTransferScreen());
     case ProfileScreen.route:
       return UnanimatedPageRoute(builder: (_) => const ProfileScreen());
+    case TransferRequestScreen.route:
+      return MaterialPageRoute(builder: (_) => const TransferRequestScreen());
     default:
       return UnanimatedPageRoute(builder: (_) => const HomeScreen());
   }
