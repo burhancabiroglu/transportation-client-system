@@ -2,7 +2,7 @@ import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
-import 'package:babiconsultancy/src/ui/widgets/buttons/text_button.dart';
+import 'package:babiconsultancy/src/ui/widgets/buttons/more.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/date_widget.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/rounded_body.dart';
@@ -34,15 +34,7 @@ class HomeScreen extends CoreStatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(localization.of(LocalizationKeys.Home_Transfers), style: theme.textStyle.body04),
-                      CoreTextButton(
-                        text: localization.of(LocalizationKeys.More),
-                        style: theme.textStyle.callout01.copyWith(
-                          fontSize: 13,
-                          color: theme.colorScheme.forest,
-                          decoration: TextDecoration.underline,
-                          decorationColor: theme.colorScheme.forest,
-                        ),
-                      )
+                      const MoreButton()
                     ],
                   ),
                   SizedBox(height: 200.h)
@@ -58,16 +50,7 @@ class HomeScreen extends CoreStatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(localization.of(LocalizationKeys.About_Us_Title), style: theme.textStyle.body04),
-                      CoreTextButton(
-                        text: localization.of(LocalizationKeys.More),
-                        style: theme.textStyle.callout01.copyWith(
-                          fontSize: 13,
-                          color: theme.colorScheme.forest,
-                          decoration: TextDecoration.underline,
-                          decorationColor: theme.colorScheme.forest,
-                        ),
-                        onPressed: (){},
-                      )
+                      const MoreButton()
                     ],
                   ),
                 ],
