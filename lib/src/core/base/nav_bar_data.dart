@@ -12,6 +12,7 @@ import 'package:unicons/unicons.dart';
 class NavBarData {
   final int order;
   final IconData icon;
+  final String navBarkey;
   final String key;
   final String route;
   
@@ -19,6 +20,7 @@ class NavBarData {
     required this.order,
     required this.icon, 
     required this.key, 
+    required this.navBarkey,
     required this.route 
   });
 
@@ -26,6 +28,7 @@ class NavBarData {
     order: 0,
     route: HomeScreen.route,
     key: LocalizationKeys.Home_Title,
+    navBarkey: LocalizationKeys.Home_Title,
     icon: UniconsLine.home_alt,
   );
   
@@ -33,6 +36,7 @@ class NavBarData {
     order: 3,
     route: ProfileScreen.route,
     key: LocalizationKeys.Profile_Title,
+    navBarkey: LocalizationKeys.Profile_Title,
     icon: UniconsLine.user,
   );
 
@@ -40,6 +44,7 @@ class NavBarData {
     order: 2,
     route: AirportTransferScreen.route,
     key: LocalizationKeys.Airport_Transfer_Title,
+    navBarkey: LocalizationKeys.Airport_Transfer_Nav_Title,
     icon: UniconsLine.plane,
   );
 
@@ -47,6 +52,7 @@ class NavBarData {
     order: 1,
     route: TransferScreen.route,
     key: LocalizationKeys.Transfer_Title,
+    navBarkey: LocalizationKeys.Transfer_Title,
     icon: FontAwesomeIcons.bus,
   );
 

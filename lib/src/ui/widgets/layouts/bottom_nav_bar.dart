@@ -3,12 +3,13 @@ import 'package:babiconsultancy/src/core/base/core_stateful_widget.dart';
 import 'package:babiconsultancy/src/core/base/nav_bar_data.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
+import 'package:babiconsultancy/src/ui/screens/main/main_nav_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class CoreBottomNavBar extends CoreStatefulWidget {
-  final GlobalKey? navigatorKey;
-  const CoreBottomNavBar({super.key, this.navigatorKey});
+  final MainNavBloc? bloc;
+  const CoreBottomNavBar({super.key, this.bloc});
 
   @override
   CoreWidgetState createState() => _CoreBottomNavBarState();
@@ -24,7 +25,7 @@ class _CoreBottomNavBarState extends CoreWidgetState<CoreBottomNavBar> {
       padding: EdgeInsets.symmetric(
         horizontal: WindowDefaults.wall,
         vertical: WindowDefaults.verticalPadding
-      ).copyWith(bottom: WindowDefaults.verticalPadding * 2.2),
+      ),//.copyWith(bottom: WindowDefaults.verticalPadding * 2.2),
       decoration: BoxDecoration(color: appTheme.colorScheme.white),
       child: GNav(
         selectedIndex: selectedIndex,
@@ -39,28 +40,25 @@ class _CoreBottomNavBarState extends CoreWidgetState<CoreBottomNavBar> {
           appTheme.colorScheme.forest.withAlpha(100)
         ]),
         tabBackgroundColor: appTheme.colorScheme.forest,
-        onTabChange: (value) {
-          final context = widget.navigatorKey!.currentContext!;
-          Navigator.of(context).popAndPushNamed(NavBarData.get(value).route);
-        },
+        onTabChange: widget.bloc?.setState,
         tabs: [
           GButton(
             icon: NavBarData.HOME.icon,
-            text: localization.of(NavBarData.HOME.key),
+            text: localization.of(NavBarData.HOME.navBarkey),
             iconSize: 30,
           ),
           GButton(
             icon: NavBarData.TRANSFERS.icon,
-            text: localization.of(NavBarData.TRANSFERS.key),
+            text: localization.of(NavBarData.TRANSFERS.navBarkey),
           ),
           GButton(
             icon: NavBarData.AIRPORT_TRANSFERS.icon,
-            text: localization.of(NavBarData.AIRPORT_TRANSFERS.key),
+            text: localization.of(NavBarData.AIRPORT_TRANSFERS.navBarkey),
             iconSize: 30,
           ),
           GButton(
             icon: NavBarData.PROFILE.icon,
-            text: localization.of(NavBarData.PROFILE.key),
+            text: localization.of(NavBarData.PROFILE.navBarkey),
           )
         ]
       ),

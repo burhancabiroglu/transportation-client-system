@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class CoreAppBar extends AppBar {
   CoreTheme get theme => appTheme;
-  final String text;
+  final Widget title;
   CoreAppBar({
     super.key,
-    required this.text,
+    required this.title,
     super.actions,
     super.leading,
   });
@@ -23,7 +23,4 @@ class CoreAppBar extends AppBar {
   
   @override
   Color? get backgroundColor => theme.colorScheme.darken;
-
-  @override
-  Widget? get title => Text(text);
 }

@@ -1,7 +1,10 @@
 import 'package:babiconsultancy/src/core/config/config.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_size.dart';
+import 'package:babiconsultancy/src/ui/screens/home/home_bloc.dart';
+import 'package:babiconsultancy/src/ui/screens/main/main_nav_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'src/ui/routes/main.routes.dart';
 
@@ -25,10 +28,16 @@ class BabiConsultancyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: AppConfig.APP_NAME,
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: mainRoutes
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => MainNavBloc()),
+        BlocProvider(create: (_) => HomeBloc())
+      ],
+      child: const MaterialApp(
+        title: AppConfig.APP_NAME,
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: mainRoutes
+      ),
     );
   }
 }

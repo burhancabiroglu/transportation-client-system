@@ -7,14 +7,39 @@ import 'package:flutter/material.dart';
 Route homeRoutes(RouteSettings settings) {
   switch (settings.name) {
     case HomeScreen.route:
-      return MaterialPageRoute(builder: (_) => const HomeScreen());
+      return UnanimatedPageRoute(builder: (_) => const HomeScreen());
     case TransferScreen.route:
-      return MaterialPageRoute(builder: (_) => const TransferScreen());
+      return UnanimatedPageRoute(builder: (_) => const TransferScreen());
     case AirportTransferScreen.route:
-      return MaterialPageRoute(builder: (_) => const AirportTransferScreen());
+      return UnanimatedPageRoute(builder: (_) => const AirportTransferScreen());
     case ProfileScreen.route:
-      return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      return UnanimatedPageRoute(builder: (_) => const ProfileScreen());
     default:
-      return MaterialPageRoute(builder: (_) => const HomeScreen());
+      return UnanimatedPageRoute(builder: (_) => const HomeScreen());
   }
+}
+
+
+
+class UnanimatedPageRoute<T> extends MaterialPageRoute<T> {
+  
+  UnanimatedPageRoute({
+    required Widget Function(BuildContext) builder,
+    RouteSettings? settings,
+    bool maintainState = true,
+    bool fullscreenDialog = false,
+  }) : super(
+    builder: builder,
+    settings: settings,
+    maintainState: maintainState,
+    fullscreenDialog: fullscreenDialog
+  );
+
+  @override
+  Widget buildTransitions(BuildContext context,Animation<double> animation,Animation<double> secondaryAnimation,Widget child) {
+    return child;
+  }  
+
+  @override
+  Duration get transitionDuration => Duration.zero;
 }

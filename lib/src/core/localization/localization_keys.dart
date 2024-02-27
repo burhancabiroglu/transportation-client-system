@@ -8,7 +8,7 @@ class LocalizationKeys {
   static const String Success = "Success";
   static const String Info = "Info";
   static const String Loading = "Loading";
-
+  static const String More = "more";
 
 
   // SPLASH SCREEN
@@ -17,6 +17,7 @@ class LocalizationKeys {
 
   // HOME SCREEN"
   static const String Home_Title = "Home.Title";
+  static const String Home_Transfers = "Home.Transfers";
 
 
   // ABOUT US SCREEN
@@ -24,9 +25,13 @@ class LocalizationKeys {
 
   // TRANSFER SCREEN
   static const String Transfer_Title = "Transfer.Title";
+  static const String Transfer_Not_Found = "Transfer.NotFound";
+
 
   // AIRPORT TRANSFER SCREEN
   static const String Airport_Transfer_Title = "AirportTransfer.Title";
+  static const String Airport_Transfer_Nav_Title = "AirportTransfer.Nav.Title";
+
 
 
   // TRANSFER REQUEST SCREEN
@@ -34,6 +39,7 @@ class LocalizationKeys {
   static const String Transfer_Request_Button = "TransferRequest.Button";
   static const String Transfer_Request_Send = "TransferRequest.Send";
   static const String Transfer_Request_Choose_Seat = "TransferRequest.ChooseSeat";
+
 
 
   // PROFILE SCREEN
