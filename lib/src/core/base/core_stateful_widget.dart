@@ -15,6 +15,8 @@ abstract class CoreWidgetState<T extends CoreStatefulWidget> extends State<T> {
 
   CoreTheme get theme => appTheme;
   LocalizationManager get localization => LocalizationManager();
+  bool get isKeyboardOpened => !(MediaQuery.of(context).viewInsets.bottom == 0);
+
 
   @override 
   @mustCallSuper

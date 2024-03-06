@@ -18,9 +18,6 @@ class LoginScreen extends CoreStatefulWidget {
 
 class LoginScreenState extends CoreWidgetState<LoginScreen> {
 
-  bool get isKeyboardOpened => !(MediaQuery.of(context).viewInsets.bottom == 0);
-
-
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<LoginCubit>(context);
@@ -34,7 +31,6 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
               return Align(
                 alignment: Alignment.bottomCenter,
                 child: SingleChildScrollView(
-                reverse: true,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: WindowDefaults.wall),
                     child: Column(

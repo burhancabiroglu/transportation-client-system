@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:babiconsultancy/main.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/config/assets.dart';
+import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_cubit.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary_variant.dart';
@@ -38,7 +38,7 @@ class LoginForm extends CoreStatelessWidget {
                 FormBuilderValidators.required(errorText: "E-posta adresi boş olamaz"),
                 FormBuilderValidators.email(errorText: "Geçerli bir e-posta adresi giriniz")
               ]),
-              decoration: _inputDecoration(
+              decoration: theme.inputDecoration(
                 hintText: 'E-posta adresiniz',
                 prefixIcon: Assets.email.toSvg(padding: EdgeInsets.all(18.h)),
               ),
@@ -56,7 +56,7 @@ class LoginForm extends CoreStatelessWidget {
                     FormBuilderValidators.required(errorText: "Şifre boş olamaz")
                   ]),
                   obscureText: snapshot.data ?? false,
-                  decoration: _inputDecoration(
+                  decoration: theme.inputDecoration(
                     hintText: 'Şifreniz',
                     prefixIcon: Assets.padlock.toSvg(padding: EdgeInsets.all(18.h)),
                     suffixIcon: Material(
@@ -92,33 +92,4 @@ class LoginForm extends CoreStatelessWidget {
       ),
     );
   }
-}
-
-
-InputBorder _focusedBorder() {
- return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: appTheme.colorScheme.textSecondary.withAlpha(80))
-  );
-}
-
-InputDecoration _inputDecoration({
-  required String hintText,
-  Widget? prefixIcon,
-  Widget? suffixIcon
-}) {
-  return InputDecoration(
-    hintText: hintText,
-    fillColor: appTheme.colorScheme.white,
-    prefixIcon: prefixIcon,
-    hintStyle: appTheme.textStyle.callout02,
-    filled: true,
-    errorBorder: _focusedBorder(),
-    focusedBorder: _focusedBorder(),
-    enabledBorder: _focusedBorder(),
-    focusedErrorBorder: _focusedBorder(),
-    border: _focusedBorder(),
-    suffixIcon: suffixIcon
-    
-  );
 }
