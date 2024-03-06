@@ -3,8 +3,8 @@ import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MainNavBloc extends Cubit<NavBarData> {
-  MainNavBloc({ NavBarData? initialState}): super(initialState ?? NavBarData.HOME);
+class MainNavCubit extends Cubit<NavBarData> {
+  MainNavCubit({ NavBarData? initialState}): super(initialState ?? NavBarData.HOME);
 
   void setState(int id) {
     final navBarData = NavBarData.get(id);

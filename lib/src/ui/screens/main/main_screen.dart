@@ -14,7 +14,7 @@ class MainScreen extends CoreStatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    final navBloc = BlocProvider.of<MainNavBloc>(context);
+    final navBloc = BlocProvider.of<MainNavCubit>(context);
 
     return Container(
       color: theme.colorScheme.white,

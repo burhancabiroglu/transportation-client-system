@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class CoreBottomNavBar extends CoreStatefulWidget {
-  final MainNavBloc? bloc;
+  final MainNavCubit? bloc;
   const CoreBottomNavBar({super.key, this.bloc});
 
   @override

@@ -2,7 +2,7 @@ import 'package:babiconsultancy/src/core/config/assets.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
-import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -14,7 +14,7 @@ class SplashScreen extends CoreStatelessWidget {
 
   void init(BuildContext context) {
       Future.delayed(const Duration(milliseconds: 2000),() async {
-        await Navigator.of(context).popAndPushNamed(MainScreen.route);
+        await Navigator.of(context).popAndPushNamed(LoginScreen.route);
       });
   }
 
