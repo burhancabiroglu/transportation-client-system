@@ -10,7 +10,6 @@ class TransferRequestScreen extends CoreStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       color: theme.colorScheme.darken,
       child: Scaffold(

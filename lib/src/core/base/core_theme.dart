@@ -15,6 +15,7 @@ abstract class CoreColorScheme {
     abstract final Color white;
     abstract final Color transparent;
     abstract final Color black;
+    abstract final Color disabled;
 }
 
 abstract class CoreTextStyle {

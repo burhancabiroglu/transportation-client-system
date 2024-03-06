@@ -43,4 +43,7 @@ class BabiAppColorScheme extends CoreColorScheme {
   
   @override
   final Color transparent = const Color(0x00000000);
+  
+  @override
+  final Color disabled = const Color(0xFFE0E0E0);
 }

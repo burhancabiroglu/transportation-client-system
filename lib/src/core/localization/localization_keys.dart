@@ -40,8 +40,12 @@ class LocalizationKeys {
   static const String Transfer_Request_Send = "TransferRequest.Send";
   static const String Transfer_Request_Choose_Seat = "TransferRequest.ChooseSeat";
 
-
+  static const String Transfer_Request_Selectable = "TransferRequest.Selectable";
+  static const String Transfer_Request_UnSelectable = "TransferRequest.UnSelectable";
+  static const String Transfer_Request_Selected = "TransferRequest.Selected";
 
   // PROFILE SCREEN
   static const String Profile_Title = "Profile.Title";
+
+  static const String lorem = "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.";
 }

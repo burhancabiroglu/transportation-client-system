@@ -25,5 +25,10 @@ class TurkishLocalization extends CoreLocalization {
     LocalizationKeys.Transfer_Request_Button: "Transfer Talep Et",
     LocalizationKeys.Transfer_Not_Found: "Transfer Bulunamad\u0131",
     LocalizationKeys.More: "Daha fazla",
+    LocalizationKeys.Profile_Title: "Profilim",
+    LocalizationKeys.Transfer_Request_Selected: "Seçildi",
+    LocalizationKeys.Transfer_Request_UnSelectable: "Seçilemez",
+    LocalizationKeys.Transfer_Request_Selectable: "Seçilebilir",
+    LocalizationKeys.Transfer_Request_Choose_Seat: "Koltuk Seç"
   };
 }
