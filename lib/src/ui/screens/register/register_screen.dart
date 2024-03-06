@@ -37,11 +37,7 @@ class RegisterScreenState extends CoreWidgetState<RegisterScreen> {
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(500),
-                          child: Image.asset(
-                            Assets.app_logo,
-                            width: 120.h,
-                            height: 120.h,
-                            )
+                          child: Assets.app_logo.toSquareImage(size: 120.h),
                         ),
                         SizedBox(height: 72.h),
                         RegisterForm(cubit: bloc),

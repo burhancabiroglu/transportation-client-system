@@ -37,11 +37,7 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(500),
-                          child: Image.asset(
-                            Assets.app_logo,
-                            width: 180.h,
-                            height: 180.h,
-                            )
+                          child: Assets.app_logo.toSquareImage(size: 180.h),
                         ),
                         SizedBox(height: 100.h),
                         LoginForm(cubit: bloc),
