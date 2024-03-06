@@ -39,11 +39,11 @@ class RegisterScreenState extends CoreWidgetState<RegisterScreen> {
                           borderRadius: BorderRadius.circular(500),
                           child: Image.asset(
                             Assets.app_logo,
-                            width: 180.h,
-                            height: 180.h,
+                            width: 120.h,
+                            height: 120.h,
                             )
                         ),
-                        SizedBox(height: 100.h),
+                        SizedBox(height: 72.h),
                         RegisterForm(cubit: bloc),
                         SizedBox(height: 100.h),
                         AnimatedOpacity(
@@ -51,14 +51,14 @@ class RegisterScreenState extends CoreWidgetState<RegisterScreen> {
                           duration: const Duration(milliseconds: 400),
                           child: Column(
                             children: [
-                              Text( "Ya da üye değilsen", style: theme.textStyle.callout02),
+                              Text( "Zaten üye misin?", style: theme.textStyle.callout02),
                               CoreTextButton(
-                                text:  "Üye ol",
+                                text:  "Giriş yap",
                                 style: theme.textStyle.body01.copyWith(
                                   decoration: TextDecoration.underline,
                                   color: theme.colorScheme.primary
                                 ),
-                                onPressed: () {},
+                                onPressed: bloc.routeToLogin,
                               ),
                             ]
                           ),

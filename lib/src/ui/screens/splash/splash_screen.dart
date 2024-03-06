@@ -2,9 +2,8 @@ import 'package:babiconsultancy/src/core/config/assets.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
-import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SplashScreen extends CoreStatelessWidget {
   static const route = "/";
@@ -14,7 +13,7 @@ class SplashScreen extends CoreStatelessWidget {
 
   void init(BuildContext context) {
       Future.delayed(const Duration(milliseconds: 2000),() async {
-        await Navigator.of(context).popAndPushNamed(LoginScreen.route);
+        await Navigator.of(context).popAndPushNamed(MainScreen.route);
       });
   }
 
@@ -31,11 +30,7 @@ class SplashScreen extends CoreStatelessWidget {
               heightFactor: 2.4,
               child: ClipRRect(
               borderRadius: BorderRadius.circular(500),
-              child: Image.asset(
-                Assets.app_logo,
-                width: 300.h,
-                height: 300.h,
-                )
+              child: Assets.app_logo.toSquareImage(size: 300.h),
               )
             ),
             Container(
@@ -52,7 +47,7 @@ class SplashScreen extends CoreStatelessWidget {
                       color: theme.colorScheme.container,
                       borderRadius: BorderRadius.circular(14)
                     ),
-                    child: SvgPicture.asset(Assets.lock,width: 24.w),
+                    child: Assets.lock.toSvg(width: 24.w),
                   ),
                   Text(
                     localization.of(LocalizationKeys.Splash_Description),

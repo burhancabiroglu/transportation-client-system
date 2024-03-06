@@ -27,8 +27,21 @@ class RegisterForm extends CoreStatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FormBuilderTextField(
+            name: RegisterCubit.fullname,
+            keyboardType: TextInputType.name,
+            textInputAction: TextInputAction.next,
+            style: theme.textStyle.body04,
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(errorText: "İsim Soyisim boş olamaz"),
+            ]),
+            decoration: theme.inputDecoration(
+              hintText: 'İsim Soyisim',
+              prefixIcon: Assets.email.toSvg(padding: EdgeInsets.all(18.h)),
+            ),
+          ),
+          SizedBox(height: 24.h),
+          FormBuilderTextField(
             name: RegisterCubit.email,
-            autofillHints: const <String>[AutofillHints.email],
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
             style: theme.textStyle.body04,
@@ -47,11 +60,13 @@ class RegisterForm extends CoreStatelessWidget {
             builder: (context, snapshot) =>
               FormBuilderTextField(
                 autocorrect: false,
-                autofillHints: const <String>[AutofillHints.password],
                 style: theme.textStyle.body04,
                 name: RegisterCubit.password,
                 validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(errorText: "Şifre boş olamaz")
+                  FormBuilderValidators.required(errorText: "Şifre boş olamaz"),
+                  FormBuilderValidators.minLength(6,errorText: "Minimum 6 karakterden oluşmalı"),
+                  FormBuilderValidators.match(r'[A-Z]',errorText: "En az bir büyük harf içermeli"),
+                  FormBuilderValidators.match(r'\d',errorText: "En az bir rakam içermeli")
                 ]),
                 obscureText: snapshot.data ?? false,
                 decoration: theme.inputDecoration(
@@ -68,7 +83,24 @@ class RegisterForm extends CoreStatelessWidget {
                 ),
               )
           ),
-          
+          SizedBox(height: 24.h),
+          FormBuilderTextField(
+            autocorrect: false,
+            style: theme.textStyle.body04,
+            name: RegisterCubit.passwordAgain,
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(errorText: "Şifre boş olamaz"),
+              FormBuilderValidators.equal(
+                cubit.formKey.currentState?.fields[RegisterCubit.passwordAgain]?.value.toString()?? "",
+                errorText: "Parolalar eşleşmiyor"
+              ),
+            ]),
+            obscureText: true,
+            decoration: theme.inputDecoration(
+              hintText: 'Şifreniz (Tekrar)',
+              prefixIcon: Assets.padlock.toSvg(padding: EdgeInsets.all(18.h)),
+            ),
+          ),
           SizedBox(height: 36.h),
           PrimaryVariantButton(
             text: "Üye Ol",

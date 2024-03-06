@@ -58,7 +58,7 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
                                   decoration: TextDecoration.underline,
                                   color: theme.colorScheme.primary
                                 ),
-                                onPressed: () {},
+                                onPressed: bloc.routeToRegister,
                               ),
                             ]
                           ),

@@ -19,14 +19,27 @@ abstract class Assets {
 
 
 extension AssetsWidget on String {
-  Widget toSvg({EdgeInsetsGeometry padding = EdgeInsets.zero}) {
+  Widget toSvg({
+    EdgeInsetsGeometry padding = EdgeInsets.zero,
+    final double? width,
+    final double? height,
+  }) {
     return Padding(
       padding: padding,
-      child: SvgPicture.asset(this)
+      child: SvgPicture.asset(this,width: width, height: height)
     );
   }
 
-  Widget toImage() {
-    return Image.asset(this);
+  Widget toImage({
+    final double? width,
+    final double? height,
+  }) {
+    return Image.asset(this,width: width,height: height);
+  }
+
+  Widget toSquareImage({
+    final double? size,
+  }) {
+    return Image.asset(this,width: size,height: size);
   }
 }

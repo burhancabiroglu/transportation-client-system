@@ -2,11 +2,13 @@ import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
+import 'package:babiconsultancy/src/ui/screens/home/home_cubit.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/more.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/date_widget.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/rounded_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends CoreStatelessWidget {
   static const route = "/main/home";
@@ -15,6 +17,7 @@ class HomeScreen extends CoreStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<HomeCubit>(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.darken,
       appBar: CoreAppBar(title: Text(localization.of(LocalizationKeys.Home_Title))),
@@ -50,7 +53,9 @@ class HomeScreen extends CoreStatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(localization.of(LocalizationKeys.About_Us_Title), style: theme.textStyle.body04),
-                      const MoreButton()
+                      MoreButton(
+                        onPressed: bloc.navigateToAboutUs,
+                      )
                     ],
                   ),
                 ],
