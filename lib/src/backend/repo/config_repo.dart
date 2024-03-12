@@ -1,6 +1,7 @@
+import 'package:babiconsultancy/src/backend/handler/firestore_handler.dart';
 import 'package:babiconsultancy/src/backend/model/config/app_config.dart';
 import 'package:babiconsultancy/src/backend/model/language/language.dart';
-import 'package:babiconsultancy/src/backend/result/app_result.dart';
+import 'package:babiconsultancy/src/backend/handler/app_result.dart';
 import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore;
 
 abstract class ConfigRepo {
@@ -15,18 +16,20 @@ class ConfigRepoImpl extends ConfigRepo {
   ConfigRepoImpl({required super.database});
 
   @override
-  Future<AppResult<AppConfig>> getAppConfig() async {
-    final collectionRef = database.collection("CONFIG");
-    final documentRef = await collectionRef.doc("APP_CONFIG").get();
-    if(documentRef.data() == null) return AppResult.error("document not found");
-    return AppResult.success(AppConfig.fromJson(documentRef.data()!));
-  }
+  Future<AppResult<AppConfig>> getAppConfig() => 
+    database.exec(
+      collection: "CONFIG",
+      doc: "APP_CONFIG",
+      mapper: AppConfig.fromJson
+    );
+  
   
   @override
-  Future<AppResult<Language>> getLanguage({String code = "tr"}) async {
-    final collectionRef = database.collection("LANGUAGE");
-    final documentRef = await collectionRef.doc(code).get();
-    if(documentRef.data() == null) return AppResult.error("document not found");
-    return AppResult.success(Language.fromJson(documentRef.data()!));
-  }
+  Future<AppResult<Language>> getLanguage({String code = "tr"}) => 
+    database.exec(
+      collection: "LANGUAGE",
+      doc: code,
+      mapper: Language.fromJson
+    );
+  
 }

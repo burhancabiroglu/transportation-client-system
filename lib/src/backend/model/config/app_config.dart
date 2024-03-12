@@ -15,4 +15,10 @@ class AppConfig {
     appCode: json['app_code'] as int,
     aboutUsLink: json['about_us_link'] as String,
   );
+
+  Map<String, dynamic> toJson() => {
+    "app_version": appVersion,
+    "app_code": appCode,
+    "about_us_link": aboutUsLink,
+  };
 }

@@ -43,8 +43,13 @@ class BabiConsultancyApp extends StatelessWidget {
         BlocProvider(create: (_) => TransferCubit()),
         BlocProvider(create: (_) => LoginCubit()),
         BlocProvider(create: (_) => RegisterCubit()),
-        BlocProvider(create: (_) => AboutUsCubit()),
-        BlocProvider(create: (_) => SplashCubit(configRepo: injector.get()))
+        BlocProvider(create: (_) => AboutUsCubit(
+          storage: injector.get()
+        )),
+        BlocProvider(create: (_) => SplashCubit(
+          configRepo: injector.get(),
+          storage: injector.get()
+        ))
       ],
       child: MaterialApp(
         title: AppConfig.APP_NAME,
