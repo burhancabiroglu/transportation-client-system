@@ -3,7 +3,9 @@ import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends CoreStatelessWidget {
   static const route = "/";
@@ -11,8 +13,9 @@ class SplashScreen extends CoreStatelessWidget {
   const SplashScreen({super.key});
 
 
-  void init(BuildContext context) {
-      Future.delayed(const Duration(milliseconds: 2000),() async {
+  void init(BuildContext context) async {
+      await BlocProvider.of<SplashCubit>(context).init();
+      Future.delayed(const Duration(milliseconds: 4000),() async {
         await Navigator.of(context).popAndPushNamed(MainScreen.route);
       });
   }

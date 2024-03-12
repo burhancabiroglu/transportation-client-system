@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "823131691795",
+    "project_id": "babibookingapp",
+    "storage_bucket": "babibookingapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823131691795:android:e7b678156a1c358f1fd8e6",
+        "android_client_info": {
+          "package_name": "com.babi.babiconsultancy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDItqYYxkbWx00WuqC-15rMIB0dMKYFoq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
