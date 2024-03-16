@@ -27,7 +27,15 @@ class TurkishLocalization extends CoreLocalization {
     LocalizationKeys.Transfer_Request_Button: "Transfer Talep Et",
     LocalizationKeys.Transfer_Not_Found: "Transfer Bulunamad\u0131",
     LocalizationKeys.More: "Daha fazla",
+
     LocalizationKeys.Profile_Title: "Profilim",
+    LocalizationKeys.Profile_Settings: "Profil ayarları",
+    LocalizationKeys.Profile_Greetings: "Merhaba",
+    LocalizationKeys.Profile_Support: "Destek",
+    LocalizationKeys.Profile_Logout: "Çıkış yap",
+    LocalizationKeys.Profile_Change_Password: "Parola değiştir",
+
+    
     LocalizationKeys.Transfer_Request_Selected: "Seçildi",
     LocalizationKeys.Transfer_Request_UnSelectable: "Seçilemez",
     LocalizationKeys.Transfer_Request_Selectable: "Seçilebilir",

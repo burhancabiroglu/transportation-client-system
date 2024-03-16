@@ -4,8 +4,8 @@ import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:flutter/material.dart';
 
-class NoBookingBox extends CoreStatelessWidget {
-  const NoBookingBox({super.key});
+class NoTransferBox extends CoreStatelessWidget {
+  const NoTransferBox({super.key});
 
   @override
   Widget build(BuildContext context) {

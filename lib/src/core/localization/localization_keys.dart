@@ -47,6 +47,11 @@ class LocalizationKeys {
 
   // PROFILE SCREEN
   static const String Profile_Title = "Profile.Title";
+  static const String Profile_Settings = "Profile.Settings";
+  static const String Profile_Greetings = "Profile.Greetings";
+  static const String Profile_Support = "Profile.Support";
+  static const String Profile_Logout = "Profile.Logout";
+  static const String Profile_Change_Password = "Profile.ChangePassword";
 
   static const String lorem = "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.";
 
