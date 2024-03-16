@@ -31,7 +31,14 @@ class TurkishLocalization extends CoreLocalization {
     LocalizationKeys.Transfer_Request_Selected: "Seçildi",
     LocalizationKeys.Transfer_Request_UnSelectable: "Seçilemez",
     LocalizationKeys.Transfer_Request_Selectable: "Seçilebilir",
-    LocalizationKeys.Transfer_Request_Choose_Seat: "Koltuk Seç"
+    LocalizationKeys.Transfer_Request_Choose_Seat: "Koltuk Seç",
     
+    LocalizationKeys.Status_Accepted: "Kabul Edildi",
+    LocalizationKeys.Status_Declined: "Reddedildi",
+    LocalizationKeys.Status_Done: "Geçmiş",
+    LocalizationKeys.Status_Pending: "Bekleniyor",
+
+    LocalizationKeys.About_Us_Text: "Türkiye'nin en prestijli ve en yenilikçi yurt dışı eğitimi danışmanlık firmaları arasında yer alan Babi Eğitim Koçluğu firmamız aracılığı ile; yurt dışında kaliteli bir eğitim almak isteyen öğrencilere, kariyer hedeflerine uygun profesyonel bir danışmanlık hizmeti sunmaktayız.",
+
   };
 }

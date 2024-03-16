@@ -6,7 +6,6 @@ targets:
           - lib/**.dart
         options:
           build_extensions:
-            #'^lib/{{}}.dart': 'lib/generated/{{}}.g.dart'
             '^lib/src/backend/{{}}.dart': 'lib/generated/{{}}.g.dart'
       freezed|freezed:
         enabled: true

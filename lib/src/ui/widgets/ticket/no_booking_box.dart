@@ -12,7 +12,7 @@ class NoBookingBox extends CoreStatelessWidget {
     final borderRadius = BorderRadius.circular(16);
     return Container(
         width: double.infinity,
-        height: 200.h,
+        height: 180.h,
         decoration: BoxDecoration(
           borderRadius: borderRadius,
           color: theme.colorScheme.disabled.withOpacity(0.5)

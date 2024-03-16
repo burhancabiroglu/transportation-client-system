@@ -23,6 +23,7 @@ class LocalizationKeys {
 
   // ABOUT US SCREEN
   static const String About_Us_Title = "AboutUs.Title";
+  static const String About_Us_Text = "AboutUs.Text";
 
   // TRANSFER SCREEN
   static const String Transfer_Title = "Transfer.Title";
@@ -48,4 +49,11 @@ class LocalizationKeys {
   static const String Profile_Title = "Profile.Title";
 
   static const String lorem = "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.";
+
+
+  static const String Status_Accepted = "status.accepted";
+  static const String Status_Declined = "status.declined";
+  static const String Status_Done = "status.done";
+  static const String Status_Pending = "status.pending";
+
 }

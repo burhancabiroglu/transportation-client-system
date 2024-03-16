@@ -15,6 +15,8 @@ abstract class Assets {
 
   static const String email = "assets/images/vectors/mail.svg";
   static const String padlock = "assets/images/vectors/padlock.svg";
+  static const String aboutUsJpeg = "assets/images/jpeg/about_us.jpg";
+
 }
 
 

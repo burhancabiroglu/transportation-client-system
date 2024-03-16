@@ -3,12 +3,13 @@ import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:babiconsultancy/src/ui/screens/home/home_cubit.dart';
+import 'package:babiconsultancy/src/ui/widgets/about/about_us_box.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/more.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/date_widget.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/rounded_body.dart';
 import 'package:babiconsultancy/src/ui/widgets/ticket/no_booking_box.dart';
-import 'package:babiconsultancy/src/ui/widgets/ticket/ticket_box.dart';
+import 'package:babiconsultancy/src/ui/widgets/ticket/transfer_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,15 +35,11 @@ class HomeScreen extends CoreStatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: WindowDefaults.wall),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(localization.of(LocalizationKeys.Home_Transfers), style: theme.textStyle.body04),
-                      const MoreButton()
-                    ],
-                  ),
-                  const TicketBox()
+                  Text(localization.of(LocalizationKeys.Home_Transfers), style: theme.textStyle.body04),
+                  SizedBox(height: 12.h),
+                  const TransfersBox()
                 ],
               ),
             ),
@@ -50,14 +47,10 @@ class HomeScreen extends CoreStatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: WindowDefaults.wall),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(localization.of(LocalizationKeys.Home_Transfer_Requests), style: theme.textStyle.body04),
-                      const MoreButton()
-                    ],
-                  ),
+                  Text(localization.of(LocalizationKeys.Home_Transfer_Requests), style: theme.textStyle.body04),
+                  SizedBox(height: 12.h),
                   const NoBookingBox()
                 ],
               ),
@@ -76,7 +69,7 @@ class HomeScreen extends CoreStatelessWidget {
                       )
                     ],
                   ),
-                  
+                  const AboutUsBox()
                 ],
               ),
             )
