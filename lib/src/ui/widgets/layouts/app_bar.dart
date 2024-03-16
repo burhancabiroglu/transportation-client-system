@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 class CoreAppBar extends AppBar {
   CoreTheme get theme => appTheme;
+  @override
+  // ignore: overridden_fields
   final Widget title;
   CoreAppBar({
     super.key,

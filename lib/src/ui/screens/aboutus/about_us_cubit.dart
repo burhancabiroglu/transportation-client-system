@@ -14,6 +14,7 @@ class AboutUsCubit extends Cubit {
   
 
   final controller = WebViewController()
+  ..clearCache()
   ..setJavaScriptMode(JavaScriptMode.unrestricted)
   ..setBackgroundColor(const Color(0x00000000));
 }

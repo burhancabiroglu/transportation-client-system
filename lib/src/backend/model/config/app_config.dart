@@ -1,24 +1,20 @@
-class AppConfig {
-  final String appVersion;
-  final int appCode;
-  final String aboutUsLink;
+// ignore_for_file: invalid_annotation_target
 
-  AppConfig({
-    required this.appVersion,
-    required this.appCode,
-    required this.aboutUsLink,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part '../../../../generated/model/config/app_config.freezed.dart';
+part '../../../../generated/model/config/app_config.g.dart';
 
-  AppConfig.fromJson(Map<String, dynamic> json): this(
-    appVersion: json['app_version'] as String,
-    appCode: json['app_code'] as int,
-    aboutUsLink: json['about_us_link'] as String,
-  );
+@freezed
+class AppConfig with _$AppConfig{
+ const factory AppConfig({
+    @JsonKey(name: 'app_version')
+    required String appVersion,
+    @JsonKey(name: 'app_code')
+    required int appCode,
+    @JsonKey(name: 'about_us_link')
+    required String aboutUsLink,
+  }) = _AppConfig;
 
-  Map<String, dynamic> toJson() => {
-    "app_version": appVersion,
-    "app_code": appCode,
-    "about_us_link": aboutUsLink,
-  };
+  factory AppConfig.fromJson(Map<String, dynamic> json) => _$AppConfigFromJson(json);
 }

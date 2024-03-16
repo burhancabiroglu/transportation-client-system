@@ -4,7 +4,6 @@ import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/result/success_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_screen.dart';
-import 'package:babiconsultancy/src/ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 Route mainRoutes(RouteSettings settings) {
@@ -14,9 +13,9 @@ Route mainRoutes(RouteSettings settings) {
     case LoginScreen.route:
       return MaterialPageRoute(builder: (_) => const LoginScreen());
     case SplashScreen.route:
-      return MaterialPageRoute(builder: (_) => const SplashScreen());
-    case WelcomeScreen.route:
-      return MaterialPageRoute(builder: (_) => const WelcomeScreen());
+      return MaterialPageRoute(builder: (_) => const MainScreen()); // SPLASH
+    /*case WelcomeScreen.route:
+      return MaterialPageRoute(builder: (_) => const WelcomeScreen()); */
     case MainScreen.route:
       return MaterialPageRoute(builder: (_) => const MainScreen());
     case SuccessScreen.route:

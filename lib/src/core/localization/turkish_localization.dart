@@ -12,6 +12,8 @@ class TurkishLocalization extends CoreLocalization {
     LocalizationKeys.Splash_Description: "Babi\nEğitim Koçluğu\nYurt D\u0131ş\u0131 Dan\u0131şmanl\u0131k",
     LocalizationKeys.Home_Title: "Ana Sayfa",
     LocalizationKeys.Home_Transfers: "Transferlerim",
+    LocalizationKeys.Home_Transfer_Requests: "Transferler Taleplerim",
+
 
     LocalizationKeys.Transfer_Request_Title: "Transfer Talebi",
     LocalizationKeys.Transfer_Title: "Transferler",
@@ -30,5 +32,6 @@ class TurkishLocalization extends CoreLocalization {
     LocalizationKeys.Transfer_Request_UnSelectable: "Seçilemez",
     LocalizationKeys.Transfer_Request_Selectable: "Seçilebilir",
     LocalizationKeys.Transfer_Request_Choose_Seat: "Koltuk Seç"
+    
   };
 }

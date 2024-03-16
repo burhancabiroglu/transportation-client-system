@@ -18,6 +18,7 @@ class LocalizationKeys {
   // HOME SCREEN"
   static const String Home_Title = "Home.Title";
   static const String Home_Transfers = "Home.Transfers";
+  static const String Home_Transfer_Requests = "Home.TransferRequests";
 
 
   // ABOUT US SCREEN
@@ -31,7 +32,6 @@ class LocalizationKeys {
   // AIRPORT TRANSFER SCREEN
   static const String Airport_Transfer_Title = "AirportTransfer.Title";
   static const String Airport_Transfer_Nav_Title = "AirportTransfer.Nav.Title";
-
 
 
   // TRANSFER REQUEST SCREEN
