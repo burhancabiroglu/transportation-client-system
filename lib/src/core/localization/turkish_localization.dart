@@ -16,6 +16,8 @@ class TurkishLocalization extends CoreLocalization {
 
 
     LocalizationKeys.Transfer_Request_Title: "Transfer Talebi",
+    LocalizationKeys.Transfer_Request_Send: "Talebi Gönder",
+
     LocalizationKeys.Transfer_Title: "Transferler",
 
     LocalizationKeys.Airport_Transfer_Title: "Havaliman\u0131 Transferleri",

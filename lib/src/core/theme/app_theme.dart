@@ -39,5 +39,5 @@ extension BabiAppThemeExtensions on CoreTheme {
       border: focusedBorder(),
       suffixIcon: suffixIcon
     );
-}
+  }
 }
