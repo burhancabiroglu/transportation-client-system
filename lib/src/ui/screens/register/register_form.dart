@@ -13,9 +13,9 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 class RegisterForm extends CoreStatelessWidget {
   final RegisterCubit cubit;
   const RegisterForm({
-    Key? key,
+    super.key,
     required this.cubit,
-  }): super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
