@@ -5,7 +5,7 @@ import 'package:babiconsultancy/src/core/config/assets.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_cubit.dart';
-import 'package:babiconsultancy/src/ui/widgets/buttons/primary_variant.dart';
+import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -14,9 +14,9 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 class LoginForm extends CoreStatelessWidget {
   final LoginCubit cubit;
   const LoginForm({
-    Key? key,
+    super.key,
     required this.cubit,
-  }): super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class LoginForm extends CoreStatelessWidget {
               ),
             ),
             SizedBox(height: 36.h),
-            PrimaryVariantButton(
+            PrimaryButton(
               text: "Giriş Yap",
               onClick: () {
                 cubit.formKey.currentState?.validate();

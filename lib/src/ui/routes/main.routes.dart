@@ -7,22 +7,15 @@ import 'package:babiconsultancy/src/ui/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 Route mainRoutes(RouteSettings settings) {
-  switch (settings.name) {
-    case RegisterScreen.route:
-      return MaterialPageRoute(builder: (_) => const RegisterScreen());
-    case LoginScreen.route:
-      return MaterialPageRoute(builder: (_) => const LoginScreen());
-    case SplashScreen.route:
-      return MaterialPageRoute(builder: (_) => const MainScreen()); // SPLASH
-    /*case WelcomeScreen.route:
-      return MaterialPageRoute(builder: (_) => const WelcomeScreen()); */
-    case MainScreen.route:
-      return MaterialPageRoute(builder: (_) => const MainScreen());
-    case SuccessScreen.route:
-      return MaterialPageRoute(builder: (_) => const SuccessScreen());
-    case AboutUsScreen.route:
-      return MaterialPageRoute(builder: (_) => const AboutUsScreen());
-    default:
-      return MaterialPageRoute(builder: (_) => const SplashScreen());
-  }
+  final screen = switch (settings.name) {
+    RegisterScreen.route => const RegisterScreen(),
+    LoginScreen.route => const LoginScreen(),
+    SplashScreen.route => const SplashScreen(),
+    MainScreen.route => const MainScreen(),
+    SuccessScreen.route => const SuccessScreen(),
+    AboutUsScreen.route => const AboutUsScreen(),
+    _ => const SplashScreen()
+  };
+  return MaterialPageRoute(builder: (_) => screen);
+  
 }

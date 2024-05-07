@@ -1,3 +1,4 @@
+import 'package:babiconsultancy/src/backend/repo/auth_repo.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +11,11 @@ class RegisterCubit extends Cubit {
   static const String password = "password";
   static const String passwordAgain = "password_again";
 
+  final AuthRepo repo;
+
   final formKey = GlobalKey<FormBuilderState>();
 
-  RegisterCubit(): super(0);
-
+  RegisterCubit({required this.repo}): super(0);
 
   void routeToLogin() {
     CoreRouter.main.popAndPushNamed(LoginScreen.route);

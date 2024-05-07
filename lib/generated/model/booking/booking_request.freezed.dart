@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of '../../../src/backend/model/book/book_request.dart';
+part of '../../../src/backend/model/booking/booking_request.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-BookRequest _$BookRequestFromJson(Map<String, dynamic> json) {
-  return _BookRequest.fromJson(json);
+BookingRequest _$BookingRequestFromJson(Map<String, dynamic> json) {
+  return _BookingRequest.fromJson(json);
 }
 
 /// @nodoc
-mixin _$BookRequest {
+mixin _$BookingRequest {
   String get id => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
@@ -27,23 +27,23 @@ mixin _$BookRequest {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BookRequestCopyWith<BookRequest> get copyWith =>
+  $BookingRequestCopyWith<BookingRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BookRequestCopyWith<$Res> {
-  factory $BookRequestCopyWith(
-          BookRequest value, $Res Function(BookRequest) then) =
-      _$BookRequestCopyWithImpl<$Res, BookRequest>;
+abstract class $BookingRequestCopyWith<$Res> {
+  factory $BookingRequestCopyWith(
+          BookingRequest value, $Res Function(BookingRequest) then) =
+      _$BookingRequestCopyWithImpl<$Res, BookingRequest>;
   @useResult
   $Res call({String id, int status, String date, String type});
 }
 
 /// @nodoc
-class _$BookRequestCopyWithImpl<$Res, $Val extends BookRequest>
-    implements $BookRequestCopyWith<$Res> {
-  _$BookRequestCopyWithImpl(this._value, this._then);
+class _$BookingRequestCopyWithImpl<$Res, $Val extends BookingRequest>
+    implements $BookingRequestCopyWith<$Res> {
+  _$BookingRequestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -80,22 +80,22 @@ class _$BookRequestCopyWithImpl<$Res, $Val extends BookRequest>
 }
 
 /// @nodoc
-abstract class _$$BookRequestImplCopyWith<$Res>
-    implements $BookRequestCopyWith<$Res> {
-  factory _$$BookRequestImplCopyWith(
-          _$BookRequestImpl value, $Res Function(_$BookRequestImpl) then) =
-      __$$BookRequestImplCopyWithImpl<$Res>;
+abstract class _$$BookingRequestImplCopyWith<$Res>
+    implements $BookingRequestCopyWith<$Res> {
+  factory _$$BookingRequestImplCopyWith(_$BookingRequestImpl value,
+          $Res Function(_$BookingRequestImpl) then) =
+      __$$BookingRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, int status, String date, String type});
 }
 
 /// @nodoc
-class __$$BookRequestImplCopyWithImpl<$Res>
-    extends _$BookRequestCopyWithImpl<$Res, _$BookRequestImpl>
-    implements _$$BookRequestImplCopyWith<$Res> {
-  __$$BookRequestImplCopyWithImpl(
-      _$BookRequestImpl _value, $Res Function(_$BookRequestImpl) _then)
+class __$$BookingRequestImplCopyWithImpl<$Res>
+    extends _$BookingRequestCopyWithImpl<$Res, _$BookingRequestImpl>
+    implements _$$BookingRequestImplCopyWith<$Res> {
+  __$$BookingRequestImplCopyWithImpl(
+      _$BookingRequestImpl _value, $Res Function(_$BookingRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$BookRequestImplCopyWithImpl<$Res>
     Object? date = null,
     Object? type = null,
   }) {
-    return _then(_$BookRequestImpl(
+    return _then(_$BookingRequestImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -129,15 +129,15 @@ class __$$BookRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BookRequestImpl implements _BookRequest {
-  const _$BookRequestImpl(
+class _$BookingRequestImpl implements _BookingRequest {
+  const _$BookingRequestImpl(
       {required this.id,
       required this.status,
       required this.date,
       required this.type});
 
-  factory _$BookRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BookRequestImplFromJson(json);
+  factory _$BookingRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BookingRequestImplFromJson(json);
 
   @override
   final String id;
@@ -150,14 +150,14 @@ class _$BookRequestImpl implements _BookRequest {
 
   @override
   String toString() {
-    return 'BookRequest(id: $id, status: $status, date: $date, type: $type)';
+    return 'BookingRequest(id: $id, status: $status, date: $date, type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BookRequestImpl &&
+            other is _$BookingRequestImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.date, date) || other.date == date) &&
@@ -171,26 +171,27 @@ class _$BookRequestImpl implements _BookRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BookRequestImplCopyWith<_$BookRequestImpl> get copyWith =>
-      __$$BookRequestImplCopyWithImpl<_$BookRequestImpl>(this, _$identity);
+  _$$BookingRequestImplCopyWith<_$BookingRequestImpl> get copyWith =>
+      __$$BookingRequestImplCopyWithImpl<_$BookingRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BookRequestImplToJson(
+    return _$$BookingRequestImplToJson(
       this,
     );
   }
 }
 
-abstract class _BookRequest implements BookRequest {
-  const factory _BookRequest(
+abstract class _BookingRequest implements BookingRequest {
+  const factory _BookingRequest(
       {required final String id,
       required final int status,
       required final String date,
-      required final String type}) = _$BookRequestImpl;
+      required final String type}) = _$BookingRequestImpl;
 
-  factory _BookRequest.fromJson(Map<String, dynamic> json) =
-      _$BookRequestImpl.fromJson;
+  factory _BookingRequest.fromJson(Map<String, dynamic> json) =
+      _$BookingRequestImpl.fromJson;
 
   @override
   String get id;
@@ -202,6 +203,6 @@ abstract class _BookRequest implements BookRequest {
   String get type;
   @override
   @JsonKey(ignore: true)
-  _$$BookRequestImplCopyWith<_$BookRequestImpl> get copyWith =>
+  _$$BookingRequestImplCopyWith<_$BookingRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

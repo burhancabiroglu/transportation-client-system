@@ -7,6 +7,7 @@ import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'splash_state.dart';
 
 class SplashScreen extends CoreStatelessWidget {
   static const route = "/";

@@ -1,20 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../../src/backend/model/book/book_request.dart';
+part of '../../../src/backend/model/booking/booking_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BookRequestImpl _$$BookRequestImplFromJson(Map<String, dynamic> json) =>
-    _$BookRequestImpl(
+_$BookingRequestImpl _$$BookingRequestImplFromJson(Map<String, dynamic> json) =>
+    _$BookingRequestImpl(
       id: json['id'] as String,
-      status: json['status'] as int,
+      status: (json['status'] as num).toInt(),
       date: json['date'] as String,
       type: json['type'] as String,
     );
 
-Map<String, dynamic> _$$BookRequestImplToJson(_$BookRequestImpl instance) =>
+Map<String, dynamic> _$$BookingRequestImplToJson(
+        _$BookingRequestImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'status': instance.status,

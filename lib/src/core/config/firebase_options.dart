@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC_AXEljibQ98g4JtQ_O9HxrOByHcx_pjw',
-    appId: '1:22923454861:android:3d46b982392de62eb6b5c4',
-    messagingSenderId: '22923454861',
-    projectId: 'babitransferbooking',
-    storageBucket: 'babitransferbooking.appspot.com',
+    apiKey: 'AIzaSyB63nzu4BnU-_G1QE7_o-GfpXaixI1GhKM',
+    appId: '1:524686571177:android:bc5e87024328de0675dbb8',
+    messagingSenderId: '524686571177',
+    projectId: 'babiedubooking',
+    storageBucket: 'babiedubooking.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA0PS-WIf4ga8weFw3FF3otKROn0JwIf_M',
-    appId: '1:22923454861:ios:028051763c19d770b6b5c4',
-    messagingSenderId: '22923454861',
-    projectId: 'babitransferbooking',
-    storageBucket: 'babitransferbooking.appspot.com',
+    apiKey: 'AIzaSyBAOLiqu08tblshDagxjuhNF-KiJJT0NeM',
+    appId: '1:524686571177:ios:b264aca3867ce43675dbb8',
+    messagingSenderId: '524686571177',
+    projectId: 'babiedubooking',
+    storageBucket: 'babiedubooking.appspot.com',
     iosBundleId: 'com.babi.babiconsultancy',
   );
 }

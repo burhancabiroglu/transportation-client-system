@@ -9,7 +9,7 @@ part of '../../../src/backend/model/config/app_config.dart';
 _$AppConfigImpl _$$AppConfigImplFromJson(Map<String, dynamic> json) =>
     _$AppConfigImpl(
       appVersion: json['app_version'] as String,
-      appCode: json['app_code'] as int,
+      appCode: (json['app_code'] as num).toInt(),
       aboutUsLink: json['about_us_link'] as String,
     );
 

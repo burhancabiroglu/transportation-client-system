@@ -1,14 +1,14 @@
-import 'package:babiconsultancy/src/backend/model/book/book_request.dart';
+import 'package:babiconsultancy/src/backend/model/booking/booking_request.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/widgets/status/status_badge.dart';
 import 'package:flutter/material.dart';
 
 class TransferRequestTile extends CoreStatelessWidget {
-  final BookRequest bookRequest;
+  final BookingRequest bookRequest;
   const TransferRequestTile({
     super.key,
-    this.bookRequest = const BookRequest(id: "id", status: 0, date: "20.12.2020", type: "type")
+    this.bookRequest = const BookingRequest(id: "id", status: 0, date: "20.12.2020", type: "type")
   });
 
   @override

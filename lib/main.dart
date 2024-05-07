@@ -12,9 +12,12 @@ import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:logger/logger.dart';
 import 'src/ui/routes/main.routes.dart';
 
 const appTheme = BabiAppTheme();
+final logger = Logger();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,13 +26,11 @@ void main() async {
   runApp(const BabiConsultancyApp());
 }
 
-
 void initScreenSize() {
   final view = WidgetsBinding.instance.platformDispatcher.views.single;
   final MediaQueryData data = MediaQueryData.fromView(view);
   WindowSize.init(data.size);
 }
-
 
 class BabiConsultancyApp extends StatelessWidget {
   const BabiConsultancyApp({super.key});
@@ -41,21 +42,17 @@ class BabiConsultancyApp extends StatelessWidget {
         BlocProvider(create: (_) => MainNavCubit()),
         BlocProvider(create: (_) => HomeCubit()),
         BlocProvider(create: (_) => TransferCubit()),
-        BlocProvider(create: (_) => LoginCubit()),
-        BlocProvider(create: (_) => RegisterCubit()),
-        BlocProvider(create: (_) => AboutUsCubit(
-          storage: injector.get()
-        )),
-        BlocProvider(create: (_) => SplashCubit(
-          configRepo: injector.get(),
-          storage: injector.get()
-        ))
+        BlocProvider(create: (_) => LoginCubit(repo: injector())),
+        BlocProvider(create: (_) => RegisterCubit(repo: injector())),
+        BlocProvider(create: (_) => AboutUsCubit(storage: injector())),
+        BlocProvider(create: (_) => SplashCubit(storage: injector()))
       ],
       child: MaterialApp(
         title: AppConfig.APP_NAME,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: mainRoutes,
         navigatorKey: CoreRouter.main.key,
+        builder: EasyLoading.init(),
       ),
     );
   }

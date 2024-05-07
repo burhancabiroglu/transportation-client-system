@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "22923454861",
-    "project_id": "babitransferbooking",
-    "storage_bucket": "babitransferbooking.appspot.com"
+    "project_number": "524686571177",
+    "project_id": "babiedubooking",
+    "storage_bucket": "babiedubooking.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:22923454861:android:3d46b982392de62eb6b5c4",
+        "mobilesdk_app_id": "1:524686571177:android:bc5e87024328de0675dbb8",
         "android_client_info": {
           "package_name": "com.babi.babiconsultancy"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC_AXEljibQ98g4JtQ_O9HxrOByHcx_pjw"
+          "current_key": "AIzaSyB63nzu4BnU-_G1QE7_o-GfpXaixI1GhKM"
         }
       ],
       "services": {

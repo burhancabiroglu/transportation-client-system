@@ -6,20 +6,15 @@ import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_reques
 import 'package:flutter/material.dart';
 
 Route homeRoutes(RouteSettings settings) {
-  switch (settings.name) {
-    case HomeScreen.route:
-      return UnanimatedPageRoute(builder: (_) => const HomeScreen());
-    case TransferScreen.route:
-      return UnanimatedPageRoute(builder: (_) => const TransferScreen());
-    case AirportTransferScreen.route:
-      return UnanimatedPageRoute(builder: (_) => const AirportTransferScreen());
-    case ProfileScreen.route:
-      return UnanimatedPageRoute(builder: (_) => const ProfileScreen());
-    case TransferRequestScreen.route:
-      return MaterialPageRoute(builder: (_) => const TransferRequestScreen());
-    default:
-      return UnanimatedPageRoute(builder: (_) => const HomeScreen());
-  }
+  final screen = switch (settings.name) {
+    HomeScreen.route => const HomeScreen(),
+    TransferScreen.route => const TransferScreen(),
+    AirportTransferScreen.route => const AirportTransferScreen(),
+    ProfileScreen.route => const ProfileScreen(),
+    TransferRequestScreen.route => const TransferRequestScreen(),
+    _ => const HomeScreen()
+  };
+  return UnanimatedPageRoute(builder: (_) => screen);
 }
 
 
@@ -27,16 +22,11 @@ Route homeRoutes(RouteSettings settings) {
 class UnanimatedPageRoute<T> extends MaterialPageRoute<T> {
   
   UnanimatedPageRoute({
-    required Widget Function(BuildContext) builder,
-    RouteSettings? settings,
-    bool maintainState = true,
-    bool fullscreenDialog = false,
-  }) : super(
-    builder: builder,
-    settings: settings,
-    maintainState: maintainState,
-    fullscreenDialog: fullscreenDialog
-  );
+    required super.builder,
+    super.settings,
+    super.maintainState = true,
+    super.fullscreenDialog = false,
+  });
 
   @override
   Widget buildTransitions(BuildContext context,Animation<double> animation,Animation<double> secondaryAnimation,Widget child) {

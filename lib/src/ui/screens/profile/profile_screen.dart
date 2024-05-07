@@ -1,4 +1,3 @@
-import 'package:babiconsultancy/src/backend/model/user/user.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
@@ -14,7 +13,6 @@ class ProfileScreen extends CoreStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const user = User(fullname: "burhan cabiroglu", email: "demoglu@gmail.com");
     return Scaffold(
       backgroundColor: theme.colorScheme.darken,
       appBar: CoreAppBar(title: Text(localization.of(LocalizationKeys.Profile_Title))),
@@ -28,7 +26,7 @@ class ProfileScreen extends CoreStatelessWidget {
             color: theme.colorScheme.darken,
             child: Row(
               children: [
-                RandomAvatar(user.fullname, height: 100.h),
+                RandomAvatar("burhan cabiroglu", height: 100.h),
                 SizedBox(width: 24.w),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +37,7 @@ class ProfileScreen extends CoreStatelessWidget {
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      user.fullname,
+                      "demoglu@gmail.com",
                       style: theme.textStyle.body02.copyWith(color: theme.colorScheme.white),
                     ),
                   ],
