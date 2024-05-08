@@ -20,10 +20,12 @@ BookingRequest _$BookingRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BookingRequest {
-  String get id => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  @JsonKey(name: "user_id")
+  String get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: "additional_note")
+  int get additionalNote => throw _privateConstructorUsedError;
+  @JsonKey(name: "transfer_type")
+  String get transferType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +39,10 @@ abstract class $BookingRequestCopyWith<$Res> {
           BookingRequest value, $Res Function(BookingRequest) then) =
       _$BookingRequestCopyWithImpl<$Res, BookingRequest>;
   @useResult
-  $Res call({String id, int status, String date, String type});
+  $Res call(
+      {@JsonKey(name: "user_id") String userId,
+      @JsonKey(name: "additional_note") int additionalNote,
+      @JsonKey(name: "transfer_type") String transferType});
 }
 
 /// @nodoc
@@ -53,27 +58,22 @@ class _$BookingRequestCopyWithImpl<$Res, $Val extends BookingRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? status = null,
-    Object? date = null,
-    Object? type = null,
+    Object? userId = null,
+    Object? additionalNote = null,
+    Object? transferType = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      additionalNote: null == additionalNote
+          ? _value.additionalNote
+          : additionalNote // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      transferType: null == transferType
+          ? _value.transferType
+          : transferType // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -87,7 +87,10 @@ abstract class _$$BookingRequestImplCopyWith<$Res>
       __$$BookingRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, int status, String date, String type});
+  $Res call(
+      {@JsonKey(name: "user_id") String userId,
+      @JsonKey(name: "additional_note") int additionalNote,
+      @JsonKey(name: "transfer_type") String transferType});
 }
 
 /// @nodoc
@@ -101,27 +104,22 @@ class __$$BookingRequestImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? status = null,
-    Object? date = null,
-    Object? type = null,
+    Object? userId = null,
+    Object? additionalNote = null,
+    Object? transferType = null,
   }) {
     return _then(_$BookingRequestImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      null == additionalNote
+          ? _value.additionalNote
+          : additionalNote // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      null == transferType
+          ? _value.transferType
+          : transferType // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -131,26 +129,26 @@ class __$$BookingRequestImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BookingRequestImpl implements _BookingRequest {
   const _$BookingRequestImpl(
-      {required this.id,
-      required this.status,
-      required this.date,
-      required this.type});
+      @JsonKey(name: "user_id") this.userId,
+      @JsonKey(name: "additional_note") this.additionalNote,
+      @JsonKey(name: "transfer_type") this.transferType);
 
   factory _$BookingRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$BookingRequestImplFromJson(json);
 
   @override
-  final String id;
+  @JsonKey(name: "user_id")
+  final String userId;
   @override
-  final int status;
+  @JsonKey(name: "additional_note")
+  final int additionalNote;
   @override
-  final String date;
-  @override
-  final String type;
+  @JsonKey(name: "transfer_type")
+  final String transferType;
 
   @override
   String toString() {
-    return 'BookingRequest(id: $id, status: $status, date: $date, type: $type)';
+    return 'BookingRequest(userId: $userId, additionalNote: $additionalNote, transferType: $transferType)';
   }
 
   @override
@@ -158,15 +156,17 @@ class _$BookingRequestImpl implements _BookingRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookingRequestImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.date, date) || other.date == date) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.additionalNote, additionalNote) ||
+                other.additionalNote == additionalNote) &&
+            (identical(other.transferType, transferType) ||
+                other.transferType == transferType));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, status, date, type);
+  int get hashCode =>
+      Object.hash(runtimeType, userId, additionalNote, transferType);
 
   @JsonKey(ignore: true)
   @override
@@ -185,22 +185,23 @@ class _$BookingRequestImpl implements _BookingRequest {
 
 abstract class _BookingRequest implements BookingRequest {
   const factory _BookingRequest(
-      {required final String id,
-      required final int status,
-      required final String date,
-      required final String type}) = _$BookingRequestImpl;
+          @JsonKey(name: "user_id") final String userId,
+          @JsonKey(name: "additional_note") final int additionalNote,
+          @JsonKey(name: "transfer_type") final String transferType) =
+      _$BookingRequestImpl;
 
   factory _BookingRequest.fromJson(Map<String, dynamic> json) =
       _$BookingRequestImpl.fromJson;
 
   @override
-  String get id;
+  @JsonKey(name: "user_id")
+  String get userId;
   @override
-  int get status;
+  @JsonKey(name: "additional_note")
+  int get additionalNote;
   @override
-  String get date;
-  @override
-  String get type;
+  @JsonKey(name: "transfer_type")
+  String get transferType;
   @override
   @JsonKey(ignore: true)
   _$$BookingRequestImplCopyWith<_$BookingRequestImpl> get copyWith =>

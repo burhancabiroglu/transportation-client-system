@@ -16,7 +16,7 @@ abstract class AuthRepo {
 }
 
 class AuthRepoImpl extends AuthRepo {
-  AuthRepoImpl({required super.api});
+  const AuthRepoImpl({required super.api});
   
   @override
   Future<AppResult<LoginResponse>> login(LoginRequest body) {
@@ -32,6 +32,4 @@ class AuthRepoImpl extends AuthRepo {
   Future<AppResult<String>> register(RegisterRequest body) {
     return NetworkHandler.getSafeResult(() => api.register(body));
   }
-
-
 }
