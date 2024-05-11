@@ -13,7 +13,7 @@ class _AuthApi implements AuthApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://us-central1-babiedubooking.cloudfunctions.net/auth';
+    baseUrl ??= 'https://us-central1-babiedubooking.cloudfunctions.net/auth/';
   }
 
   final Dio _dio;

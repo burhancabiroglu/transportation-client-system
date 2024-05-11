@@ -3,7 +3,7 @@ import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
-import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +23,7 @@ class SplashScreen extends CoreStatelessWidget {
       listener: (context, state) {
         switch(state){
           case SplashState.DONE:
-            CoreRouter.main.popAndPushNamed(MainScreen.route);
+            CoreRouter.main.popAndPushNamed(LoginScreen.route);
             break;
           case SplashState.NETWORK_NOT_FOUND:
             break; 

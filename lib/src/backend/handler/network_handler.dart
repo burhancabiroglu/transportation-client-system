@@ -9,7 +9,8 @@ abstract class NetworkHandler {
   static Future<AppResult<T>> getSafeResult<T>(Future<BaseResponse<T>> Function() call) async {
     try {
       final response = await call();
-      return AppResult.success(response.data);
+      logger.e("Network Request Success: $response");
+      return AppResult.success(data: response.data);
     } catch (e) {
       if (e is DioException) {
         switch (e.type) {
@@ -20,26 +21,30 @@ abstract class NetworkHandler {
           case DioExceptionType.unknown:
             logger.e("${e.type} -> Poor Network");
             return AppResult.error(
-              e.response?.statusCode?? 400,
-               e.response?.statusMessage ?? ""
+              statusCode:  e.response?.statusCode?? 400,
+              error: e.response?.statusMessage ?? "",
+              message: e.response?.data["message"] ?? ""
             );
           case DioExceptionType.badResponse:
             logger.e("${e.type} ${e.response.toString()}");
             return AppResult.error(
-              e.response?.statusCode?? 400,
-               e.response?.statusMessage ?? ""
+              statusCode:  e.response?.statusCode?? 400,
+              error: e.response?.statusMessage ?? "",
+              message: e.response?.data["message"] ?? ""
             );
           default:
             return AppResult.error(
-              e.response?.statusCode?? 400,
-              e.response?.statusMessage ?? ""
+              statusCode:  e.response?.statusCode?? 400,
+              error: e.response?.statusMessage ?? "",
+              message: e.response?.data["message"] ?? ""
             );
         }
       }
       logger.e("Api error message -> ${e.toString()}");
-      return AppResult.error(
-        500,
-        e.toString()
+      return const AppResult.error(
+        statusCode:  500,
+        message: "Internal Error",
+        error: "Internal Error"
       );
     }
   }

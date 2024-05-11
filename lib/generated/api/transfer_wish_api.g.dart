@@ -14,7 +14,7 @@ class _TransferWishApi implements TransferWishApi {
     this.baseUrl,
   }) {
     baseUrl ??=
-        'https://us-central1-babiedubooking.cloudfunctions.net/transfer_wish';
+        'https://us-central1-babiedubooking.cloudfunctions.net/transfer_wish/';
   }
 
   final Dio _dio;

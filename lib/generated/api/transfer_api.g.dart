@@ -14,7 +14,7 @@ class _TransferApi implements TransferApi {
     this.baseUrl,
   }) {
     baseUrl ??=
-        'https://us-central1-babiedubooking.cloudfunctions.net/transfer';
+        'https://us-central1-babiedubooking.cloudfunctions.net/transfer/';
   }
 
   final Dio _dio;

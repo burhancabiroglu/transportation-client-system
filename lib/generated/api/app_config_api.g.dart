@@ -13,7 +13,7 @@ class _AppConfigApi implements AppConfigApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://us-central1-babiedubooking.cloudfunctions.net/config';
+    baseUrl ??= 'https://us-central1-babiedubooking.cloudfunctions.net/config/';
   }
 
   final Dio _dio;

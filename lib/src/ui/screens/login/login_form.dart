@@ -29,7 +29,7 @@ class LoginForm extends CoreStatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             FormBuilderTextField(
-              name: LoginCubit.email,
+              name: LoginCubit.emailRef,
               autofillHints: const <String>[AutofillHints.email],
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
@@ -42,6 +42,7 @@ class LoginForm extends CoreStatelessWidget {
                 hintText: 'E-posta adresiniz',
                 prefixIcon: Assets.email.toSvg(padding: EdgeInsets.all(18.h)),
               ),
+              onChanged: (_) => cubit.clearErrorStates(LoginCubit.emailRef),
             ),
             SizedBox(height: 24.h),
             StreamBuilder(
@@ -51,10 +52,11 @@ class LoginForm extends CoreStatelessWidget {
                   autocorrect: false,
                   autofillHints: const <String>[AutofillHints.password],
                   style: theme.textStyle.body04,
-                  name: LoginCubit.password,
+                  name: LoginCubit.passwordRef,
                   validator: FormBuilderValidators.compose([
                     FormBuilderValidators.required(errorText: "Şifre boş olamaz")
                   ]),
+                  onChanged: (_) => cubit.clearErrorStates(LoginCubit.passwordRef),
                   obscureText: snapshot.data ?? false,
                   decoration: theme.inputDecoration(
                     hintText: 'Şifreniz',
@@ -80,12 +82,7 @@ class LoginForm extends CoreStatelessWidget {
             SizedBox(height: 36.h),
             PrimaryButton(
               text: "Giriş Yap",
-              onClick: () {
-                cubit.formKey.currentState?.validate();
-                //if (!form.valid) return form.markAllAsTouched();
-                //form.unfocus();
-                //TextInput.finishAutofillContext();
-              },
+              onClick: cubit.login
             )
           ],
         ),

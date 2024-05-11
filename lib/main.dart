@@ -30,6 +30,16 @@ void initScreenSize() {
   final view = WidgetsBinding.instance.platformDispatcher.views.single;
   final MediaQueryData data = MediaQueryData.fromView(view);
   WindowSize.init(data.size);
+  EasyLoading.instance
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.custom
+    ..indicatorColor = Colors.white
+    ..textColor = Colors.white
+    ..backgroundColor = appTheme.colorScheme.darken
+    ..maskType = EasyLoadingMaskType.black
+    ..indicatorSize = 70.0
+    ..radius = 10.0
+    ..progressColor = Colors.yellow;
 }
 
 class BabiConsultancyApp extends StatelessWidget {
@@ -45,7 +55,7 @@ class BabiConsultancyApp extends StatelessWidget {
         BlocProvider(create: (_) => LoginCubit(repo: injector())),
         BlocProvider(create: (_) => RegisterCubit(repo: injector())),
         BlocProvider(create: (_) => AboutUsCubit(storage: injector())),
-        BlocProvider(create: (_) => SplashCubit(storage: injector()))
+        BlocProvider(create: (_) => SplashCubit(configRepo: injector()))
       ],
       child: MaterialApp(
         title: AppConfig.APP_NAME,

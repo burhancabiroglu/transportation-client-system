@@ -1,13 +1,13 @@
-import 'package:babiconsultancy/src/backend/repo/shared_pref.dart';
+import 'package:babiconsultancy/src/backend/repo/config_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
-  final LocalStorage storage;
+  final ConfigRepo configRepo;
   SplashCubit({
-    required this.storage
+    required this.configRepo
   }): super(SplashState.LOADING) {
     init();
   }
@@ -17,6 +17,11 @@ class SplashCubit extends Cubit<SplashState> {
       emit(SplashState.NETWORK_NOT_FOUND);
       return;
     }
+    await Future.wait([
+      configRepo.getSeatStatuses(),
+      configRepo.getTransferStatuses(),
+      configRepo.getTransferTypes()
+    ]);
     emit(SplashState.DONE);
   }
 }
