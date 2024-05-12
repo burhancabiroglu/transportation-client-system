@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:babiconsultancy/src/backend/repo/shared_pref.dart';
+import 'package:babiconsultancy/src/backend/api/shared_pref.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -9,7 +9,7 @@ class AboutUsCubit extends Cubit {
   AboutUsCubit({
     required this.storage
   }): super(0) {
-    controller.loadRequest(Uri.parse(storage.appConfig!.aboutUsLink));
+    // controller.loadRequest(Uri.parse(storage.appConfig!.aboutUsLink));
   }
   
 

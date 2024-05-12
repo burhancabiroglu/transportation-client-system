@@ -2,11 +2,11 @@ import 'package:babiconsultancy/src/backend/api/app_config_api.dart';
 import 'package:babiconsultancy/src/backend/api/auth_api.dart';
 import 'package:babiconsultancy/src/backend/api/transfer_api.dart';
 import 'package:babiconsultancy/src/backend/api/transfer_wish_api.dart';
-import 'package:babiconsultancy/src/backend/handler/cache_manager.dart';
+import 'package:babiconsultancy/src/backend/handler/cache_handler.dart';
 import 'package:babiconsultancy/src/backend/handler/core_client.dart';
 import 'package:babiconsultancy/src/backend/repo/auth_repo.dart';
 import 'package:babiconsultancy/src/backend/repo/config_repo.dart';
-import 'package:babiconsultancy/src/backend/repo/shared_pref.dart';
+import 'package:babiconsultancy/src/backend/api/shared_pref.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,7 +15,7 @@ final injector = GetIt.instance;
 Future setup() async {
   final sharedPrefs = await SharedPreferences.getInstance();
   injector.registerSingleton(LocalStorage.initAsync(sharedPrefs));
-  injector.registerSingleton(CacheManager(storage: injector.get<LocalStorage>()));
+  injector.registerSingleton(CacheHandler(storage: injector.get<LocalStorage>()));
   injector.registerSingleton(CoreClient());
   injector.registerSingleton(AuthApi(injector<CoreClient>()));
   injector.registerSingleton(TransferApi(injector<CoreClient>()));
@@ -25,7 +25,7 @@ Future setup() async {
   injector.registerSingleton<ConfigRepo>(
     ConfigRepoImpl(
       api: injector<AppConfigApi>(), 
-      cacheManager: injector<CacheManager>()
+      cacheManager: injector<CacheHandler>()
     )
   );
 

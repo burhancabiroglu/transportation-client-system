@@ -20,5 +20,5 @@ class CacheStore<T> with _$CacheStore<T> {
 
 
 extension CacheStoreExt on CacheStore {
-    bool isValid() => (DateTime.now().millisecondsSinceEpoch - (createdAt + lifetime)) > 0;
+    bool isValid() => (DateTime.now().millisecondsSinceEpoch - (createdAt + lifetime)) < 0;
 }
