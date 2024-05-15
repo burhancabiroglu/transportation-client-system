@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/config/assets.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
@@ -27,13 +26,14 @@ class RegisterForm extends CoreStatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FormBuilderTextField(
-            name: RegisterCubit.fullname,
+            name: RegisterCubit.fullnameRef,
             keyboardType: TextInputType.name,
             textInputAction: TextInputAction.next,
             style: theme.textStyle.body04,
             validator: FormBuilderValidators.compose([
               FormBuilderValidators.required(errorText: "İsim Soyisim boş olamaz"),
             ]),
+            onChanged: (_) => cubit.clearErrorStates(RegisterCubit.fullnameRef),
             decoration: theme.inputDecoration(
               hintText: 'İsim Soyisim',
               prefixIcon: Assets.email.toSvg(padding: EdgeInsets.all(18.h)),
@@ -41,10 +41,11 @@ class RegisterForm extends CoreStatelessWidget {
           ),
           SizedBox(height: 24.h),
           FormBuilderTextField(
-            name: RegisterCubit.email,
+            name: RegisterCubit.emailRef,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
             style: theme.textStyle.body04,
+            onChanged: (_) => cubit.clearErrorStates(RegisterCubit.emailRef),
             validator: FormBuilderValidators.compose([
               FormBuilderValidators.required(errorText: "E-posta adresi boş olamaz"),
               FormBuilderValidators.email(errorText: "Geçerli bir e-posta adresi giriniz")
@@ -61,7 +62,8 @@ class RegisterForm extends CoreStatelessWidget {
               FormBuilderTextField(
                 autocorrect: false,
                 style: theme.textStyle.body04,
-                name: RegisterCubit.password,
+                name: RegisterCubit.passwordRef,
+                onChanged: (_) => cubit.clearErrorStates(RegisterCubit.passwordRef),
                 validator: FormBuilderValidators.compose([
                   FormBuilderValidators.required(errorText: "Şifre boş olamaz"),
                   FormBuilderValidators.minLength(6,errorText: "Minimum 6 karakterden oluşmalı"),
@@ -87,11 +89,12 @@ class RegisterForm extends CoreStatelessWidget {
           FormBuilderTextField(
             autocorrect: false,
             style: theme.textStyle.body04,
-            name: RegisterCubit.passwordAgain,
+            name: RegisterCubit.passwordAgainRef,
+            onChanged: (_) => cubit.clearErrorStates(RegisterCubit.passwordAgainRef),
             validator: FormBuilderValidators.compose([
               FormBuilderValidators.required(errorText: "Şifre boş olamaz"),
               FormBuilderValidators.equal(
-                cubit.formKey.currentState?.fields[RegisterCubit.passwordAgain]?.value.toString()?? "",
+                cubit.formKey.currentState?.fields[RegisterCubit.passwordAgainRef]?.value.toString()?? "",
                 errorText: "Parolalar eşleşmiyor"
               ),
             ]),
@@ -104,12 +107,7 @@ class RegisterForm extends CoreStatelessWidget {
           SizedBox(height: 36.h),
           PrimaryVariantButton(
             text: "Üye Ol",
-            onClick: () {
-              cubit.formKey.currentState?.validate();
-              //if (!form.valid) return form.markAllAsTouched();
-              //form.unfocus();
-              //TextInput.finishAutofillContext();
-            },
+            onClick: cubit.register
           )
         ],
       ),

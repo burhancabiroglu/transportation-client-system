@@ -1,3 +1,4 @@
+import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/ui/widgets/seat/seat_box_state.dart';
 import 'package:flutter/material.dart';
@@ -5,27 +6,28 @@ import 'package:flutter_svg/svg.dart';
 
 class SeatBox extends CoreStatelessWidget {
   final int index;
-  final SeatBoxState state;
-  final Function(int,SeatBoxState)? onStateChange;
+  final SeatDto dto;
+  final Function(int,SeatDto)? onStateChange;
   const SeatBox({
     super.key,
     this.index = 0, 
-    this.state = SeatBoxState.INELIGIBLE,
+    required this.dto,
     this.onStateChange,
   });
-
   SeatBoxState onTap() {
+    final SeatBoxState state = SeatBoxState.get(dto.status);
     final newState = switch(state) {
-      SeatBoxState.SELECTED => SeatBoxState.UNSELECTED,
-      SeatBoxState.INELIGIBLE => SeatBoxState.INELIGIBLE,
-      SeatBoxState.UNSELECTED => SeatBoxState.SELECTED,
+      SeatBoxState.SELECTED => SeatBoxState.AVAILABLE,
+      SeatBoxState.OCCUPIED => SeatBoxState.OCCUPIED,
+      SeatBoxState.AVAILABLE => SeatBoxState.SELECTED,
     };
-    onStateChange?.call(index,newState);
+    onStateChange?.call(index,dto.copyWith(status: newState.id));
     return newState;
   }
 
   @override
   Widget build(BuildContext context) {
+    final SeatBoxState state = SeatBoxState.get(dto.status);
     return InkWell(
       onTap: onTap,
       child: Stack(

@@ -12,6 +12,7 @@ abstract class TransferRepo {
 	Future<AppResult<List<SeatDto>>> getSeatsByTransferId(String transferId);
 	Future<AppResult<List<TransferDto>>> getTransfersByType(int type);
 	Future<AppResult<List<TransferDto>>> getTransfersByStatus(int status);
+  Future<AppResult<List<TransferDto>>> getTransfersByQuery(int status, int type);
 }
 
 class TransferRepoImpl extends TransferRepo {
@@ -35,5 +36,10 @@ class TransferRepoImpl extends TransferRepo {
   @override
   Future<AppResult<String>> updateSeat(String seatId, int status) {
     return NetworkHandler.getSafeResult(() => api.updateSeat(seatId, status));
+  }
+  
+  @override
+  Future<AppResult<List<TransferDto>>> getTransfersByQuery(int status, int type) {
+    return NetworkHandler.getSafeResult(() => api.getTransfersByQuery(status, type));
   }
 }

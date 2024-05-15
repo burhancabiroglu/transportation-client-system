@@ -2,6 +2,6 @@
 enum SplashState {
   NETWORK_NOT_FOUND,
   ERROR,
-  LOADING,
-  DONE;
+  UNAUTHORIZED,
+  USER_AUTHORIZED;
 }

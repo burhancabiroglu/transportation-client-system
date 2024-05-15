@@ -1,10 +1,15 @@
+import 'package:babiconsultancy/src/backend/model/user/user.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
+import 'package:babiconsultancy/src/ui/screens/profile/profile_cubit.dart';
+import 'package:babiconsultancy/src/ui/screens/profile/profile_state.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/shelf.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
+import 'package:babiconsultancy/src/ui/widgets/shimmer/shimmer_placeholder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:random_avatar/random_avatar.dart';
 
 class ProfileScreen extends CoreStatelessWidget {
@@ -13,37 +18,50 @@ class ProfileScreen extends CoreStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = BlocProvider.of<ProfileCubit>(context);
+    cubit.getInformations();
     return Scaffold(
       backgroundColor: theme.colorScheme.darken,
       appBar: CoreAppBar(title: Text(localization.of(LocalizationKeys.Profile_Title))),
       body: Column(
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: WindowDefaults.wall,
-              vertical: WindowDefaults.verticalPadding
-            ),
-            color: theme.colorScheme.darken,
-            child: Row(
-              children: [
-                RandomAvatar("burhan cabiroglu", height: 100.h),
-                SizedBox(width: 24.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          BlocBuilder<ProfileCubit,ProfileState>(
+            bloc: cubit,
+            builder: (context,state) {
+              return Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: WindowDefaults.wall,
+                  vertical: WindowDefaults.verticalPadding
+                ),
+                color: theme.colorScheme.darken,
+                child: Row(
                   children: [
-                    Text(
-                      localization.of(LocalizationKeys.Profile_Greetings),
-                      style: theme.textStyle.caption02.copyWith(color: theme.colorScheme.white),
+                    ShimmerPlaceHolder(
+                      enabled: state is! ProfileStateSuccess,
+                      child: RandomAvatar(
+                        state.info?.fullname ?? "none",
+                        height: 100.h
+                      ),
                     ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      "demoglu@gmail.com",
-                      style: theme.textStyle.body02.copyWith(color: theme.colorScheme.white),
-                    ),
+                    SizedBox(width: 24.w),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          localization.of(LocalizationKeys.Profile_Greetings),
+                          style: theme.textStyle.caption02.copyWith(color: theme.colorScheme.white),
+                        ),
+                        SizedBox(height: 4.h),
+                        Text(
+                          state.info?.fullname ?? "",
+                          style: theme.textStyle.body02.copyWith(color: theme.colorScheme.white),
+                        ),
+                      ],
+                    )
                   ],
-                )
-              ],
-            ),
+                ),
+              );
+            }
           ),
           SizedBox(height: 40.h),
           Expanded(

@@ -49,7 +49,7 @@ class RegisterScreenState extends CoreWidgetState<RegisterScreen> {
                             children: [
                               Text( "Zaten üye misin?", style: theme.textStyle.callout02),
                               CoreTextButton(
-                                text:  "Giriş yap",
+                                text: "Giriş yap",
                                 style: theme.textStyle.body01.copyWith(
                                   decoration: TextDecoration.underline,
                                   color: theme.colorScheme.primary

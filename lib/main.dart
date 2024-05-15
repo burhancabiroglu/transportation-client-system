@@ -7,8 +7,10 @@ import 'package:babiconsultancy/src/ui/screens/aboutus/about_us_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/home/home_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/main/main_nav_bloc.dart';
+import 'package:babiconsultancy/src/ui/screens/profile/profile_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/airport/airport_transfer_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,12 +52,14 @@ class BabiConsultancyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => MainNavCubit()),
-        BlocProvider(create: (_) => HomeCubit()),
-        BlocProvider(create: (_) => TransferCubit()),
-        BlocProvider(create: (_) => LoginCubit(repo: injector())),
+        BlocProvider(create: (_) => HomeCubit(transferRepo: injector(),transferWishRepo: injector())),
+        BlocProvider(create: (_) => TransferCubit(repo: injector())),
+        BlocProvider(create: (_) => AirportTransferCubit(repo: injector())),
+        BlocProvider(create: (_) => LoginCubit(repo: injector(), session: injector())),
         BlocProvider(create: (_) => RegisterCubit(repo: injector())),
         BlocProvider(create: (_) => AboutUsCubit(storage: injector())),
-        BlocProvider(create: (_) => SplashCubit(configRepo: injector()))
+        BlocProvider(create: (_) => SplashCubit(configRepo: injector(), session: injector())),
+        BlocProvider(create: (_) => ProfileCubit(repo: injector()))
       ],
       child: MaterialApp(
         title: AppConfig.APP_NAME,

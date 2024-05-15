@@ -8,6 +8,7 @@ import 'package:babiconsultancy/src/backend/model/user/user.dart';
 
 abstract class AuthRepo {
   final AuthApi api;
+  
   const AuthRepo({required this.api});
 
   Future<AppResult<LoginResponse>> login(LoginRequest body);
@@ -16,7 +17,7 @@ abstract class AuthRepo {
 }
 
 class AuthRepoImpl extends AuthRepo {
-  const AuthRepoImpl({required super.api});
+  const AuthRepoImpl({required super.api });
   
   @override
   Future<AppResult<LoginResponse>> login(LoginRequest body) {

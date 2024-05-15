@@ -2,20 +2,20 @@ sealed class LoginState {
   final String? message;
   const LoginState({this.message});
 
-  const factory LoginState.success({String? message}) = _Success;
-  const factory LoginState.error({String? message}) = _Error;
-  static LoginState get none => const _None();
+  const factory LoginState.success({String? message}) = LoginStateSuccess;
+  const factory LoginState.error({String? message}) = LoginStateError;
+  static LoginState get none => const LoginStateNone();
 
 }
 
-class _None extends LoginState {
-  const _None();
+class LoginStateNone extends LoginState {
+  const LoginStateNone();
 }
 
-class _Success extends LoginState {
-  const _Success({super.message});
+class LoginStateSuccess extends LoginState {
+  const LoginStateSuccess({super.message});
 }
 
-class _Error extends LoginState {
-  const _Error({super.message});
+class LoginStateError extends LoginState {
+  const LoginStateError({super.message});
 }

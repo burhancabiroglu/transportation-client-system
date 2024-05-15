@@ -4,6 +4,7 @@ import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,8 +23,11 @@ class SplashScreen extends CoreStatelessWidget {
       bloc: bloc,
       listener: (context, state) {
         switch(state){
-          case SplashState.DONE:
+          case SplashState.UNAUTHORIZED:
             CoreRouter.main.popAndPushNamed(LoginScreen.route);
+            break;
+          case SplashState.USER_AUTHORIZED:
+            CoreRouter.main.popAndPushNamed(MainScreen.route);
             break;
           case SplashState.NETWORK_NOT_FOUND:
             break; 

@@ -23,4 +23,7 @@ abstract class TransferApi {
 
 	@GET("status/:status")
 	Future<BaseResponse<List<TransferDto>>> getTransfersByStatus(@Path("status") int status);
+
+	@GET("")
+  Future<BaseResponse<List<TransferDto>>> getTransfersByQuery(@Query("status") int status, @Query("type") int type);
 }

@@ -20,3 +20,7 @@ class User with _$User {
       _$UserFromJson(json);
 
 }
+
+extension UserExtension on User {
+  String get fullname => "$name $surname";
+}

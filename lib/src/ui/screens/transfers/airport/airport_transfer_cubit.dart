@@ -1,3 +1,4 @@
+
 import 'package:babiconsultancy/src/backend/handler/app_result.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
 import 'package:babiconsultancy/src/backend/repo/transfer_repo.dart';
@@ -9,9 +10,9 @@ import 'package:babiconsultancy/src/ui/widgets/seat/seat_box_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-class TransferCubit extends Cubit<TransferState> {
+class AirportTransferCubit extends Cubit<TransferState> {
   final TransferRepo repo;
-  TransferCubit({
+  AirportTransferCubit({
     required this.repo
   }): super(TransferState.none) {
     fetch();
@@ -21,7 +22,7 @@ class TransferCubit extends Cubit<TransferState> {
     EasyLoading.show();
     repo.getTransfersByQuery(
       TransferStatusConstants.PLANNED,
-      TransferTypeConstants.NORMAL
+      TransferTypeConstants.AIRPORT
     )
       .successListener((data) {
         if(data.isEmpty) {

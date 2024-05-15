@@ -4,6 +4,7 @@ import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_state.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/result/transfer_not_found.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/shadow_overlay.dart';
 import 'package:babiconsultancy/src/ui/widgets/seat/seat_box.dart';
@@ -24,59 +25,64 @@ class TransferScreen extends CoreStatelessWidget {
     return Scaffold(
       backgroundColor: theme.colorScheme.darken,
       appBar: CoreAppBar(title: Text(localization.of(LocalizationKeys.Transfer_Title))),
-      body: BlocBuilder<TransferCubit,TransferState>(
-        builder: (context, state) {
-          return RoundedBody(
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: WindowDefaults.verticalPadding * 1.6,
-                bottom: WindowDefaults.verticalPadding,
-                left: WindowDefaults.wall,
-                right: WindowDefaults.wall
-              ),
-              child: Column(
-                children: [
-                  Text(
-                    LocalizationKeys.lorem,
-                    style: theme.textStyle.footnote02,
-                  ),
-                  const SeatToolsetWidget(),
-                  SizedBox(height: 24.h),
-                  Expanded(
-                    child: ShadowOverlay(
-                      shadowWidth: 500.w,
-                      shadowHeight: 50.h,
-                      shadowColor: theme.colorScheme.container,
-                      child: GridView.builder(
-                        padding: EdgeInsets.only(bottom: WindowDefaults.verticalPadding * 2),
-                        itemCount: 6,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4,
-                          childAspectRatio: 1,
-                          crossAxisSpacing: 20.w,
-                          mainAxisSpacing: 20.h
+      body: RoundedBody(
+        child: BlocBuilder<TransferCubit,TransferState>(
+          bloc: bloc,
+          builder: (context,state) {
+            if(state is TransferStateEmpty) return const TransferNotFoundView();
+            if(state is TransferSeatSelection) {
+              return Padding(
+                padding: EdgeInsets.only(
+                  top: WindowDefaults.verticalPadding * 1.6,
+                  bottom: WindowDefaults.verticalPadding,
+                  left: WindowDefaults.wall,
+                  right: WindowDefaults.wall
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      LocalizationKeys.lorem,
+                      style: theme.textStyle.footnote02,
+                    ),
+                    const SeatToolsetWidget(),
+                    SizedBox(height: 24.h),
+                    Expanded(
+                      child: ShadowOverlay(
+                        shadowWidth: 500.w,
+                        shadowHeight: 50.h,
+                        shadowColor: theme.colorScheme.container,
+                        child: GridView.builder(
+                          padding: EdgeInsets.only(bottom: WindowDefaults.verticalPadding * 2),
+                          itemCount: 6,
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4,
+                            childAspectRatio: 1,
+                            crossAxisSpacing: 20.w,
+                            mainAxisSpacing: 20.h
+                          ),
+                          itemBuilder: ((context, index) {
+                            return SeatBox(
+                              key: ValueKey(index),
+                              index: index,
+                              dto: state.data[index]!,
+                              onStateChange: bloc.onStateChanged,
+                            );
+                          })
                         ),
-                        itemBuilder: ((context, index) {
-                          return SeatBox(
-                            key: ValueKey(index),
-                            index: index,
-                            state: state.data[index]!,
-                            onStateChange: bloc.onStateChanged,
-                          );
-                        })
                       ),
                     ),
-                  ),
-                  PrimaryButton(
-                    isEnabled: state.buttonState,
-                    text: localization.of(LocalizationKeys.Transfer_Request_Choose_Seat),
-                    onClick: bloc.navigateToApprove
-                  )
-                ],
-              ),
-            )
-          );
-        }
+                    PrimaryButton(
+                      isEnabled: state.buttonState,
+                      text: localization.of(LocalizationKeys.Transfer_Request_Choose_Seat),
+                      onClick: bloc.navigateToApprove
+                    )
+                  ],
+                ),
+              );
+            }
+            return const SizedBox(); 
+          }
+        )
       ),
     );
   }

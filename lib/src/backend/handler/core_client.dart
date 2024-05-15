@@ -13,7 +13,7 @@ class CoreClient extends DioForNative {
     HttpHeaders.authorizationHeader: "Bearer $authorizationToken"
   };
 
-  CoreClient([BaseOptions? options]): super();
+  CoreClient([super.options]);
   
   @override
   BaseOptions get options => super.options.copyWith(headers: _headers);
