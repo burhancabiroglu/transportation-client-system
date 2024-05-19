@@ -1,7 +1,7 @@
 import 'package:babiconsultancy/src/backend/model/response/base_response.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_dto.dart';
-import 'package:babiconsultancy/src/backend/conf/network_options.dart';
+import 'package:babiconsultancy/config/network_options.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

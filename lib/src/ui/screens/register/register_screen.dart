@@ -1,5 +1,5 @@
 import 'package:babiconsultancy/src/core/base/core_stateful_widget.dart';
-import 'package:babiconsultancy/src/core/config/assets.dart';
+import 'package:babiconsultancy/config/assets.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';

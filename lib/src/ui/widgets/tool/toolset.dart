@@ -1,5 +1,5 @@
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
-import 'package:babiconsultancy/src/core/config/assets.dart';
+import 'package:babiconsultancy/config/assets.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:flutter/widgets.dart';
