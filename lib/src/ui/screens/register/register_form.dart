@@ -5,7 +5,7 @@ import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
-import 'package:babiconsultancy/validators/form_builder_validators.dart';
+import 'package:babiconsultancy/src/core/libs/validators/form_builder_validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
