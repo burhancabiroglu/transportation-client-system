@@ -1,7 +1,7 @@
 import 'package:babiconsultancy/src/backend/model/booking/booking_request.dart';
 import 'package:babiconsultancy/src/backend/model/booking/transfer_wish_dto.dart';
 import 'package:babiconsultancy/src/backend/model/response/base_response.dart';
-import 'package:babiconsultancy/src/core/config/network_options.dart';
+import 'package:babiconsultancy/src/backend/conf/network_options.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

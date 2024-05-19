@@ -3,7 +3,7 @@ import 'package:babiconsultancy/src/backend/model/login/login_response.dart';
 import 'package:babiconsultancy/src/backend/model/register/register_request.dart';
 import 'package:babiconsultancy/src/backend/model/response/base_response.dart';
 import 'package:babiconsultancy/src/backend/model/user/user.dart';
-import 'package:babiconsultancy/src/core/config/network_options.dart';
+import 'package:babiconsultancy/src/backend/conf/network_options.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
