@@ -4,10 +4,10 @@ import 'package:babiconsultancy/src/core/config/assets.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';
-import 'package:babiconsultancy/src/ui/widgets/buttons/primary_variant.dart';
+import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
+import 'package:babiconsultancy/validators/form_builder_validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
 
 class RegisterForm extends CoreStatelessWidget {
   final RegisterCubit cubit;
@@ -94,7 +94,7 @@ class RegisterForm extends CoreStatelessWidget {
             validator: FormBuilderValidators.compose([
               FormBuilderValidators.required(errorText: "Şifre boş olamaz"),
               FormBuilderValidators.equal(
-                cubit.formKey.currentState?.fields[RegisterCubit.passwordAgainRef]?.value.toString()?? "",
+                cubit.passwordAgain,
                 errorText: "Parolalar eşleşmiyor"
               ),
             ]),
@@ -105,7 +105,7 @@ class RegisterForm extends CoreStatelessWidget {
             ),
           ),
           SizedBox(height: 36.h),
-          PrimaryVariantButton(
+          PrimaryButton(
             text: "Üye Ol",
             onClick: cubit.register
           )

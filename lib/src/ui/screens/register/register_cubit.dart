@@ -19,7 +19,7 @@ class RegisterCubit extends Cubit {
   final formKey = GlobalKey<FormBuilderState>();
 
   FormBuilderState? get form => formKey.currentState;
-  String get fullname => form?.fields[emailRef]?.value ?? "";
+  String get fullname => form?.fields[fullnameRef]?.value ?? "";
   String get email => form?.fields[emailRef]?.value ?? "";
   String get password => form?.fields[passwordRef]?.value ?? "";
   String get passwordAgain => form?.fields[passwordRef]?.value ?? "";

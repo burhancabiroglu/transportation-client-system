@@ -3,7 +3,6 @@ import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/airport/airport_transfer_cubit.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_state.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/result/transfer_not_found.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';

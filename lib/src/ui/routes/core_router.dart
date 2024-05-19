@@ -29,6 +29,12 @@ class CoreRouter {
     if(context == null) return Future.error("context not fount");
     return Navigator.of(context).popAndPushNamed(routeName, arguments: arguments,result: result);
   }  
+
+  void pop<T extends Object?>([ T? result ]) {
+    final context = key.currentContext;
+    if(context == null) return;
+    return Navigator.of(context).pop();
+  } 
 }
 
 

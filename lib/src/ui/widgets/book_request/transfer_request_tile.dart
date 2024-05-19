@@ -1,21 +1,13 @@
 import 'package:babiconsultancy/src/backend/model/booking/transfer_wish_dto.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
-import 'package:babiconsultancy/src/ui/widgets/status/status_badge.dart';
 import 'package:flutter/material.dart';
 
 class TransferRequestTile extends CoreStatelessWidget {
   final TransferWishDto bookRequest;
   const TransferRequestTile({
     super.key,
-    this.bookRequest = const TransferWishDto(
-      id: "id", 
-      transferType: 0, 
-      fullname: "fullname", 
-      email: "email", 
-      createdAt: "createdAt",
-      additionalNote: ""
-      )
+    required this.bookRequest
   });
 
   @override
@@ -43,7 +35,7 @@ class TransferRequestTile extends CoreStatelessWidget {
                 ],
               ),
               const Spacer(),
-              StatusBadge(statusKey: 0)
+              // StatusBadge(statusKey: 0)
             ],
           ),
           Align(

@@ -83,6 +83,24 @@ class ProfileScreen extends CoreStatelessWidget {
                   Shelf(
                     text: localization.of(LocalizationKeys.Profile_Logout),
                     isSignOut: true,
+                    onClick: () {
+                      final dialog  = AlertDialog(
+                      title: Text("Başlık"),
+                      backgroundColor: Colors.white,
+                      content: Text("Açıklama Satırı"),
+                      actions: [
+                        TextButton(
+                          child: Text("Cancel"),
+                          onPressed: () {},
+                        ),
+                        TextButton(
+                          child: Text("OK"),
+                          onPressed: () {},
+                        ),
+                       ],
+                      );
+                      showDialog(context: context, builder: (context) => dialog);
+                    },
                   ),
                 ],
               ),
