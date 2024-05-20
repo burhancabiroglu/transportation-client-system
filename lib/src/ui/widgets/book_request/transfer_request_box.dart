@@ -1,4 +1,3 @@
-import 'package:babiconsultancy/main.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/widgets/book_request/transfer_request_cubit.dart';
@@ -20,7 +19,6 @@ class TransferRequestBox extends CoreStatelessWidget {
     return BlocBuilder<TransferRequestCubit,TransferRequestState>(
       bloc: cubit,
       builder: (context, state) {
-        logger.d(state);
         return ShimmerPlaceHolder(
           enabled: state is TransferRequestsNone,
           child: state is TransferRequestsSuccess ? 

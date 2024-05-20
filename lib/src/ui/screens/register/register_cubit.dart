@@ -12,7 +12,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  static const String fullnameRef = "email";
+  static const String fullnameRef = "fullname";
   static const String emailRef = "email";
   static const String passwordRef = "password";
   static const String passwordAgainRef = "password_again";
@@ -24,7 +24,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   String get fullname => form?.fields[fullnameRef]?.value ?? "";
   String get email => form?.fields[emailRef]?.value ?? "";
   String get password => form?.fields[passwordRef]?.value ?? "";
-  String get passwordAgain => form?.fields[passwordRef]?.value ?? "";
+  String get passwordAgain => form?.fields[passwordAgainRef]?.value ?? "";
 
   RegisterCubit({required this.repo}): super(RegisterState.none);
 
@@ -38,17 +38,15 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   void register() {
     FocusManager.instance.primaryFocus?.unfocus();
-    if(form?.validate() != true) return;
+    if(form?.saveAndValidate() != true) return;
     EasyLoading.show();
     final split = fullname.split(" ");
     final name = split[0];
     final surname = split.length > 1 ? split[1] : "";
     repo.register(RegisterRequest(email, name, surname, password))
-      .successListener((data) {
-        
-      })
+      .successListener((data) => routeToSuccess())
       .errorListener((error) {
-        
+        emit(RegisterState.error(message: error.message));
       })
       .completeListener((result) { 
         EasyLoading.dismiss();

@@ -31,7 +31,7 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
             bloc: cubit,
             listener: (context, state) {
               if(state is LoginStateError) {
-                 CoreSnackBar.error(message: state.message).show(context);
+                 CoreSnackBar.error(message: localization.of(state.message?? "")).show(context);
               }
             },
             child: Align(

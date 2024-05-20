@@ -9,7 +9,7 @@ abstract class NetworkHandler {
   static Future<AppResult<T>> getSafeResult<T>(Future<BaseResponse<T>> Function() call) async {
     try {
       final response = await call();
-      logger.e("Network Request Success: $response");
+      logger.d("Network Request Success: $response");
       return AppResult.success(data: response.data);
     } catch (e) {
       if (e is DioException) {

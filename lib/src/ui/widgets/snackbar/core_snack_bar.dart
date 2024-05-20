@@ -1,6 +1,7 @@
 import 'package:babiconsultancy/main.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:unicons/unicons.dart';
 
 class CoreSnackBar extends SnackBar {
   const CoreSnackBar({
@@ -29,7 +30,11 @@ class CoreSnackBar extends SnackBar {
 
   factory CoreSnackBar.error({ required String? message }) {
     return CoreSnackBar(
-      content: Text(message ?? ""),
+      content: Row(children: [
+        const Icon(UniconsLine.times_circle,color: Colors.white),
+        const SizedBox(width: 5),
+        Text(message ?? "")
+      ],),
       backgroundColor: appTheme.colorScheme.error,
       behavior: SnackBarBehavior.floating,
       dismissDirection: DismissDirection.up,

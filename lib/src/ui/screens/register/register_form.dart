@@ -93,12 +93,12 @@ class RegisterForm extends CoreStatelessWidget {
             onChanged: (_) => cubit.clearErrorStates(RegisterCubit.passwordAgainRef),
             validator: FormBuilderValidators.compose([
               FormBuilderValidators.required(errorText: "Şifre boş olamaz"),
-              FormBuilderValidators.equal(
-                cubit.passwordAgain,
+              FormBuilderValidators.equal<String>(
+                cubit.form?.instantValue[RegisterCubit.passwordRef] ?? '',
                 errorText: "Parolalar eşleşmiyor"
               ),
             ]),
-            obscureText: true,
+            obscureText: false,
             decoration: theme.inputDecoration(
               hintText: 'Şifreniz (Tekrar)',
               prefixIcon: Assets.padlock.toSvg(padding: EdgeInsets.all(18.h)),
