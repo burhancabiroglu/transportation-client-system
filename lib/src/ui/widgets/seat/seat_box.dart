@@ -1,6 +1,6 @@
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
-import 'package:babiconsultancy/src/ui/widgets/seat/seat_box_state.dart';
+import 'package:babiconsultancy/src/backend/model/seat/seat_box_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

@@ -2,6 +2,7 @@ import 'package:babiconsultancy/src/backend/api/transfer_api.dart';
 import 'package:babiconsultancy/src/backend/handler/app_result.dart';
 import 'package:babiconsultancy/src/backend/handler/network_handler.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
+import 'package:babiconsultancy/src/backend/model/seat/seat_reservation.dart';
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_dto.dart';
 
 abstract class TransferRepo {
@@ -13,6 +14,7 @@ abstract class TransferRepo {
 	Future<AppResult<List<TransferDto>>> getTransfersByType(int type);
 	Future<AppResult<List<TransferDto>>> getTransfersByStatus(int status);
   Future<AppResult<List<TransferDto>>> getTransfersByQuery(int status, int type);
+  Future<AppResult<List<SeatReservation>>> getSeatReservations();
 }
 
 class TransferRepoImpl extends TransferRepo {
@@ -42,4 +44,10 @@ class TransferRepoImpl extends TransferRepo {
   Future<AppResult<List<TransferDto>>> getTransfersByQuery(int status, int type) {
     return NetworkHandler.getSafeResult(() => api.getTransfersByQuery(status, type));
   }
+  
+  @override
+  Future<AppResult<List<SeatReservation>>> getSeatReservations() {
+    return NetworkHandler.getSafeResult(() => api.getSeatReservations());
+  }
+
 }

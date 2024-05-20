@@ -1,24 +1,22 @@
-class SeatReservation{
-  final String seatId;
-  final String transferId;
-  final int status;
-  final String userId;
-  final String fullname;
-  final String email;
-  final int transferStatus;
-  final int transferType;
-  final String plannedAt;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const SeatReservation({
-    required this.seatId,
-    required this.transferId,
-    required this.status,
-    required this.userId,
-    required this.fullname,
-    required this.email,
-    required this.transferStatus,
-    required this.transferType,
-    required this.plannedAt,
-  });
+part "../../../../generated/model/seat/seat_reservation.freezed.dart";
+part "../../../../generated/model/seat/seat_reservation.g.dart";
+
+@freezed
+class SeatReservation with _$SeatReservation {
+  const factory SeatReservation({
+    @JsonKey(name: 'seat_id') required String seatId,
+    @JsonKey(name: 'transfer_id') required String transferId,
+    required int status,
+    @JsonKey(name: 'user_id') required String userId,
+    required String fullname,
+    required String email,
+    @JsonKey(name: 'transfer_status') required int transferStatus,
+    @JsonKey(name: 'transfer_type') required int transferType,
+    @JsonKey(name: 'planned_at') required String plannedAt,
+  }) = _SeatReservation;
+
+  factory SeatReservation.fromJson(Map<String, dynamic> json) => _$SeatReservationFromJson(json);
 }
-  
+

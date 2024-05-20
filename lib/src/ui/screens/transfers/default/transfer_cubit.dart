@@ -1,11 +1,11 @@
 import 'package:babiconsultancy/src/backend/handler/app_result.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
 import 'package:babiconsultancy/src/backend/repo/transfer_repo.dart';
-import 'package:babiconsultancy/config/model_constants.dart';
+import 'package:babiconsultancy/src/config/model_constants.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_state.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_screen.dart';
-import 'package:babiconsultancy/src/ui/widgets/seat/seat_box_state.dart';
+import 'package:babiconsultancy/src/backend/model/seat/seat_box_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 

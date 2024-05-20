@@ -1,6 +1,4 @@
-// ignore_for_file: constant_identifier_names
-
-import 'package:babiconsultancy/config/assets.dart';
+import 'package:babiconsultancy/src/config/assets.dart';
 
 enum SeatBoxState{
   SELECTED(id: 3, isSelected: true, resource: Assets.seat_selected),

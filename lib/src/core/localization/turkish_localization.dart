@@ -31,10 +31,10 @@ class TurkishLocalization extends CoreLocalization {
     LocalizationKeys.More: "Daha fazla",
 
     LocalizationKeys.Profile_Title: "Profilim",
-    LocalizationKeys.Profile_Settings: "Profil ayarları",
+    LocalizationKeys.Profile_Settings: "Profil ayarlar\u0131",
     LocalizationKeys.Profile_Greetings: "Merhaba",
     LocalizationKeys.Profile_Support: "Destek",
-    LocalizationKeys.Profile_Logout: "Çıkış yap",
+    LocalizationKeys.Profile_Logout: "Ç\u0131k\u0131ş yap",
     LocalizationKeys.Profile_Change_Password: "Parola değiştir",
 
     
@@ -48,7 +48,12 @@ class TurkishLocalization extends CoreLocalization {
     LocalizationKeys.Status_Done: "Geçmiş",
     LocalizationKeys.Status_Pending: "Bekleniyor",
 
-    LocalizationKeys.About_Us_Text: "Türkiye'nin en prestijli ve en yenilikçi yurt dışı eğitimi danışmanlık firmaları arasında yer alan Babi Eğitim Koçluğu firmamız aracılığı ile; yurt dışında kaliteli bir eğitim almak isteyen öğrencilere, kariyer hedeflerine uygun profesyonel bir danışmanlık hizmeti sunmaktayız.",
+    "AboutUs.Text": "Türkiye'nin en prestijli ve en yenilikçi yurt d\u0131ş\u0131 eğitimi dan\u0131şmanl\u0131k firmalar\u0131 aras\u0131nda yer alan Babi Eğitim Koçluğu firmam\u0131z arac\u0131l\u0131ğ\u0131 ile; yurt d\u0131ş\u0131nda kaliteli bir eğitim almak isteyen öğrencilere, kariyer hedeflerine uygun profesyonel bir dan\u0131şmanl\u0131k hizmeti sunmaktay\u0131z.",
 
+    "auth_error.wrong_credentials": "Yanl\u0131ş kullan\u0131c\u0131 ad\u0131 veya şifre.",
+    "auth_error.record_not_found": "Kay\u0131t bulunamad\u0131.",
+    "auth_error.user_not_confirmed": "Kullan\u0131c\u0131 hesab\u0131 doğrulanmam\u0131ş.",
+    "auth_error.email_already_used": "E-posta adresi zaten kullan\u0131l\u0131yor.",
+    "auth_error.weak_password": "Zay\u0131f parola hatas\u0131"
   };
 }

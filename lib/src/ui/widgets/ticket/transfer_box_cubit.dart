@@ -11,7 +11,7 @@ class TransferBoxCubit extends Cubit<TransferBoxState> {
 
 
   void fetch() {
-    /*repo.getSeatReservation()
+    repo.getSeatReservations()
       .successListener((data) {
         if(data.isEmpty) {
           emit(TransferBoxState.empty);
@@ -21,6 +21,6 @@ class TransferBoxCubit extends Cubit<TransferBoxState> {
       })
       .errorListener((error) {
          emit(TransferBoxState.empty);
-      });*/
+      });
   }
 }

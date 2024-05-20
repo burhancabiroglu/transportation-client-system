@@ -9,7 +9,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-class RegisterCubit extends Cubit {
+import 'register_state.dart';
+
+class RegisterCubit extends Cubit<RegisterState> {
   static const String fullnameRef = "email";
   static const String emailRef = "email";
   static const String passwordRef = "password";
@@ -24,7 +26,7 @@ class RegisterCubit extends Cubit {
   String get password => form?.fields[passwordRef]?.value ?? "";
   String get passwordAgain => form?.fields[passwordRef]?.value ?? "";
 
-  RegisterCubit({required this.repo}): super(0);
+  RegisterCubit({required this.repo}): super(RegisterState.none);
 
   void routeToLogin() {
     CoreRouter.main.popAndPushNamed(LoginScreen.route);

@@ -1,5 +1,5 @@
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
-import 'package:babiconsultancy/src/ui/widgets/seat/seat_box_state.dart';
+import 'package:babiconsultancy/src/backend/model/seat/seat_box_state.dart';
 
 sealed class TransferState {
   const TransferState();

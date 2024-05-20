@@ -1,7 +1,8 @@
 import 'package:babiconsultancy/src/backend/model/response/base_response.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
+import 'package:babiconsultancy/src/backend/model/seat/seat_reservation.dart';
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_dto.dart';
-import 'package:babiconsultancy/config/network_options.dart';
+import 'package:babiconsultancy/src/config/network_options.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -26,4 +27,7 @@ abstract class TransferApi {
 
 	@GET("")
   Future<BaseResponse<List<TransferDto>>> getTransfersByQuery(@Query("status") int status, @Query("type") int type);
+
+  @GET("reservation")
+  Future<BaseResponse<List<SeatReservation>>> getSeatReservations();
 }

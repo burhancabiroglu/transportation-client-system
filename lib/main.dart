@@ -1,4 +1,4 @@
-import 'package:babiconsultancy/config/config.dart';
+import 'package:babiconsultancy/src/config/config.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_size.dart';
 import 'package:babiconsultancy/src/module/injection.dart';
