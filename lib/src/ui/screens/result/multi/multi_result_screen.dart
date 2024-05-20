@@ -1,5 +1,9 @@
+import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
+import 'package:babiconsultancy/src/ui/routes/core_router.dart';
+import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
+import 'package:babiconsultancy/src/ui/screens/result/multi/result_step_args.dart';
 import 'package:babiconsultancy/src/ui/screens/result/multi/result_step_screen.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +11,18 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class MultiResultScreen extends CoreStatelessWidget {
-  static const route = "/mutli-result";
+  static const route = "/mutli-result-screen";
+  static const argsKey = "/mutli-result-args";
 
-  const MultiResultScreen({super.key});
+  final List<ResultStepArgs> args;
 
-  final List<Widget> pages = const [
-    ResultStepScreen(),
-    ResultStepScreen(),
-  ];
+  const MultiResultScreen({
+    super.key,
+    this.args = const []
+  });
+
+  List<Widget> get pages => args.map((e) => ResultStepScreen(args: e)).toList(); 
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,6 @@ class MultiResultScreen extends CoreStatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // WelcomeTextWidget(),
             Expanded(
               child: PageView.builder(
                 controller: pageController,
@@ -44,11 +51,11 @@ class MultiResultScreen extends CoreStatelessWidget {
                 count: pages.length,
                 textDirection: TextDirection.ltr,
                 effect: JumpingDotEffect(
-                    dotHeight: 12,
-                    dotWidth: 20,
-                    dotColor: theme.colorScheme.primary.withAlpha(100),
-                    activeDotColor: theme.colorScheme.primary,
-                    spacing: 8),
+                  dotHeight: 12,
+                  dotWidth: 20,
+                  dotColor: theme.colorScheme.primary.withAlpha(100),
+                  activeDotColor: theme.colorScheme.primary,
+                  spacing: 8),
                 onDotClicked: (val) {},
               ),
             ),
@@ -60,8 +67,8 @@ class MultiResultScreen extends CoreStatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   PrimaryButton(
-                    text: "Devam Et",
-                    onClick: () {},
+                    text: localization.of(LocalizationKeys.Okay),
+                    onClick: () => CoreRouter.main.popAndPushNamed(args.firstOrNull?.routeCallBack ?? LoginScreen.route),
                   ),
                 ],
               ),

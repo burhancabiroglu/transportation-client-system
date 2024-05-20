@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 class LocalizationKeys {
   // GENERAL 
+  static const String Okay = "Okay";
   static const String Continue = "Continue";
   static const String Register_Success = "Register.Success";
   static const String Login_Success = "Register.Success";
@@ -61,4 +62,10 @@ class LocalizationKeys {
   static const String Status_Done = "status.done";
   static const String Status_Pending = "status.pending";
 
+
+  static const String Register_Successful_Title = "register.successful.title";
+  static const String Register_Successful_Description = "register.successful.description";
+
+  static const String User_Confirmation_Info_Title = "user.confirmation.info.title";
+  static const String User_Confirmation_Info_Description = "user.confirmation.info.description";
 }

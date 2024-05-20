@@ -9,6 +9,7 @@ class TurkishLocalization extends CoreLocalization {
 
   @override
   Map<String, String> get map => {
+    "Okay": "Tamam",
     LocalizationKeys.Splash_Description: "Babi\nEğitim Koçluğu\nYurt D\u0131ş\u0131 Dan\u0131şmanl\u0131k",
     LocalizationKeys.Home_Title: "Ana Sayfa",
     LocalizationKeys.Home_Transfers: "Transferlerim",
@@ -54,6 +55,12 @@ class TurkishLocalization extends CoreLocalization {
     "auth_error.record_not_found": "Kay\u0131t bulunamad\u0131.",
     "auth_error.user_not_confirmed": "Kullan\u0131c\u0131 hesab\u0131 doğrulanmam\u0131ş.",
     "auth_error.email_already_used": "E-posta adresi zaten kullan\u0131l\u0131yor.",
-    "auth_error.weak_password": "Zay\u0131f parola hatas\u0131"
+    "auth_error.weak_password": "Zay\u0131f parola hatas\u0131",
+
+
+    "register.successful.title": "Kay\u0131t Başar\u0131l\u0131",
+    "register.successful.description": "Hesab\u0131n\u0131z başar\u0131yla kaydedildi. Ancak, hesab\u0131n\u0131z\u0131n tam olarak etkinleştirilmesi için yönetici onay\u0131 gerekmektedir.\n\nYönetici onay\u0131n\u0131n ard\u0131ndan uygulamam\u0131za tam erişim elde edebileceksiniz. \n\nLütfen bekleyiniz.",
+     "user.confirmation.info.title": "Hesab\u0131n\u0131z Onay Aşamas\u0131nda",
+     "user.confirmation.info.description": "Hesab\u0131n\u0131z\u0131 tam olarak etkinleştirmek için Onay Aşamas\u0131'na geçtik. Hesab\u0131n\u0131z\u0131 kullanabilmeniz için yönetici onay\u0131 gerekmektedir. Lütfen sabr\u0131n\u0131z\u0131 gösterin, talebiniz en k\u0131sa sürede incelenecek ve onaylanacakt\u0131r. Teşekkürler!"
   };
 }

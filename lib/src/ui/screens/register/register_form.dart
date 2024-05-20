@@ -86,7 +86,7 @@ class RegisterForm extends CoreStatelessWidget {
               )
           ),
           SizedBox(height: 24.h),
-          FormBuilderTextField(
+          /*FormBuilderTextField(
             autocorrect: false,
             style: theme.textStyle.body04,
             name: RegisterCubit.passwordAgainRef,
@@ -103,7 +103,7 @@ class RegisterForm extends CoreStatelessWidget {
               hintText: 'Şifreniz (Tekrar)',
               prefixIcon: Assets.padlock.toSvg(padding: EdgeInsets.all(18.h)),
             ),
-          ),
+          ),*/
           SizedBox(height: 36.h),
           PrimaryButton(
             text: "Üye Ol",

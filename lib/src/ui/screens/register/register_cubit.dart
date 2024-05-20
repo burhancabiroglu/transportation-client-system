@@ -3,7 +3,8 @@ import 'package:babiconsultancy/src/backend/model/register/register_request.dart
 import 'package:babiconsultancy/src/backend/repo/auth_repo.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
-import 'package:babiconsultancy/src/ui/screens/result/success_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/result/multi/multi_result_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/result/prepared/register_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -32,8 +33,11 @@ class RegisterCubit extends Cubit<RegisterState> {
     CoreRouter.main.popAndPushNamed(LoginScreen.route);
   }
 
-   void routeToSuccess() {
-    CoreRouter.main.popAndPushNamed(SuccessScreen.route);
+  void routeToSuccess() {
+    CoreRouter.main.popAndPushNamed(
+      MultiResultScreen.route, 
+      arguments: { MultiResultScreen.argsKey: registerSuccessArgs }
+    );
   }
 
   void register() {
