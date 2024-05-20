@@ -17,8 +17,11 @@ class SessionManager extends Cubit<SessionState> {
     required this.authApi,
   }) : super(const SessionState.unauthorized());
 
-  void login({required String accessToken}) {
-    emit(SessionState.authorized(accessToken: accessToken));
+  void login({
+    required String accessToken,
+    required User user,
+  }) {
+    emit(SessionState.authorized(accessToken: accessToken, user: user));
     storage.setString(ACCESS_TOKEN_ID, accessToken);
     CoreClient.authorizationToken = accessToken;
   }
@@ -27,7 +30,7 @@ class SessionManager extends Cubit<SessionState> {
     emit(const SessionState.unauthorized());
   }
 
-  Future<AppResult<User>> checkLoggedIn() {
+  Future<AppResult<User>> checkLoggedIn() async {
     final token = storage.getString(ACCESS_TOKEN_ID);
     if (token == null || token.isEmpty) {
       return Future.value(const AppResult.error(
@@ -35,8 +38,11 @@ class SessionManager extends Cubit<SessionState> {
           error: "access_token",
           statusCode: 500));
     }
-    login(accessToken: token);
-    return NetworkHandler.getSafeResult(() => authApi.profile());
+    CoreClient.authorizationToken = token;
+    final networkReq = NetworkHandler.getSafeResult(() => authApi.profile());
+    return networkReq.successListener((data) {
+      login(accessToken: token, user: data);
+    });
   }
 
   static const ACCESS_TOKEN_ID = "ACCESS_TOKEN";

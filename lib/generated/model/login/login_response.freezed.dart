@@ -21,6 +21,7 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$LoginResponse {
   String get accessToken => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,9 @@ abstract class $LoginResponseCopyWith<$Res> {
           LoginResponse value, $Res Function(LoginResponse) then) =
       _$LoginResponseCopyWithImpl<$Res, LoginResponse>;
   @useResult
-  $Res call({String accessToken});
+  $Res call({String accessToken, User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -51,13 +54,26 @@ class _$LoginResponseCopyWithImpl<$Res, $Val extends LoginResponse>
   @override
   $Res call({
     Object? accessToken = null,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
       accessToken: null == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -69,7 +85,10 @@ abstract class _$$LoginResponseImplCopyWith<$Res>
       __$$LoginResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String accessToken});
+  $Res call({String accessToken, User user});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -84,12 +103,17 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? accessToken = null,
+    Object? user = null,
   }) {
     return _then(_$LoginResponseImpl(
       null == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -97,17 +121,19 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LoginResponseImpl implements _LoginResponse {
-  const _$LoginResponseImpl(this.accessToken);
+  const _$LoginResponseImpl(this.accessToken, this.user);
 
   factory _$LoginResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoginResponseImplFromJson(json);
 
   @override
   final String accessToken;
+  @override
+  final User user;
 
   @override
   String toString() {
-    return 'LoginResponse(accessToken: $accessToken)';
+    return 'LoginResponse(accessToken: $accessToken, user: $user)';
   }
 
   @override
@@ -116,12 +142,13 @@ class _$LoginResponseImpl implements _LoginResponse {
         (other.runtimeType == runtimeType &&
             other is _$LoginResponseImpl &&
             (identical(other.accessToken, accessToken) ||
-                other.accessToken == accessToken));
+                other.accessToken == accessToken) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, accessToken);
+  int get hashCode => Object.hash(runtimeType, accessToken, user);
 
   @JsonKey(ignore: true)
   @override
@@ -138,13 +165,16 @@ class _$LoginResponseImpl implements _LoginResponse {
 }
 
 abstract class _LoginResponse implements LoginResponse {
-  const factory _LoginResponse(final String accessToken) = _$LoginResponseImpl;
+  const factory _LoginResponse(final String accessToken, final User user) =
+      _$LoginResponseImpl;
 
   factory _LoginResponse.fromJson(Map<String, dynamic> json) =
       _$LoginResponseImpl.fromJson;
 
   @override
   String get accessToken;
+  @override
+  User get user;
   @override
   @JsonKey(ignore: true)
   _$$LoginResponseImplCopyWith<_$LoginResponseImpl> get copyWith =>

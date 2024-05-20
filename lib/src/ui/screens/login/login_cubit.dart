@@ -52,17 +52,10 @@ class LoginCubit extends Cubit<LoginState> {
     if(form?.validate() != true) return;
     EasyLoading.show();
     repo.login(LoginRequest(email, password))
-      .successListener((value) async { 
-        session.login(accessToken: value.accessToken);
-        repo.profile()
-          .successListener((data) {
-            emit(const LoginState.success());
-            routeToMain();
-          })
-          .errorListener((error) { 
-            emit(LoginState.error(message: error.message));
-          });
-          
+      .successListener((data) { 
+        session.login(accessToken: data.accessToken, user: data.user);
+        emit(const LoginState.success());
+        routeToMain();
       })
       .errorListener((error) { 
         if(ErrorCodes.USER_NOT_CONFIRMED == error.message) {
