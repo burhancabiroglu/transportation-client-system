@@ -7,6 +7,9 @@ abstract class CoreStatelessWidget extends StatelessWidget {
   const CoreStatelessWidget({super.key});
 
   CoreTheme get theme => appTheme;
+  CoreColorScheme get colorScheme => appTheme.colorScheme;
+  CoreTextStyle get textStyle => appTheme.textStyle;
+
   LocalizationManager get localization => LocalizationManager();
   
   @override

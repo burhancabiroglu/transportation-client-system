@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/config/assets.dart';
+import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';
@@ -31,11 +32,11 @@ class RegisterForm extends CoreStatelessWidget {
             textInputAction: TextInputAction.next,
             style: theme.textStyle.body04,
             validator: FormBuilderValidators.compose([
-              FormBuilderValidators.required(errorText: "İsim Soyisim boş olamaz"),
+              FormBuilderValidators.required(errorText: localization.of(LocalizationKeys.Error_FullName_Required)),
             ]),
             onChanged: (_) => cubit.clearErrorStates(RegisterCubit.fullnameRef),
             decoration: theme.inputDecoration(
-              hintText: 'İsim Soyisim',
+              hintText: localization.of(LocalizationKeys.Form_FullName),
               prefixIcon: Assets.email.toSvg(padding: EdgeInsets.all(18.h)),
             ),
           ),
@@ -47,11 +48,11 @@ class RegisterForm extends CoreStatelessWidget {
             style: theme.textStyle.body04,
             onChanged: (_) => cubit.clearErrorStates(RegisterCubit.emailRef),
             validator: FormBuilderValidators.compose([
-              FormBuilderValidators.required(errorText: "E-posta adresi boş olamaz"),
-              FormBuilderValidators.email(errorText: "Geçerli bir e-posta adresi giriniz")
+              FormBuilderValidators.required(errorText: localization.of(LocalizationKeys.Error_Email_Required)),
+              FormBuilderValidators.email(errorText: localization.of(LocalizationKeys.Error_Email_Format))
             ]),
             decoration: theme.inputDecoration(
-              hintText: 'E-posta adresiniz',
+              hintText: localization.of(LocalizationKeys.Form_Email),
               prefixIcon: Assets.email.toSvg(padding: EdgeInsets.all(18.h)),
             ),
           ),
@@ -65,14 +66,14 @@ class RegisterForm extends CoreStatelessWidget {
                 name: RegisterCubit.passwordRef,
                 onChanged: (_) => cubit.clearErrorStates(RegisterCubit.passwordRef),
                 validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(errorText: "Şifre boş olamaz"),
-                  FormBuilderValidators.minLength(6,errorText: "Minimum 6 karakterden oluşmalı"),
-                  FormBuilderValidators.match(r'[A-Z]',errorText: "En az bir büyük harf içermeli"),
-                  FormBuilderValidators.match(r'\d',errorText: "En az bir rakam içermeli")
+                  FormBuilderValidators.required(errorText: localization.of(LocalizationKeys.Error_Password_Required)),
+                  FormBuilderValidators.minLength(6,errorText: localization.of(LocalizationKeys.Error_Password_Length)),
+                  FormBuilderValidators.match(r'[A-Z]',errorText: localization.of(LocalizationKeys.Error_Password_Uppercase)),
+                  FormBuilderValidators.match(r'\d',errorText: localization.of(LocalizationKeys.Error_Password_Decimal))
                 ]),
                 obscureText: snapshot.data ?? false,
                 decoration: theme.inputDecoration(
-                  hintText: 'Şifreniz',
+                  hintText: localization.of(LocalizationKeys.Form_Password),
                   prefixIcon: Assets.padlock.toSvg(padding: EdgeInsets.all(18.h)),
                   suffixIcon: Material(
                     color: Colors.transparent,
@@ -106,7 +107,7 @@ class RegisterForm extends CoreStatelessWidget {
           ),*/
           SizedBox(height: 36.h),
           PrimaryButton(
-            text: "Üye Ol",
+            text: localization.of(LocalizationKeys.Form_Register),
             onClick: cubit.register
           )
         ],

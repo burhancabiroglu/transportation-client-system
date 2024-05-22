@@ -3,8 +3,11 @@ import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
+import 'package:babiconsultancy/src/ui/dialogs/bottom_sheet_dialog.dart';
+import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_state.dart';
+import 'package:babiconsultancy/src/ui/screens/profile/support/profile_support_screen.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/shelf.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/shimmer/shimmer_placeholder.dart';
@@ -19,7 +22,6 @@ class ProfileScreen extends CoreStatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = BlocProvider.of<ProfileCubit>(context);
-    cubit.getInformations();
     return Scaffold(
       backgroundColor: theme.colorScheme.darken,
       appBar: CoreAppBar(title: Text(localization.of(LocalizationKeys.Profile_Title))),
@@ -70,37 +72,21 @@ class ProfileScreen extends CoreStatelessWidget {
               child: Column(
                 children: [
                   Shelf(
-                    text: localization.of(LocalizationKeys.Profile_Settings),
-                    onClick: () {},
+                    text: localization.of(LocalizationKeys.Profile_Info),
+                    onClick: cubit.routeToProfileInfo
                   ),
-                  Shelf(
+                  /*Shelf(
                     text: localization.of(LocalizationKeys.Profile_Change_Password)
-                  ),
+                  ), */
                   Shelf(
-                    text: localization.of(LocalizationKeys.Profile_Support)
+                    text: localization.of(LocalizationKeys.Profile_Support),
+                    onClick: () => CoreRouter.main.pushNamed(ProfileSupportScreen.route)
                   ),
                   SizedBox(height: WindowDefaults.verticalPadding),
                   Shelf(
                     text: localization.of(LocalizationKeys.Profile_Logout),
                     isSignOut: true,
-                    onClick: () {
-                      final dialog  = AlertDialog(
-                      title: Text("Başlık"),
-                      backgroundColor: Colors.white,
-                      content: Text("Açıklama Satırı"),
-                      actions: [
-                        TextButton(
-                          child: Text("Cancel"),
-                          onPressed: () {},
-                        ),
-                        TextButton(
-                          child: Text("OK"),
-                          onPressed: () {},
-                        ),
-                       ],
-                      );
-                      showDialog(context: context, builder: (context) => dialog);
-                    },
+                    onClick: logoutBottomSheet
                   ),
                 ],
               ),

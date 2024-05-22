@@ -10,13 +10,39 @@ class LocalizationKeys {
   static const String Info = "Info";
   static const String Loading = "Loading";
   static const String More = "more";
+  static const String Yes = "Yes";
+  static const String No = "No";
+
+  static const String Logout_Dialog = "Logout.Dialog";
+
+
+  // FORM FIELDS
+  static const String Form_Login = "Form.Login";
+  static const String Form_Login_Description = "Form.Login.Description";
+  static const String Form_Register = "Form.Register";
+  static const String Form_Register_Description = "Form.Register.Description";
+  static const String Form_Email = "Form.Email";
+  static const String Form_FullName = "Form.FullName";
+  static const String Form_Password = "Form.Password";
+  static const String Form_ForgotPassword = "Form.ForgotPassword";
+  static const String Form_CreatedAt = "Form.CreatedAt";
+
+
+  // FORM ERRORS
+  static const String Error_FullName_Required = "Error.FullName.Required";
+  static const String Error_Email_Required = "Error.Email.Required";
+  static const String Error_Email_Format = "Error.Email.Format";
+  static const String Error_Password_Required = "Error.Password.Required";  
+  static const String Error_Password_Decimal = "Error.Password.Decimal";
+  static const String Error_Password_Uppercase = "Error.Password.Uppercase";
+  static const String Error_Password_Length = "Error.Password.Length";
 
 
   // SPLASH SCREEN
   static const String Splash_Description = "Splash.Description";
   static const String Splash_Welcome = "Splash.Welcome";
 
-  // HOME SCREEN"
+  // HOME SCREEN
   static const String Home_Title = "Home.Title";
   static const String Home_Transfers = "Home.Transfers";
   static const String Home_Transfer_Requests = "Home.TransferRequests";
@@ -49,6 +75,8 @@ class LocalizationKeys {
   // PROFILE SCREEN
   static const String Profile_Title = "Profile.Title";
   static const String Profile_Settings = "Profile.Settings";
+  static const String Profile_Info = "Profile.Info";
+  static const String Profile_App_Info = "Profile.App.Info";
   static const String Profile_Greetings = "Profile.Greetings";
   static const String Profile_Support = "Profile.Support";
   static const String Profile_Logout = "Profile.Logout";

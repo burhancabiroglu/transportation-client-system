@@ -10,7 +10,7 @@ class LocalizationManager {
 
   LocalizationManager._init();
   
-  String currentCode = "TR";
+  String currentCode = "tr";
 
   factory LocalizationManager() {
     return _instance;
@@ -18,7 +18,7 @@ class LocalizationManager {
 
   @protected
   final Map<String,CoreLocalization> _map = {
-      "TR": const TurkishLocalization()
+      "tr": const TurkishLocalization()
   };
 
   String of(String key) {

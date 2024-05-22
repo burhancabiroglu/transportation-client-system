@@ -1,5 +1,6 @@
 import 'package:babiconsultancy/src/core/base/core_stateful_widget.dart';
 import 'package:babiconsultancy/src/config/assets.dart';
+import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_cubit.dart';
@@ -53,9 +54,12 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
                         duration: Durations.medium4,
                         child: Column(
                           children: [
-                            Text( "Ya da üye değilsen", style: theme.textStyle.callout02),
+                            Text(
+                              localization.of(LocalizationKeys.Form_Register_Description), 
+                              style: theme.textStyle.callout02
+                            ),
                             CoreTextButton(
-                              text:  "Üye ol",
+                              text: localization.of(LocalizationKeys.Form_Register), 
                               style: theme.textStyle.body01.copyWith(
                                 decoration: TextDecoration.underline,
                                 color: theme.colorScheme.primary

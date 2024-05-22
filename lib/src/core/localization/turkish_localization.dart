@@ -5,44 +5,50 @@ class TurkishLocalization extends CoreLocalization {
   const TurkishLocalization();
 
   @override
-  final String code = "TR";
+  final String code = "tr";
 
   @override
   Map<String, String> get map => {
     "Okay": "Tamam",
-    LocalizationKeys.Splash_Description: "Babi\nEğitim Koçluğu\nYurt D\u0131ş\u0131 Dan\u0131şmanl\u0131k",
-    LocalizationKeys.Home_Title: "Ana Sayfa",
-    LocalizationKeys.Home_Transfers: "Transferlerim",
-    LocalizationKeys.Home_Transfer_Requests: "Transferler Taleplerim",
+    "Yes": "Evet",
+    "No": "Hay\u0131r",
+    "Logout.Dialog": "Ç\u0131k\u0131ş yapmak istediğinize emin misiniz?",
+
+    "Splash.Description": "Babi\nEğitim Koçluğu\nYurt D\u0131ş\u0131 Dan\u0131şmanl\u0131k",
+    "Home.Title": "Ana Sayfa",
+    "Home.Transfers": "Transferlerim",
+    "Home.TransferRequests": "Transferler Taleplerim",
 
 
-    LocalizationKeys.Transfer_Request_Title: "Transfer Talebi",
-    LocalizationKeys.Transfer_Request_Send: "Talebi Gönder",
+    "TransferRequest.Title": "Transfer Talebi",
+    "TransferRequest.Send": "Talebi Gönder",
 
-    LocalizationKeys.Transfer_Title: "Transferler",
+    "Transfer.Title": "Transferler",
 
-    LocalizationKeys.Airport_Transfer_Title: "Havaliman\u0131 Transferleri",
-    LocalizationKeys.Airport_Transfer_Nav_Title: "Havaliman\u0131",
+    "AirportTransfer.Title": "Havaliman\u0131 Transferleri",
+    "AirportTransfer.Nav.Title": "Havaliman\u0131",
 
-    LocalizationKeys.About_Us_Title: "Hakk\u0131m\u0131zda",
+    "AboutUs.Title" : "Hakk\u0131m\u0131zda",
 
 
-    LocalizationKeys.Transfer_Request_Button: "Transfer Talep Et",
-    LocalizationKeys.Transfer_Not_Found: "Transfer Bulunamad\u0131",
-    LocalizationKeys.More: "Daha fazla",
+    "TransferRequest.Button" : "Transfer Talep Et",
+    "Transfer.NotFound": "Transfer Bulunamad\u0131",
+    "More": "Daha fazla",
 
-    LocalizationKeys.Profile_Title: "Profilim",
-    LocalizationKeys.Profile_Settings: "Profil ayarlar\u0131",
-    LocalizationKeys.Profile_Greetings: "Merhaba",
-    LocalizationKeys.Profile_Support: "Destek",
-    LocalizationKeys.Profile_Logout: "Ç\u0131k\u0131ş yap",
-    LocalizationKeys.Profile_Change_Password: "Parola değiştir",
+    "Profile.Title": "Profilim",
+    "Profile.Settings": "Profil ayarlar\u0131",
+    "Profile.Info": "Profil Bilgilerim",
+    "Profile.Greetings": "Merhaba",
+    "Profile.Support" : "Destek",
+    "Profile.Logout": "Ç\u0131k\u0131ş yap",
+    "Profile.ChangePassword": "Parola değiştir",
+    "Profile.App.Info": "Uygulama Hakk\u0131nda",
 
     
-    LocalizationKeys.Transfer_Request_Selected: "Seçildi",
-    LocalizationKeys.Transfer_Request_UnSelectable: "Seçilemez",
-    LocalizationKeys.Transfer_Request_Selectable: "Seçilebilir",
-    LocalizationKeys.Transfer_Request_Choose_Seat: "Koltuk Seç",
+    "TransferRequest.Selected" : "Seçildi",
+    "TransferRequest.UnSelectable" : "Seçilemez",
+    "TransferRequest.Selectable" : "Seçilebilir",
+    "TransferRequest.Choose_Seat" : "Koltuk Seç",
     
     LocalizationKeys.Status_Accepted: "Kabul Edildi",
     LocalizationKeys.Status_Declined: "Reddedildi",
@@ -60,7 +66,28 @@ class TurkishLocalization extends CoreLocalization {
 
     "register.successful.title": "Kay\u0131t Başar\u0131l\u0131",
     "register.successful.description": "Hesab\u0131n\u0131z başar\u0131yla kaydedildi. Ancak, hesab\u0131n\u0131z\u0131n tam olarak etkinleştirilmesi için yönetici onay\u0131 gerekmektedir.\n\nYönetici onay\u0131n\u0131n ard\u0131ndan uygulamam\u0131za tam erişim elde edebileceksiniz. \n\nLütfen bekleyiniz.",
-     "user.confirmation.info.title": "Hesab\u0131n\u0131z Onay Aşamas\u0131nda",
-     "user.confirmation.info.description": "Hesab\u0131n\u0131z\u0131 tam olarak etkinleştirmek için Onay Aşamas\u0131'na geçtik. Hesab\u0131n\u0131z\u0131 kullanabilmeniz için yönetici onay\u0131 gerekmektedir. Lütfen sabr\u0131n\u0131z\u0131 gösterin, talebiniz en k\u0131sa sürede incelenecek ve onaylanacakt\u0131r. Teşekkürler!"
+    "user.confirmation.info.title": "Hesab\u0131n\u0131z Onay Aşamas\u0131nda",
+    "user.confirmation.info.description": "Hesab\u0131n\u0131z\u0131 tam olarak etkinleştirmek için Onay Aşamas\u0131'na geçtik. Hesab\u0131n\u0131z\u0131 kullanabilmeniz için yönetici onay\u0131 gerekmektedir. Lütfen sabr\u0131n\u0131z\u0131 gösterin, talebiniz en k\u0131sa sürede incelenecek ve onaylanacakt\u0131r. Teşekkürler!",
+
+
+    "Form.Login" : "Giriş Yap",
+    "Form.Login.Description": "Zaten üye misin?",  
+    "Form.Register" : "Üye Ol",
+    "Form.Register.Description": "Ya da üye değilsen",
+    "Form.Email" : "E-posta adresiniz",
+    "Form.Password" : "Şifreniz",
+    "Form.FullName" : "İsim Soyisim",
+    "Form.ForgotPassword" : "Şifremi Unuttum",
+    "Form.CreatedAt": "Üyelik Tarihi",
+
+    "Error.Email.Required": "E-posta adresi boş olamaz",
+    "Error.Email.Format": "Geçerli bir e-posta adresi giriniz",
+    "Error.Password.Required": "Şifre boş olamaz",
+    "Error.FullName.Required": "İsim Soyisim boş olamaz",
+
+    "Error.Password.Decimal": "En az bir rakam içermeli",
+    "Error.Password.Uppercase": "En az bir büyük harf içermeli",
+    "Error.Password.Length":"Minimum 6 karakterden oluşmal\u0131",
+    
   };
 }

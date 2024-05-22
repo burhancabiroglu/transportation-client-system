@@ -35,6 +35,10 @@ class CoreRouter {
     if(context == null) return;
     return Navigator.of(context).pop();
   } 
+
+  static void reset() {
+    bottomNavBar = CoreRouter._(key: GlobalKey());
+  } 
 }
 
 

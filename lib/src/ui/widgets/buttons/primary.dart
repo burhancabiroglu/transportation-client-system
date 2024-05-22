@@ -10,13 +10,13 @@ class PrimaryButton extends CoreStatelessWidget {
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry margin;
   const PrimaryButton({
-      Key? key,
+      super.key,
       this.text = "",
       this.onClick,
       this.padding = EdgeInsets.zero,
       this.margin = EdgeInsets.zero,
       this.isEnabled = true,
-    })  : super(key: key);
+    });
 
   @override
   Widget build(BuildContext context) {

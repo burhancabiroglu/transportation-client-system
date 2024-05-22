@@ -26,7 +26,7 @@ abstract class NetworkHandler {
               message: e.response?.data["message"] ?? ""
             );
           case DioExceptionType.badResponse:
-            logger.e("${e.type} ${e.response.toString()}");
+            logger.e("${e.type} ${e.response.toString()}\n${e.requestOptions.uri}");
             return AppResult.error(
               statusCode:  e.response?.statusCode?? 400,
               error: e.response?.statusMessage ?? "",

@@ -1,5 +1,6 @@
 import 'package:babiconsultancy/src/core/base/core_stateful_widget.dart';
 import 'package:babiconsultancy/src/config/assets.dart';
+import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';
@@ -53,9 +54,11 @@ class RegisterScreenState extends CoreWidgetState<RegisterScreen> {
                         duration: const Duration(milliseconds: 400),
                         child: Column(
                           children: [
-                            Text( "Zaten üye misin?", style: theme.textStyle.callout02),
+                            Text(
+                              localization.of(LocalizationKeys.Form_Login_Description), 
+                              style: theme.textStyle.callout02),
                             CoreTextButton(
-                              text: "Giriş yap",
+                              text: localization.of(LocalizationKeys.Form_Login), 
                               style: theme.textStyle.body01.copyWith(
                                 decoration: TextDecoration.underline,
                                 color: theme.colorScheme.primary

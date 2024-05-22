@@ -28,6 +28,8 @@ class SessionManager extends Cubit<SessionState> {
 
   void logout() {
     emit(const SessionState.unauthorized());
+    storage.remove(ACCESS_TOKEN_ID);
+    CoreClient.authorizationToken = null;
   }
 
   Future<AppResult<User>> checkLoggedIn() async {

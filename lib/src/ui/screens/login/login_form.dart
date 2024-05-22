@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/config/assets.dart';
+import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_cubit.dart';
@@ -35,11 +36,11 @@ class LoginForm extends CoreStatelessWidget {
               textInputAction: TextInputAction.next,
               style: theme.textStyle.body04,
               validator: FormBuilderValidators.compose([
-                FormBuilderValidators.required(errorText: "E-posta adresi boş olamaz"),
-                FormBuilderValidators.email(errorText: "Geçerli bir e-posta adresi giriniz")
+                FormBuilderValidators.required(errorText: localization.of(LocalizationKeys.Error_Email_Required)),
+                FormBuilderValidators.email(errorText: localization.of(LocalizationKeys.Error_Email_Format))
               ]),
               decoration: theme.inputDecoration(
-                hintText: 'E-posta adresiniz',
+                hintText: localization.of(LocalizationKeys.Form_Email),
                 prefixIcon: Assets.email.toSvg(padding: EdgeInsets.all(18.h)),
               ),
               onChanged: (_) => cubit.clearErrorStates(LoginCubit.emailRef),
@@ -54,12 +55,12 @@ class LoginForm extends CoreStatelessWidget {
                   style: theme.textStyle.body04,
                   name: LoginCubit.passwordRef,
                   validator: FormBuilderValidators.compose([
-                    FormBuilderValidators.required(errorText: "Şifre boş olamaz")
+                    FormBuilderValidators.required(errorText: localization.of(LocalizationKeys.Error_Password_Required))
                   ]),
                   onChanged: (_) => cubit.clearErrorStates(LoginCubit.passwordRef),
                   obscureText: snapshot.data ?? false,
                   decoration: theme.inputDecoration(
-                    hintText: 'Şifreniz',
+                    hintText: localization.of(LocalizationKeys.Form_Password),
                     prefixIcon: Assets.padlock.toSvg(padding: EdgeInsets.all(18.h)),
                     suffixIcon: Material(
                       color: Colors.transparent,
@@ -75,13 +76,13 @@ class LoginForm extends CoreStatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: CoreTextButton(
-                text: "Şifremi Unuttum",
+                text: localization.of(LocalizationKeys.Form_ForgotPassword),
                 style: theme.textStyle.body04.copyWith(color: theme.colorScheme.primary),
               ),
             ),
             SizedBox(height: 36.h),
             PrimaryButton(
-              text: "Giriş Yap",
+              text: localization.of(LocalizationKeys.Form_Login),
               onClick: cubit.login
             )
           ],
