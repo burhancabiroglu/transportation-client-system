@@ -1,9 +1,14 @@
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
+import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_text_field_data.dart';
 import 'package:flutter/material.dart';
 
 class ImmutableTextField extends CoreStatelessWidget {
-  const ImmutableTextField({super.key});
+  final ImmutableTextFieldData data;
+  const ImmutableTextField({
+    super.key,
+    required this.data
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +26,13 @@ class ImmutableTextField extends CoreStatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Transfer Tipi",
-            style: theme.textStyle.caption02
-                .copyWith(color: theme.colorScheme.textSecondary),
+            data.label,
+            style: textStyle.caption02.copyWith(color: colorScheme.textSecondary),
           ),
           SizedBox(height: 4.h),
           Text(
-            "Hava Limanı Transferi",
-            style: theme.textStyle.footnote01
-                .copyWith(color: theme.colorScheme.primary),
+            data.text,
+            style: textStyle.footnote01.copyWith(color: colorScheme.primary),
           ),
         ],
       ),

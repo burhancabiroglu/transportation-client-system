@@ -1,3 +1,4 @@
+import 'package:babiconsultancy/src/core/utils/route_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/home/home_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/airport/airport_transfer_screen.dart';
@@ -11,7 +12,9 @@ Route homeRoutes(RouteSettings settings) {
     TransferScreen.route => const TransferScreen(),
     AirportTransferScreen.route => const AirportTransferScreen(),
     ProfileScreen.route => const ProfileScreen(),
-    TransferRequestScreen.route => const TransferRequestScreen(),
+    TransferRequestScreen.route => TransferRequestScreen(
+      args: settings.args(TransferRequestScreen.argsKey),
+    ),
     _ => const HomeScreen()
   };
   return UnanimatedPageRoute(builder: (_) => screen);

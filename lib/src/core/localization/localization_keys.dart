@@ -89,6 +89,7 @@ class LocalizationKeys {
   static const String Status_Declined = "status.declined";
   static const String Status_Done = "status.done";
   static const String Status_Pending = "status.pending";
+  static const String Status_Planned = "status.planned";
 
 
   static const String Register_Successful_Title = "register.successful.title";

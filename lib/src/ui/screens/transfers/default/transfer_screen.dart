@@ -29,7 +29,9 @@ class TransferScreen extends CoreStatelessWidget {
         child: BlocBuilder<TransferCubit,TransferState>(
           bloc: bloc,
           builder: (context,state) {
-            if(state is TransferStateEmpty) return const TransferNotFoundView();
+            if(state is TransferStateEmpty){
+               return TransferNotFoundView(type: bloc.transferType);
+            }
             if(state is TransferSeatSelection) {
               return Padding(
                 padding: EdgeInsets.only(

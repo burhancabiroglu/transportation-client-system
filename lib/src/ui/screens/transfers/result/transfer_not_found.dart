@@ -1,16 +1,22 @@
+import 'package:babiconsultancy/src/backend/model/transfer/transfer_type.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/config/assets.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_args.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_screen.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary_variant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class TransferNotFoundView extends CoreStatelessWidget {
-  const TransferNotFoundView({super.key});
+  final TransferType type;
+  const TransferNotFoundView({
+    super.key,
+    required this.type,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +33,10 @@ class TransferNotFoundView extends CoreStatelessWidget {
             text: localization.of(LocalizationKeys.Transfer_Request_Button),
             margin: EdgeInsets.only(bottom: 28.h,right: WindowDefaults.wall,left: WindowDefaults.wall),
             onClick: (){
-              CoreRouter.bottomNavBar.pushNamed(TransferRequestScreen.route);
+              CoreRouter.bottomNavBar.pushNamed(
+                TransferRequestScreen.route,
+                arguments: { TransferRequestScreen.argsKey : TransferRequestArgs(type.id) }
+              );
             },
           )
         ]

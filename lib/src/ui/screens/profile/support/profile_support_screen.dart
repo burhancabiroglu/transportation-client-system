@@ -5,7 +5,6 @@ import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/rounded_body.dart';
 import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_multi_line_text_field%20.dart';
-import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_text_field.dart';
 import 'package:flutter/material.dart';
 
 class ProfileSupportScreen extends CoreStatelessWidget {
@@ -34,7 +33,6 @@ class ProfileSupportScreen extends CoreStatelessWidget {
                     style: theme.textStyle.footnote02,
                   ),
                   SizedBox(height: 16.h),
-                  const ImmutableTextField(),
                   SizedBox(height: 16.h),
                   const ImmutableMultiLineTextField(),
                   const Spacer(),
