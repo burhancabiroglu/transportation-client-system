@@ -3,9 +3,9 @@ import 'package:babiconsultancy/src/backend/repo/transfer_wish_repo.dart';
 import 'package:babiconsultancy/src/ui/widgets/book_request/transfer_request_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TransferRequestCubit extends Cubit<TransferRequestState> {
+class TransferRequestBoxCubit extends Cubit<TransferRequestState> {
   final TransferWishRepo repo;
-  TransferRequestCubit({
+  TransferRequestBoxCubit({
     required this.repo
   }): super(TransferRequestState.none);
 

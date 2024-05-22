@@ -1,9 +1,9 @@
-import 'package:babiconsultancy/main.dart';
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_type.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_args.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_cubit.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/rounded_body.dart';
@@ -11,6 +11,7 @@ import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_multi_line_t
 import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_text_field.dart';
 import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_text_field_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TransferRequestScreen extends CoreStatelessWidget {
   static const String route = "transfer_request";
@@ -25,10 +26,12 @@ class TransferRequestScreen extends CoreStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    logger.e(args.transferTypeId);
-    return Container(
-      color: colorScheme.darken,
-      child: Scaffold(
+    final cubit = BlocProvider.of<TransferRequestCubit>(context);
+    return SafeArea(
+      top: false,
+      child: Container(
+        color: colorScheme.darken,
+        child: Scaffold(
           extendBody: true,
           backgroundColor: colorScheme.darken,
           appBar: CoreAppBar(
@@ -53,7 +56,9 @@ class TransferRequestScreen extends CoreStatelessWidget {
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  const ImmutableMultiLineTextField(),
+                  ImmutableMultiLineTextField(
+                    dataList: cubit.data,
+                  ),
                   const Spacer(),
                   PrimaryButton(
                     text: localization.of(LocalizationKeys.Transfer_Request_Send),
@@ -63,6 +68,7 @@ class TransferRequestScreen extends CoreStatelessWidget {
               )
             )
           ),
+        ),
       ),
     );
   }

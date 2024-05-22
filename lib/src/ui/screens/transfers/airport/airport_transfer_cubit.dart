@@ -56,7 +56,7 @@ class AirportTransferCubit extends Cubit<TransferState> {
   }
 
   void navigateToApprove() {
-    CoreRouter.bottomNavBar.pushNamed(
+    CoreRouter.main.pushNamed(
       TransferRequestScreen.route,
       arguments: { TransferRequestScreen.argsKey: TransferRequestArgs(transferType.id) }
     );

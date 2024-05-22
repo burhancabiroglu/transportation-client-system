@@ -8,6 +8,7 @@ import 'package:babiconsultancy/src/ui/screens/register/register_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/result/multi/multi_result_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/result/success_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_screen.dart';
 import 'package:flutter/material.dart';
 
 Route mainRoutes(RouteSettings settings) {
@@ -23,8 +24,13 @@ Route mainRoutes(RouteSettings settings) {
       ),
     ProfileSupportScreen.route => const ProfileSupportScreen(),
     AboutUsScreen.route => const AboutUsScreen(),
+    
     MultiResultScreen.route =>
       MultiResultScreen(args: settings.args(MultiResultScreen.argsKey)),
+
+    TransferRequestScreen.route => TransferRequestScreen(
+      args: settings.args(TransferRequestScreen.argsKey),
+    ),
     _ => const SplashScreen()
   };
   return MaterialPageRoute(builder: (_) => screen);

@@ -21,25 +21,25 @@ class TransferNotFoundView extends CoreStatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: [
-          const Spacer(),
-          SvgPicture.asset(Assets.result_not_found),
-          Text(
-            localization.of(LocalizationKeys.Transfer_Not_Found),
-            style: theme.textStyle.body02.copyWith(color: theme.colorScheme.textSecondary.withAlpha(160)),
-          ),
-          const Spacer(),
-          PrimaryVariantButton(
-            text: localization.of(LocalizationKeys.Transfer_Request_Button),
-            margin: EdgeInsets.only(bottom: 28.h,right: WindowDefaults.wall,left: WindowDefaults.wall),
-            onClick: (){
-              CoreRouter.bottomNavBar.pushNamed(
-                TransferRequestScreen.route,
-                arguments: { TransferRequestScreen.argsKey : TransferRequestArgs(type.id) }
-              );
-            },
-          )
-        ]
-      );
+      children: [
+        const Spacer(),
+        SvgPicture.asset(Assets.result_not_found),
+        Text(
+          localization.of(LocalizationKeys.Transfer_Not_Found),
+          style: theme.textStyle.body02.copyWith(color: theme.colorScheme.textSecondary.withAlpha(160)),
+        ),
+        const Spacer(),
+        PrimaryVariantButton(
+          text: localization.of(LocalizationKeys.Transfer_Request_Button),
+          margin: EdgeInsets.only(bottom: 28.h,right: WindowDefaults.wall,left: WindowDefaults.wall),
+          onClick: (){
+            CoreRouter.main.pushNamed(
+              TransferRequestScreen.route,
+              arguments: { TransferRequestScreen.argsKey : TransferRequestArgs(type.id) }
+            );
+          },
+        )
+      ]
+    );
   }
 }

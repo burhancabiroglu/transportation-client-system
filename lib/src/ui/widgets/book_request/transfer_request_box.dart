@@ -14,9 +14,9 @@ class TransferRequestBox extends CoreStatelessWidget {
   @override
   Widget build(BuildContext context) {
     final borderRadius = BorderRadius.circular(16);
-    final cubit = BlocProvider.of<TransferRequestCubit>(context);
+    final cubit = BlocProvider.of<TransferRequestBoxCubit>(context);
     cubit.fetch();
-    return BlocBuilder<TransferRequestCubit,TransferRequestState>(
+    return BlocBuilder<TransferRequestBoxCubit,TransferRequestState>(
       bloc: cubit,
       builder: (context, state) {
         return ShimmerPlaceHolder(
