@@ -9,8 +9,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class TransferRequestCubit extends Cubit {
+  static const String additionalNoteRef = "additionalNoteRef";
+
   final SessionManager session;
   final TransferWishRepo repo;
+
+
   TransferRequestCubit({
     required this.repo,
     required this.session
@@ -30,9 +34,13 @@ class TransferRequestCubit extends Cubit {
           text: auth.user.email
         ),
         ImmutableTextFieldData(
-          label: localization.of(LocalizationKeys.Form_CreatedAt), 
+          label: localization.of(LocalizationKeys.Form_ApplicationDate), 
           text: date,
         )
     ];
+  }
+
+  void submit() {
+    
   }
 }

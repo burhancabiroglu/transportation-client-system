@@ -21,16 +21,16 @@ class AirportTransferScreen extends CoreStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<AirportTransferCubit>(context);
+    final cubit = BlocProvider.of<AirportTransferCubit>(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.darken,
-      appBar: CoreAppBar(title: Text(localization.of(LocalizationKeys.Airport_Transfer_Title))),
+      appBar: CoreAppBar(title: Text(localization.of(cubit.transferType.title))),
       body: RoundedBody(
         child: BlocBuilder<AirportTransferCubit,TransferState>(
-          bloc: bloc,
+          bloc: cubit,
           builder: (context,state) {
             if(state is TransferStateEmpty){
-              return TransferNotFoundView(type: bloc.transferType);
+              return TransferNotFoundView(type: cubit.transferType);
             }
             if(state is TransferSeatSelection) {
               return Padding(
@@ -67,7 +67,7 @@ class AirportTransferScreen extends CoreStatelessWidget {
                               key: ValueKey(index),
                               index: index,
                               dto: state.data[index]!,
-                              onStateChange: bloc.onStateChanged,
+                              onStateChange: cubit.onStateChanged,
                             );
                           })
                         ),
@@ -76,7 +76,7 @@ class AirportTransferScreen extends CoreStatelessWidget {
                     PrimaryButton(
                       isEnabled: state.buttonState,
                       text: localization.of(LocalizationKeys.Transfer_Request_Choose_Seat),
-                      onClick: bloc.navigateToApprove
+                      onClick: cubit.navigateToApprove
                     )
                   ],
                 ),

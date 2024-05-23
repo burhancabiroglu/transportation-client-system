@@ -4,16 +4,19 @@ import 'package:flutter/material.dart';
 
 
 class PrimaryVariantButton extends CoreStatelessWidget {
+  final bool isEnabled;
   final VoidCallback? onClick;
   final String text;
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry margin;
-  const PrimaryVariantButton({Key? key,
+  const PrimaryVariantButton({
+      super.key,
       this.text = "",
       this.onClick,
       this.padding = EdgeInsets.zero,
-      this.margin = EdgeInsets.zero
-    })  : super(key: key);
+      this.margin = EdgeInsets.zero,
+      this.isEnabled = true,
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +25,18 @@ class PrimaryVariantButton extends CoreStatelessWidget {
       padding: padding,
       margin: margin,
       child: FilledButton(
-        onPressed: onClick,
+       onPressed: isEnabled ? onClick : null,
         style: ElevatedButton.styleFrom(
           elevation: 4,
           backgroundColor: theme.colorScheme.forest,
-          disabledBackgroundColor: theme.colorScheme.forest,
+          disabledBackgroundColor: theme.colorScheme.disabled,
           shadowColor: theme.colorScheme.forest.withAlpha(600),
           minimumSize: Size(2000, size.height),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
         child: Text(
           text,
-          style: theme.textStyle.heading03.copyWith(color: theme.colorScheme.white),
+          style: textStyle.heading03.copyWith(color: colorScheme.white),
         )
       ),
     );

@@ -36,7 +36,7 @@ class PrimaryButton extends CoreStatelessWidget {
         ),
         child: Text(
           text,
-          style: theme.textStyle.heading03.copyWith(color: theme.colorScheme.white),
+          style: textStyle.heading03.copyWith(color: colorScheme.white),
         )
       ),
     );

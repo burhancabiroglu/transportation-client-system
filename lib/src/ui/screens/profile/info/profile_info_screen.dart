@@ -35,7 +35,7 @@ class ProfileInfoScreen extends CoreStatelessWidget {
               children: [
                 SizedBox(height: 16.h),
                 ImmutableMultiLineTextField(
-                  dataList: args,
+                  children: args,
                   scale: 1.8,
                 ),
               ],

@@ -5,12 +5,12 @@ import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_text_field_d
 import 'package:flutter/material.dart';
 
 class ImmutableMultiLineTextField extends CoreStatelessWidget {
-  final List<ImmutableTextFieldData> dataList;
+  final List<ImmutableTextFieldData> children;
   final double scale;
   const ImmutableMultiLineTextField({
     super.key, 
     this.scale = 1,
-    this.dataList = const []
+    this.children = const []
   });
 
   @override
@@ -29,8 +29,8 @@ class ImmutableMultiLineTextField extends CoreStatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: List<Widget>.generate(dataList.length, (index) {
-          final data = dataList[index];
+        children: List<Widget>.generate(children.length, (index) {
+          final data = children[index];
           return Column(
             children: [
               Column(
@@ -54,7 +54,7 @@ class ImmutableMultiLineTextField extends CoreStatelessWidget {
                   ),
                 ],
               ),
-              if(dataList.length - 1 != index)... [
+              if(children.length - 1 != index)... [
                 SizedBox(height: 16.h * scale),
               ]
             ],

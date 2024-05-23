@@ -2,6 +2,7 @@ import 'package:babiconsultancy/main.dart';
 import 'package:babiconsultancy/src/backend/handler/session/session_manager.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/localization/localization_manager.dart';
+import 'package:babiconsultancy/src/core/utils/delay_utils.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/module/injection.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
@@ -15,13 +16,14 @@ Future<T?> logoutBottomSheet<T>() {
   final localization = LocalizationManager();
   final colorScheme = appTheme.colorScheme;
   final textStyle = appTheme.textStyle;
+  final session = injector.get<SessionManager>();
 
   void logout() async {
     EasyLoading.show();
-    injector.get<SessionManager>().logout();
+    session.logout();
     CoreRouter.main.pop();
     CoreRouter.reset();
-    await Future.delayed(Durations.extralong1);
+    await delay(700);
     CoreRouter.main.popAndPushNamed(LoginScreen.route);
     EasyLoading.dismiss();
   }

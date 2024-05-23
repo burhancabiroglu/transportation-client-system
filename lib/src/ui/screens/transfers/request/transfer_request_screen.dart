@@ -1,6 +1,7 @@
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_type.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
+import 'package:babiconsultancy/src/core/theme/app_theme.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_args.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_cubit.dart';
@@ -12,6 +13,7 @@ import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_text_field.d
 import 'package:babiconsultancy/src/ui/widgets/textfields/immutable_text_field_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 class TransferRequestScreen extends CoreStatelessWidget {
   static const String route = "transfer_request";
@@ -51,18 +53,40 @@ class TransferRequestScreen extends CoreStatelessWidget {
                   SizedBox(height: 16.h),
                   ImmutableTextField(
                     data: ImmutableTextFieldData(
-                      label: "Transfer Tipi",
+                      label: localization.of(LocalizationKeys.TransferType_Label),
                       text: localization.of(TransferType.get(args.transferTypeId).key)
                     ),
                   ),
                   SizedBox(height: 16.h),
                   ImmutableMultiLineTextField(
-                    dataList: cubit.data,
+                    children: cubit.data,
+                  ),
+                  SizedBox(height: 24.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      localization.of(LocalizationKeys.Transfer_Request_Additional_Note),
+                      style: textStyle.footnote01.copyWith(
+                        color: colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                  FormBuilderTextField(
+                    name: TransferRequestCubit.additionalNoteRef,
+                    keyboardType: TextInputType.name,
+                    textInputAction: TextInputAction.done,
+                    style: textStyle.body04,
+                    minLines: 3,
+                    maxLines: 10,
+                    decoration: theme.inputDecoration(
+                      hintText: localization.of(LocalizationKeys.Form_Description)
+                    ),
                   ),
                   const Spacer(),
                   PrimaryButton(
                     text: localization.of(LocalizationKeys.Transfer_Request_Send),
-                    onClick: (){},
+                    onClick: cubit.submit,
                   )
                 ],
               )

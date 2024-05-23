@@ -30,7 +30,7 @@ class TurkishLocalization extends CoreLocalization {
 
     "AboutUs.Title" : "Hakk\u0131m\u0131zda",
 
-
+    "TransferRequest.AdditionalNote": "İletmek istediğiniz ek not: ", 
     "TransferRequest.Button" : "Transfer Talep Et",
     "Transfer.NotFound": "Transfer Bulunamad\u0131",
     "More": "Daha fazla",
@@ -79,6 +79,8 @@ class TurkishLocalization extends CoreLocalization {
     "Form.FullName" : "İsim Soyisim",
     "Form.ForgotPassword" : "Şifremi Unuttum",
     "Form.CreatedAt": "Üyelik Tarihi",
+    "Form.ApplicationDate": "Başvuru Tarihi",
+    "Form.Description": "Buraya yazabilirsiniz",
 
     "Error.Email.Required": "E-posta adresi boş olamaz",
     "Error.Email.Format": "Geçerli bir e-posta adresi giriniz",
@@ -89,5 +91,9 @@ class TurkishLocalization extends CoreLocalization {
     "Error.Password.Uppercase": "En az bir büyük harf içermeli",
     "Error.Password.Length":"Minimum 6 karakterden oluşmal\u0131",
     
+    "TransferType.Standart": "Standart Transfer",
+    "TransferType.Airport": "Havaliman\u0131 Transferi",
+    "TransferType.Label": "Transfer Tipi",
+     
   };
 }

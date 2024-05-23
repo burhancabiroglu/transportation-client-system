@@ -26,6 +26,8 @@ class LocalizationKeys {
   static const String Form_Password = "Form.Password";
   static const String Form_ForgotPassword = "Form.ForgotPassword";
   static const String Form_CreatedAt = "Form.CreatedAt";
+  static const String Form_ApplicationDate = "Form.ApplicationDate";
+  static const String Form_Description = "Form.Description";
 
 
   // FORM ERRORS
@@ -67,6 +69,7 @@ class LocalizationKeys {
   static const String Transfer_Request_Button = "TransferRequest.Button";
   static const String Transfer_Request_Send = "TransferRequest.Send";
   static const String Transfer_Request_Choose_Seat = "TransferRequest.ChooseSeat";
+  static const String Transfer_Request_Additional_Note = "TransferRequest.AdditionalNote";
 
   static const String Transfer_Request_Selectable = "TransferRequest.Selectable";
   static const String Transfer_Request_UnSelectable = "TransferRequest.UnSelectable";
@@ -97,4 +100,9 @@ class LocalizationKeys {
 
   static const String User_Confirmation_Info_Title = "user.confirmation.info.title";
   static const String User_Confirmation_Info_Description = "user.confirmation.info.description";
+
+   
+  static const String TransferType_Standart = "TransferType.Standart";
+  static const String TransferType_Airport = "TransferType.Airport";
+  static const String TransferType_Label = "TransferType.Label";
 }
