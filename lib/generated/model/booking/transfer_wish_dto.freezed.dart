@@ -20,15 +20,17 @@ TransferWishDto _$TransferWishDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TransferWishDto {
+  @JsonKey(name: "user_id")
+  String get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: "created_at")
+  String get createdAt => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: "transfer_type")
   int get transferType => throw _privateConstructorUsedError;
   @JsonKey(name: "additional_note")
-  String? get additionalNote => throw _privateConstructorUsedError;
-  String get fullname => throw _privateConstructorUsedError;
+  String get additionalNote => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  @JsonKey(name: "created_At")
-  String get createdAt => throw _privateConstructorUsedError;
+  String get fullname => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,12 +45,13 @@ abstract class $TransferWishDtoCopyWith<$Res> {
       _$TransferWishDtoCopyWithImpl<$Res, TransferWishDto>;
   @useResult
   $Res call(
-      {String id,
+      {@JsonKey(name: "user_id") String userId,
+      @JsonKey(name: "created_at") String createdAt,
+      String id,
       @JsonKey(name: "transfer_type") int transferType,
-      @JsonKey(name: "additional_note") String? additionalNote,
-      String fullname,
+      @JsonKey(name: "additional_note") String additionalNote,
       String email,
-      @JsonKey(name: "created_At") String createdAt});
+      String fullname});
 }
 
 /// @nodoc
@@ -64,14 +67,23 @@ class _$TransferWishDtoCopyWithImpl<$Res, $Val extends TransferWishDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? userId = null,
+    Object? createdAt = null,
     Object? id = null,
     Object? transferType = null,
-    Object? additionalNote = freezed,
-    Object? fullname = null,
+    Object? additionalNote = null,
     Object? email = null,
-    Object? createdAt = null,
+    Object? fullname = null,
   }) {
     return _then(_value.copyWith(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -80,21 +92,17 @@ class _$TransferWishDtoCopyWithImpl<$Res, $Val extends TransferWishDto>
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
               as int,
-      additionalNote: freezed == additionalNote
+      additionalNote: null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fullname: null == fullname
-          ? _value.fullname
-          : fullname // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      fullname: null == fullname
+          ? _value.fullname
+          : fullname // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -109,12 +117,13 @@ abstract class _$$TransferWishDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {@JsonKey(name: "user_id") String userId,
+      @JsonKey(name: "created_at") String createdAt,
+      String id,
       @JsonKey(name: "transfer_type") int transferType,
-      @JsonKey(name: "additional_note") String? additionalNote,
-      String fullname,
+      @JsonKey(name: "additional_note") String additionalNote,
       String email,
-      @JsonKey(name: "created_At") String createdAt});
+      String fullname});
 }
 
 /// @nodoc
@@ -128,14 +137,23 @@ class __$$TransferWishDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? userId = null,
+    Object? createdAt = null,
     Object? id = null,
     Object? transferType = null,
-    Object? additionalNote = freezed,
-    Object? fullname = null,
+    Object? additionalNote = null,
     Object? email = null,
-    Object? createdAt = null,
+    Object? fullname = null,
   }) {
     return _then(_$TransferWishDtoImpl(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -144,21 +162,17 @@ class __$$TransferWishDtoImplCopyWithImpl<$Res>
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
               as int,
-      additionalNote: freezed == additionalNote
+      additionalNote: null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fullname: null == fullname
-          ? _value.fullname
-          : fullname // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      fullname: null == fullname
+          ? _value.fullname
+          : fullname // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -168,16 +182,23 @@ class __$$TransferWishDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TransferWishDtoImpl implements _TransferWishDto {
   const _$TransferWishDtoImpl(
-      {required this.id,
+      {@JsonKey(name: "user_id") required this.userId,
+      @JsonKey(name: "created_at") required this.createdAt,
+      required this.id,
       @JsonKey(name: "transfer_type") required this.transferType,
-      @JsonKey(name: "additional_note") this.additionalNote,
-      required this.fullname,
+      @JsonKey(name: "additional_note") required this.additionalNote,
       required this.email,
-      @JsonKey(name: "created_At") required this.createdAt});
+      required this.fullname});
 
   factory _$TransferWishDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransferWishDtoImplFromJson(json);
 
+  @override
+  @JsonKey(name: "user_id")
+  final String userId;
+  @override
+  @JsonKey(name: "created_at")
+  final String createdAt;
   @override
   final String id;
   @override
@@ -185,18 +206,15 @@ class _$TransferWishDtoImpl implements _TransferWishDto {
   final int transferType;
   @override
   @JsonKey(name: "additional_note")
-  final String? additionalNote;
-  @override
-  final String fullname;
+  final String additionalNote;
   @override
   final String email;
   @override
-  @JsonKey(name: "created_At")
-  final String createdAt;
+  final String fullname;
 
   @override
   String toString() {
-    return 'TransferWishDto(id: $id, transferType: $transferType, additionalNote: $additionalNote, fullname: $fullname, email: $email, createdAt: $createdAt)';
+    return 'TransferWishDto(userId: $userId, createdAt: $createdAt, id: $id, transferType: $transferType, additionalNote: $additionalNote, email: $email, fullname: $fullname)';
   }
 
   @override
@@ -204,22 +222,23 @@ class _$TransferWishDtoImpl implements _TransferWishDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TransferWishDtoImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.transferType, transferType) ||
                 other.transferType == transferType) &&
             (identical(other.additionalNote, additionalNote) ||
                 other.additionalNote == additionalNote) &&
-            (identical(other.fullname, fullname) ||
-                other.fullname == fullname) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+            (identical(other.fullname, fullname) ||
+                other.fullname == fullname));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, transferType, additionalNote,
-      fullname, email, createdAt);
+  int get hashCode => Object.hash(runtimeType, userId, createdAt, id,
+      transferType, additionalNote, email, fullname);
 
   @JsonKey(ignore: true)
   @override
@@ -238,17 +257,23 @@ class _$TransferWishDtoImpl implements _TransferWishDto {
 
 abstract class _TransferWishDto implements TransferWishDto {
   const factory _TransferWishDto(
-          {required final String id,
-          @JsonKey(name: "transfer_type") required final int transferType,
-          @JsonKey(name: "additional_note") final String? additionalNote,
-          required final String fullname,
-          required final String email,
-          @JsonKey(name: "created_At") required final String createdAt}) =
-      _$TransferWishDtoImpl;
+      {@JsonKey(name: "user_id") required final String userId,
+      @JsonKey(name: "created_at") required final String createdAt,
+      required final String id,
+      @JsonKey(name: "transfer_type") required final int transferType,
+      @JsonKey(name: "additional_note") required final String additionalNote,
+      required final String email,
+      required final String fullname}) = _$TransferWishDtoImpl;
 
   factory _TransferWishDto.fromJson(Map<String, dynamic> json) =
       _$TransferWishDtoImpl.fromJson;
 
+  @override
+  @JsonKey(name: "user_id")
+  String get userId;
+  @override
+  @JsonKey(name: "created_at")
+  String get createdAt;
   @override
   String get id;
   @override
@@ -256,14 +281,11 @@ abstract class _TransferWishDto implements TransferWishDto {
   int get transferType;
   @override
   @JsonKey(name: "additional_note")
-  String? get additionalNote;
-  @override
-  String get fullname;
+  String get additionalNote;
   @override
   String get email;
   @override
-  @JsonKey(name: "created_At")
-  String get createdAt;
+  String get fullname;
   @override
   @JsonKey(ignore: true)
   _$$TransferWishDtoImplCopyWith<_$TransferWishDtoImpl> get copyWith =>

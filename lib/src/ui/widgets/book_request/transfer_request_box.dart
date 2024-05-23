@@ -33,7 +33,7 @@ class TransferRequestBox extends CoreStatelessWidget {
                   color: theme.colorScheme.disabled.withOpacity(0.6),
                 ),
                 child: ListView.builder(
-                  itemCount: 2,
+                  itemCount: state.requests.length,
                   itemBuilder: (context, index) => 
                     TransferRequestTile(bookRequest: state.requests[index])       
                 ),
