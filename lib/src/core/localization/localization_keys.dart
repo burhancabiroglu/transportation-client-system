@@ -71,6 +71,10 @@ class LocalizationKeys {
   static const String Transfer_Request_Choose_Seat = "TransferRequest.ChooseSeat";
   static const String Transfer_Request_Additional_Note = "TransferRequest.AdditionalNote";
 
+  static const TransferRequest_Successful_Title =  "TransferRequest.successful.title";
+  static const TransferRequest_Successful_Description = "TransferRequest.successful.description";
+  static const TransferRequest_Error_Description =   "TransferRequest.error.description";
+
   static const String Transfer_Request_Selectable = "TransferRequest.Selectable";
   static const String Transfer_Request_UnSelectable = "TransferRequest.UnSelectable";
   static const String Transfer_Request_Selected = "TransferRequest.Selected";

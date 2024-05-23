@@ -11,7 +11,6 @@ abstract class TransferWishRepo {
   Future<AppResult<String>> createTransferWish(BookingRequest body);
   Future<AppResult<String>> removeTransferWish(String id);
   Future<AppResult<List<TransferWishDto>>> getTransferWishesByUserId();
-
 }
 
 class TransferWishRepoImpl extends TransferWishRepo {
@@ -31,6 +30,5 @@ class TransferWishRepoImpl extends TransferWishRepo {
   Future<AppResult<String>> removeTransferWish(String id) {
     return NetworkHandler.getSafeResult(() => api.removeTransferWish(id));
   }
-  
   
 }

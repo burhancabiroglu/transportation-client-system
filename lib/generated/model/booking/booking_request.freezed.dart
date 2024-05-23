@@ -23,9 +23,9 @@ mixin _$BookingRequest {
   @JsonKey(name: "user_id")
   String get userId => throw _privateConstructorUsedError;
   @JsonKey(name: "additional_note")
-  int get additionalNote => throw _privateConstructorUsedError;
+  String get additionalNote => throw _privateConstructorUsedError;
   @JsonKey(name: "transfer_type")
-  String get transferType => throw _privateConstructorUsedError;
+  int get transferType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,8 +41,8 @@ abstract class $BookingRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "additional_note") int additionalNote,
-      @JsonKey(name: "transfer_type") String transferType});
+      @JsonKey(name: "additional_note") String additionalNote,
+      @JsonKey(name: "transfer_type") int transferType});
 }
 
 /// @nodoc
@@ -70,11 +70,11 @@ class _$BookingRequestCopyWithImpl<$Res, $Val extends BookingRequest>
       additionalNote: null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       transferType: null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ) as $Val);
   }
 }
@@ -89,8 +89,8 @@ abstract class _$$BookingRequestImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "additional_note") int additionalNote,
-      @JsonKey(name: "transfer_type") String transferType});
+      @JsonKey(name: "additional_note") String additionalNote,
+      @JsonKey(name: "transfer_type") int transferType});
 }
 
 /// @nodoc
@@ -116,11 +116,11 @@ class __$$BookingRequestImplCopyWithImpl<$Res>
       null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -141,10 +141,10 @@ class _$BookingRequestImpl implements _BookingRequest {
   final String userId;
   @override
   @JsonKey(name: "additional_note")
-  final int additionalNote;
+  final String additionalNote;
   @override
   @JsonKey(name: "transfer_type")
-  final String transferType;
+  final int transferType;
 
   @override
   String toString() {
@@ -186,8 +186,8 @@ class _$BookingRequestImpl implements _BookingRequest {
 abstract class _BookingRequest implements BookingRequest {
   const factory _BookingRequest(
           @JsonKey(name: "user_id") final String userId,
-          @JsonKey(name: "additional_note") final int additionalNote,
-          @JsonKey(name: "transfer_type") final String transferType) =
+          @JsonKey(name: "additional_note") final String additionalNote,
+          @JsonKey(name: "transfer_type") final int transferType) =
       _$BookingRequestImpl;
 
   factory _BookingRequest.fromJson(Map<String, dynamic> json) =
@@ -198,10 +198,10 @@ abstract class _BookingRequest implements BookingRequest {
   String get userId;
   @override
   @JsonKey(name: "additional_note")
-  int get additionalNote;
+  String get additionalNote;
   @override
   @JsonKey(name: "transfer_type")
-  String get transferType;
+  int get transferType;
   @override
   @JsonKey(ignore: true)
   _$$BookingRequestImplCopyWith<_$BookingRequestImpl> get copyWith =>

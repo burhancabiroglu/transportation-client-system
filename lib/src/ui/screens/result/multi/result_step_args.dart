@@ -2,7 +2,7 @@ class ResultStepArgs {
   final String title;
   final String description;
   final String lottieAsset;
-  final String routeCallBack;
+  final void Function() routeCallBack;
   
   const ResultStepArgs({
     required this.title, 

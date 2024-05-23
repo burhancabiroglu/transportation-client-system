@@ -10,9 +10,9 @@ class BookingRequest with _$BookingRequest {
     @JsonKey(name: "user_id")
     String userId,
     @JsonKey(name: "additional_note")
-    int additionalNote,
+    String additionalNote,
     @JsonKey(name: "transfer_type")
-    String transferType,
+    int transferType,
   ) = _BookingRequest;
 
   factory BookingRequest.fromJson(Map<String, dynamic> json) =>

@@ -22,6 +22,10 @@ class TurkishLocalization extends CoreLocalization {
 
     "TransferRequest.Title": "Transfer Talebi",
     "TransferRequest.Send": "Talebi Gönder",
+    "TransferRequest.successful.title": "Transfer Talebi Başar\u0131l\u0131",
+    "TransferRequest.successful.description": "Transfer talebiniz başar\u0131yla gerçekleştirilmiştir",
+    "TransferRequest.error.description": "Transfer talebi s\u0131ras\u0131nda işlem başar\u0131s\u0131z oldu.",
+
 
     "Transfer.Title": "Transferler",
 
@@ -94,6 +98,8 @@ class TurkishLocalization extends CoreLocalization {
     "TransferType.Standart": "Standart Transfer",
     "TransferType.Airport": "Havaliman\u0131 Transferi",
     "TransferType.Label": "Transfer Tipi",
+     
+
      
   };
 }

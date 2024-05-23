@@ -1,6 +1,4 @@
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
-import 'package:babiconsultancy/src/ui/routes/core_router.dart';
-import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/screens/result/multi/result_step_args.dart';
@@ -68,7 +66,7 @@ class MultiResultScreen extends CoreStatelessWidget {
                 children: [
                   PrimaryButton(
                     text: localization.of(LocalizationKeys.Okay),
-                    onClick: () => CoreRouter.main.popAndPushNamed(args.firstOrNull?.routeCallBack ?? LoginScreen.route),
+                    onClick: args.firstOrNull?.routeCallBack
                   ),
                 ],
               ),

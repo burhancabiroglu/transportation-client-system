@@ -9,8 +9,8 @@ part of '../../../src/backend/model/booking/booking_request.dart';
 _$BookingRequestImpl _$$BookingRequestImplFromJson(Map<String, dynamic> json) =>
     _$BookingRequestImpl(
       json['user_id'] as String,
-      (json['additional_note'] as num).toInt(),
-      json['transfer_type'] as String,
+      json['additional_note'] as String,
+      (json['transfer_type'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BookingRequestImplToJson(
