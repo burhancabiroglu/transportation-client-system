@@ -1,7 +1,6 @@
 import 'package:babiconsultancy/src/backend/model/booking/transfer_wish_dto.dart';
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_type.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
-import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/ui/widgets/status/status_badge.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +23,10 @@ class TransferRequestTile extends CoreStatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  /*Text(
                     localization.of(LocalizationKeys.TransferType_Label),
                     style: textStyle.caption02.copyWith(color: colorScheme.textSecondary),
-                  ),
+                  ),*/
                   Text(
                     localization.of(TransferType.get(bookRequest.transferType).key),
                     style: textStyle.footnote01.copyWith(color: colorScheme.textPrimary),

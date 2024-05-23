@@ -21,17 +21,17 @@ class TransferRequestScreen extends CoreStatelessWidget {
   static const String route = "transfer_request";
   static const String argsKey = "transfer_request_args_key";
 
-  final TransferRequestArgs args;
+  final TransferRequestArgs? args;
   
   const TransferRequestScreen({
     super.key, 
-    required this.args
+    this.args
   });
 
   @override
   Widget build(BuildContext context) {
     final cubit = BlocProvider.of<TransferRequestCubit>(context);
-    cubit.fetch(args.transferTypeId);
+    cubit.fetch(args?.transferTypeId ?? 2);
     return SafeArea(
       top: false,
       child: Container(
@@ -65,7 +65,7 @@ class TransferRequestScreen extends CoreStatelessWidget {
                       ImmutableTextField(
                         data: ImmutableTextFieldData(
                           label: localization.of(LocalizationKeys.TransferType_Label),
-                          text: localization.of(TransferType.get(args.transferTypeId).key)
+                          text: localization.of(TransferType.get(args?.transferTypeId??2).key)
                         ),
                       ),
                       SizedBox(height: 16.h),

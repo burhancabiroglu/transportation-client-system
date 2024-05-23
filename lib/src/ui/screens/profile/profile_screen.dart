@@ -8,6 +8,7 @@ import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_state.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/support/profile_support_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_screen.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/shelf.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/shimmer/shimmer_placeholder.dart';
@@ -75,9 +76,10 @@ class ProfileScreen extends CoreStatelessWidget {
                     text: localization.of(LocalizationKeys.Profile_Info),
                     onClick: cubit.routeToProfileInfo
                   ),
-                  /*Shelf(
-                    text: localization.of(LocalizationKeys.Profile_Change_Password)
-                  ), */
+                  Shelf(
+                    text: localization.of(LocalizationKeys.Transfer_Request_Title),
+                    onClick: () => CoreRouter.main.pushNamed(TransferRequestScreen.route)
+                  ),
                   Shelf(
                     text: localization.of(LocalizationKeys.Profile_Support),
                     onClick: () => CoreRouter.main.pushNamed(ProfileSupportScreen.route)
