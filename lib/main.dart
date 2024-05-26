@@ -11,6 +11,7 @@ import 'package:babiconsultancy/src/ui/screens/profile/profile_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/airport/airport_transfer_cubit.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/approve/transfer_approve_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_cubit.dart';
 import 'package:babiconsultancy/src/ui/widgets/book_request/transfer_request_cubit.dart';
@@ -67,6 +68,7 @@ class BabiConsultancyApp extends StatelessWidget {
         BlocProvider(create: (_) => RegisterCubit(repo: injector())),
         BlocProvider(create: (_) => AboutUsCubit(storage: injector())),
         BlocProvider(create: (_) => SplashCubit(session: injector())),
+        BlocProvider(create: (_) => TransferApproveCubit(repo: injector(),session: injector())),
         BlocProvider(create: (_) => ProfileCubit(repo: injector()))
       ],
       child: MaterialApp(

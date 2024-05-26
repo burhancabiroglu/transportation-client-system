@@ -20,20 +20,14 @@ SeatReservation _$SeatReservationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SeatReservation {
-  @JsonKey(name: 'seat_id')
   String get seatId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'transfer_id')
   String get transferId => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'user_id')
   String get userId => throw _privateConstructorUsedError;
   String get fullname => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'transfer_status')
   int get transferStatus => throw _privateConstructorUsedError;
-  @JsonKey(name: 'transfer_type')
   int get transferType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'planned_at')
   String get plannedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,15 +43,15 @@ abstract class $SeatReservationCopyWith<$Res> {
       _$SeatReservationCopyWithImpl<$Res, SeatReservation>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'seat_id') String seatId,
-      @JsonKey(name: 'transfer_id') String transferId,
+      {String seatId,
+      String transferId,
       int status,
-      @JsonKey(name: 'user_id') String userId,
+      String userId,
       String fullname,
       String email,
-      @JsonKey(name: 'transfer_status') int transferStatus,
-      @JsonKey(name: 'transfer_type') int transferType,
-      @JsonKey(name: 'planned_at') String plannedAt});
+      int transferStatus,
+      int transferType,
+      String plannedAt});
 }
 
 /// @nodoc
@@ -133,15 +127,15 @@ abstract class _$$SeatReservationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'seat_id') String seatId,
-      @JsonKey(name: 'transfer_id') String transferId,
+      {String seatId,
+      String transferId,
       int status,
-      @JsonKey(name: 'user_id') String userId,
+      String userId,
       String fullname,
       String email,
-      @JsonKey(name: 'transfer_status') int transferStatus,
-      @JsonKey(name: 'transfer_type') int transferType,
-      @JsonKey(name: 'planned_at') String plannedAt});
+      int transferStatus,
+      int transferType,
+      String plannedAt});
 }
 
 /// @nodoc
@@ -210,42 +204,36 @@ class __$$SeatReservationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SeatReservationImpl implements _SeatReservation {
   const _$SeatReservationImpl(
-      {@JsonKey(name: 'seat_id') required this.seatId,
-      @JsonKey(name: 'transfer_id') required this.transferId,
+      {required this.seatId,
+      required this.transferId,
       required this.status,
-      @JsonKey(name: 'user_id') required this.userId,
+      required this.userId,
       required this.fullname,
       required this.email,
-      @JsonKey(name: 'transfer_status') required this.transferStatus,
-      @JsonKey(name: 'transfer_type') required this.transferType,
-      @JsonKey(name: 'planned_at') required this.plannedAt});
+      required this.transferStatus,
+      required this.transferType,
+      required this.plannedAt});
 
   factory _$SeatReservationImpl.fromJson(Map<String, dynamic> json) =>
       _$$SeatReservationImplFromJson(json);
 
   @override
-  @JsonKey(name: 'seat_id')
   final String seatId;
   @override
-  @JsonKey(name: 'transfer_id')
   final String transferId;
   @override
   final int status;
   @override
-  @JsonKey(name: 'user_id')
   final String userId;
   @override
   final String fullname;
   @override
   final String email;
   @override
-  @JsonKey(name: 'transfer_status')
   final int transferStatus;
   @override
-  @JsonKey(name: 'transfer_type')
   final int transferType;
   @override
-  @JsonKey(name: 'planned_at')
   final String plannedAt;
 
   @override
@@ -296,43 +284,36 @@ class _$SeatReservationImpl implements _SeatReservation {
 
 abstract class _SeatReservation implements SeatReservation {
   const factory _SeatReservation(
-          {@JsonKey(name: 'seat_id') required final String seatId,
-          @JsonKey(name: 'transfer_id') required final String transferId,
-          required final int status,
-          @JsonKey(name: 'user_id') required final String userId,
-          required final String fullname,
-          required final String email,
-          @JsonKey(name: 'transfer_status') required final int transferStatus,
-          @JsonKey(name: 'transfer_type') required final int transferType,
-          @JsonKey(name: 'planned_at') required final String plannedAt}) =
-      _$SeatReservationImpl;
+      {required final String seatId,
+      required final String transferId,
+      required final int status,
+      required final String userId,
+      required final String fullname,
+      required final String email,
+      required final int transferStatus,
+      required final int transferType,
+      required final String plannedAt}) = _$SeatReservationImpl;
 
   factory _SeatReservation.fromJson(Map<String, dynamic> json) =
       _$SeatReservationImpl.fromJson;
 
   @override
-  @JsonKey(name: 'seat_id')
   String get seatId;
   @override
-  @JsonKey(name: 'transfer_id')
   String get transferId;
   @override
   int get status;
   @override
-  @JsonKey(name: 'user_id')
   String get userId;
   @override
   String get fullname;
   @override
   String get email;
   @override
-  @JsonKey(name: 'transfer_status')
   int get transferStatus;
   @override
-  @JsonKey(name: 'transfer_type')
   int get transferType;
   @override
-  @JsonKey(name: 'planned_at')
   String get plannedAt;
   @override
   @JsonKey(ignore: true)

@@ -2,8 +2,8 @@ import 'package:babiconsultancy/src/config/assets.dart';
 
 enum SeatBoxState{
   SELECTED(id: 3, isSelected: true, resource: Assets.seat_selected),
-  OCCUPIED(id: 1, isSelected: null, resource: Assets.seat_disabled),
-  AVAILABLE(id: 2, isSelected: false, resource: Assets.seat);
+  OCCUPIED(id: 2, isSelected: null, resource: Assets.seat_disabled),
+  AVAILABLE(id: 1, isSelected: false, resource: Assets.seat);
 
   const SeatBoxState({
     required this.id,

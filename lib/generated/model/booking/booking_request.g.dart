@@ -8,15 +8,15 @@ part of '../../../src/backend/model/booking/booking_request.dart';
 
 _$BookingRequestImpl _$$BookingRequestImplFromJson(Map<String, dynamic> json) =>
     _$BookingRequestImpl(
-      json['user_id'] as String,
-      json['additional_note'] as String,
-      (json['transfer_type'] as num).toInt(),
+      json['userId'] as String,
+      json['additionalNote'] as String,
+      (json['transferType'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BookingRequestImplToJson(
         _$BookingRequestImpl instance) =>
     <String, dynamic>{
-      'user_id': instance.userId,
-      'additional_note': instance.additionalNote,
-      'transfer_type': instance.transferType,
+      'userId': instance.userId,
+      'additionalNote': instance.additionalNote,
+      'transferType': instance.transferType,
     };

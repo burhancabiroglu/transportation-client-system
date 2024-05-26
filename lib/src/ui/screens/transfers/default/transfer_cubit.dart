@@ -1,17 +1,19 @@
 import 'package:babiconsultancy/src/backend/handler/app_result.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
+import 'package:babiconsultancy/src/backend/model/transfer/transfer_dto.dart';
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_status.dart';
 import 'package:babiconsultancy/src/backend/model/transfer/transfer_type.dart';
 import 'package:babiconsultancy/src/backend/repo/transfer_repo.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/approve/transfer_approve_args.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/approve/transfer_approve_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_state.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_args.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_screen.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_box_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class TransferCubit extends Cubit<TransferState> {
+  TransferDto? transfer;
   final transferStatus = TransferStatus.PLANNED;
   final transferType = TransferType.NORMAL;
 
@@ -31,6 +33,7 @@ class TransferCubit extends Cubit<TransferState> {
         if(data.isEmpty) {
           return emit(TransferState.empty);
         }
+        transfer = data.last;
         repo.getSeatsByTransferId(data.last.id).successListener((data) {
           return emit(TransferState.seatSelection(data: data.asMap()));
         });
@@ -46,7 +49,7 @@ class TransferCubit extends Cubit<TransferState> {
   ) {
     final currentState =  state as TransferSeatSelection;
     if(otherState.status == SeatBoxState.OCCUPIED.id) return;
-      final data = currentState.data;
+      final Map<int, SeatDto> data = Map.from(currentState.data);
       data[index] = otherState;
       if(currentState.previousSelected != null) {
         final prev = data[currentState.previousSelected!]!;
@@ -56,9 +59,15 @@ class TransferCubit extends Cubit<TransferState> {
   }
 
   void navigateToApprove() {
+    final currentState = state as TransferSeatSelection;
+    final args = TransferApproveArgs(
+      type: transferType.id,
+      seatId: currentState.data[currentState.previousSelected!]?.seatId ?? "",
+      plannedAt: transfer?.plannedAt ?? ""
+    );
     CoreRouter.main.pushNamed(
-      TransferRequestScreen.route,
-      arguments: { TransferRequestScreen.argsKey : TransferRequestArgs(transferType.id) }
+      TransferApproveScreen.route,
+      arguments: { TransferApproveScreen.argsKey : args }
     );
   }
 }

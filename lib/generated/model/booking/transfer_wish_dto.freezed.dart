@@ -20,14 +20,10 @@ TransferWishDto _$TransferWishDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TransferWishDto {
-  @JsonKey(name: "user_id")
   String get userId => throw _privateConstructorUsedError;
-  @JsonKey(name: "created_at")
   String get createdAt => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "transfer_type")
   int get transferType => throw _privateConstructorUsedError;
-  @JsonKey(name: "additional_note")
   String get additionalNote => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get fullname => throw _privateConstructorUsedError;
@@ -45,11 +41,11 @@ abstract class $TransferWishDtoCopyWith<$Res> {
       _$TransferWishDtoCopyWithImpl<$Res, TransferWishDto>;
   @useResult
   $Res call(
-      {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "created_at") String createdAt,
+      {String userId,
+      String createdAt,
       String id,
-      @JsonKey(name: "transfer_type") int transferType,
-      @JsonKey(name: "additional_note") String additionalNote,
+      int transferType,
+      String additionalNote,
       String email,
       String fullname});
 }
@@ -117,11 +113,11 @@ abstract class _$$TransferWishDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "created_at") String createdAt,
+      {String userId,
+      String createdAt,
       String id,
-      @JsonKey(name: "transfer_type") int transferType,
-      @JsonKey(name: "additional_note") String additionalNote,
+      int transferType,
+      String additionalNote,
       String email,
       String fullname});
 }
@@ -182,11 +178,11 @@ class __$$TransferWishDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TransferWishDtoImpl implements _TransferWishDto {
   const _$TransferWishDtoImpl(
-      {@JsonKey(name: "user_id") required this.userId,
-      @JsonKey(name: "created_at") required this.createdAt,
+      {required this.userId,
+      required this.createdAt,
       required this.id,
-      @JsonKey(name: "transfer_type") required this.transferType,
-      @JsonKey(name: "additional_note") required this.additionalNote,
+      required this.transferType,
+      required this.additionalNote,
       required this.email,
       required this.fullname});
 
@@ -194,18 +190,14 @@ class _$TransferWishDtoImpl implements _TransferWishDto {
       _$$TransferWishDtoImplFromJson(json);
 
   @override
-  @JsonKey(name: "user_id")
   final String userId;
   @override
-  @JsonKey(name: "created_at")
   final String createdAt;
   @override
   final String id;
   @override
-  @JsonKey(name: "transfer_type")
   final int transferType;
   @override
-  @JsonKey(name: "additional_note")
   final String additionalNote;
   @override
   final String email;
@@ -257,11 +249,11 @@ class _$TransferWishDtoImpl implements _TransferWishDto {
 
 abstract class _TransferWishDto implements TransferWishDto {
   const factory _TransferWishDto(
-      {@JsonKey(name: "user_id") required final String userId,
-      @JsonKey(name: "created_at") required final String createdAt,
+      {required final String userId,
+      required final String createdAt,
       required final String id,
-      @JsonKey(name: "transfer_type") required final int transferType,
-      @JsonKey(name: "additional_note") required final String additionalNote,
+      required final int transferType,
+      required final String additionalNote,
       required final String email,
       required final String fullname}) = _$TransferWishDtoImpl;
 
@@ -269,18 +261,14 @@ abstract class _TransferWishDto implements TransferWishDto {
       _$TransferWishDtoImpl.fromJson;
 
   @override
-  @JsonKey(name: "user_id")
   String get userId;
   @override
-  @JsonKey(name: "created_at")
   String get createdAt;
   @override
   String get id;
   @override
-  @JsonKey(name: "transfer_type")
   int get transferType;
   @override
-  @JsonKey(name: "additional_note")
   String get additionalNote;
   @override
   String get email;

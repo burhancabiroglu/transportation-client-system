@@ -7,11 +7,8 @@ part "../../../../generated/model/booking/booking_request.g.dart";
 @freezed
 class BookingRequest with _$BookingRequest {
   const factory BookingRequest(
-    @JsonKey(name: "user_id")
     String userId,
-    @JsonKey(name: "additional_note")
     String additionalNote,
-    @JsonKey(name: "transfer_type")
     int transferType,
   ) = _BookingRequest;
 

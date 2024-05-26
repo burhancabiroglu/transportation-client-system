@@ -20,17 +20,11 @@ TransferDto _$TransferDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TransferDto {
-  @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'transfer_type')
   int get transferType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'additional_note')
   String get additionalNote => throw _privateConstructorUsedError;
-  @JsonKey(name: 'planned_at')
   String get plannedAt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'seat_count')
   int get seatCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status')
   int get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,12 +40,12 @@ abstract class $TransferDtoCopyWith<$Res> {
       _$TransferDtoCopyWithImpl<$Res, TransferDto>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String id,
-      @JsonKey(name: 'transfer_type') int transferType,
-      @JsonKey(name: 'additional_note') String additionalNote,
-      @JsonKey(name: 'planned_at') String plannedAt,
-      @JsonKey(name: 'seat_count') int seatCount,
-      @JsonKey(name: 'status') int status});
+      {String id,
+      int transferType,
+      String additionalNote,
+      String plannedAt,
+      int seatCount,
+      int status});
 }
 
 /// @nodoc
@@ -112,12 +106,12 @@ abstract class _$$TransferDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String id,
-      @JsonKey(name: 'transfer_type') int transferType,
-      @JsonKey(name: 'additional_note') String additionalNote,
-      @JsonKey(name: 'planned_at') String plannedAt,
-      @JsonKey(name: 'seat_count') int seatCount,
-      @JsonKey(name: 'status') int status});
+      {String id,
+      int transferType,
+      String additionalNote,
+      String plannedAt,
+      int seatCount,
+      int status});
 }
 
 /// @nodoc
@@ -170,34 +164,23 @@ class __$$TransferDtoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TransferDtoImpl implements _TransferDto {
-  const _$TransferDtoImpl(
-      @JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'transfer_type') this.transferType,
-      @JsonKey(name: 'additional_note') this.additionalNote,
-      @JsonKey(name: 'planned_at') this.plannedAt,
-      @JsonKey(name: 'seat_count') this.seatCount,
-      @JsonKey(name: 'status') this.status);
+  const _$TransferDtoImpl(this.id, this.transferType, this.additionalNote,
+      this.plannedAt, this.seatCount, this.status);
 
   factory _$TransferDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransferDtoImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
   final String id;
   @override
-  @JsonKey(name: 'transfer_type')
   final int transferType;
   @override
-  @JsonKey(name: 'additional_note')
   final String additionalNote;
   @override
-  @JsonKey(name: 'planned_at')
   final String plannedAt;
   @override
-  @JsonKey(name: 'seat_count')
   final int seatCount;
   @override
-  @JsonKey(name: 'status')
   final int status;
 
   @override
@@ -243,33 +226,27 @@ class _$TransferDtoImpl implements _TransferDto {
 
 abstract class _TransferDto implements TransferDto {
   const factory _TransferDto(
-      @JsonKey(name: 'id') final String id,
-      @JsonKey(name: 'transfer_type') final int transferType,
-      @JsonKey(name: 'additional_note') final String additionalNote,
-      @JsonKey(name: 'planned_at') final String plannedAt,
-      @JsonKey(name: 'seat_count') final int seatCount,
-      @JsonKey(name: 'status') final int status) = _$TransferDtoImpl;
+      final String id,
+      final int transferType,
+      final String additionalNote,
+      final String plannedAt,
+      final int seatCount,
+      final int status) = _$TransferDtoImpl;
 
   factory _TransferDto.fromJson(Map<String, dynamic> json) =
       _$TransferDtoImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
   String get id;
   @override
-  @JsonKey(name: 'transfer_type')
   int get transferType;
   @override
-  @JsonKey(name: 'additional_note')
   String get additionalNote;
   @override
-  @JsonKey(name: 'planned_at')
   String get plannedAt;
   @override
-  @JsonKey(name: 'seat_count')
   int get seatCount;
   @override
-  @JsonKey(name: 'status')
   int get status;
   @override
   @JsonKey(ignore: true)

@@ -8,6 +8,7 @@ import 'package:babiconsultancy/src/ui/screens/register/register_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/result/multi/multi_result_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/result/success_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/approve/transfer_approve_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,10 @@ Route mainRoutes(RouteSettings settings) {
 
     TransferRequestScreen.route => TransferRequestScreen(
       args: settings.args(TransferRequestScreen.argsKey),
+    ),
+
+    TransferApproveScreen.route => TransferApproveScreen(
+      args: settings.args(TransferApproveScreen.argsKey),
     ),
     _ => const SplashScreen()
   };

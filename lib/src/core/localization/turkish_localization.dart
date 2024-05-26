@@ -52,7 +52,7 @@ class TurkishLocalization extends CoreLocalization {
     "TransferRequest.Selected" : "Seçildi",
     "TransferRequest.UnSelectable" : "Seçilemez",
     "TransferRequest.Selectable" : "Seçilebilir",
-    "TransferRequest.Choose_Seat" : "Koltuk Seç",
+    "TransferRequest.ChooseSeat" : "Koltuk Seç",
     
     LocalizationKeys.Status_Accepted: "Kabul Edildi",
     LocalizationKeys.Status_Declined: "Reddedildi",

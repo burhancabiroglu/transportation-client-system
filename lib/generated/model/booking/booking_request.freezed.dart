@@ -20,11 +20,8 @@ BookingRequest _$BookingRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BookingRequest {
-  @JsonKey(name: "user_id")
   String get userId => throw _privateConstructorUsedError;
-  @JsonKey(name: "additional_note")
   String get additionalNote => throw _privateConstructorUsedError;
-  @JsonKey(name: "transfer_type")
   int get transferType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,10 +36,7 @@ abstract class $BookingRequestCopyWith<$Res> {
           BookingRequest value, $Res Function(BookingRequest) then) =
       _$BookingRequestCopyWithImpl<$Res, BookingRequest>;
   @useResult
-  $Res call(
-      {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "additional_note") String additionalNote,
-      @JsonKey(name: "transfer_type") int transferType});
+  $Res call({String userId, String additionalNote, int transferType});
 }
 
 /// @nodoc
@@ -87,10 +81,7 @@ abstract class _$$BookingRequestImplCopyWith<$Res>
       __$$BookingRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: "user_id") String userId,
-      @JsonKey(name: "additional_note") String additionalNote,
-      @JsonKey(name: "transfer_type") int transferType});
+  $Res call({String userId, String additionalNote, int transferType});
 }
 
 /// @nodoc
@@ -129,21 +120,16 @@ class __$$BookingRequestImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BookingRequestImpl implements _BookingRequest {
   const _$BookingRequestImpl(
-      @JsonKey(name: "user_id") this.userId,
-      @JsonKey(name: "additional_note") this.additionalNote,
-      @JsonKey(name: "transfer_type") this.transferType);
+      this.userId, this.additionalNote, this.transferType);
 
   factory _$BookingRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$BookingRequestImplFromJson(json);
 
   @override
-  @JsonKey(name: "user_id")
   final String userId;
   @override
-  @JsonKey(name: "additional_note")
   final String additionalNote;
   @override
-  @JsonKey(name: "transfer_type")
   final int transferType;
 
   @override
@@ -185,22 +171,18 @@ class _$BookingRequestImpl implements _BookingRequest {
 
 abstract class _BookingRequest implements BookingRequest {
   const factory _BookingRequest(
-          @JsonKey(name: "user_id") final String userId,
-          @JsonKey(name: "additional_note") final String additionalNote,
-          @JsonKey(name: "transfer_type") final int transferType) =
-      _$BookingRequestImpl;
+      final String userId,
+      final String additionalNote,
+      final int transferType) = _$BookingRequestImpl;
 
   factory _BookingRequest.fromJson(Map<String, dynamic> json) =
       _$BookingRequestImpl.fromJson;
 
   @override
-  @JsonKey(name: "user_id")
   String get userId;
   @override
-  @JsonKey(name: "additional_note")
   String get additionalNote;
   @override
-  @JsonKey(name: "transfer_type")
   int get transferType;
   @override
   @JsonKey(ignore: true)

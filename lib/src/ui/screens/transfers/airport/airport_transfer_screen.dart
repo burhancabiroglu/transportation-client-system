@@ -55,7 +55,7 @@ class AirportTransferScreen extends CoreStatelessWidget {
                         shadowColor: theme.colorScheme.container,
                         child: GridView.builder(
                           padding: EdgeInsets.only(bottom: WindowDefaults.verticalPadding * 2),
-                          itemCount: 6,
+                          itemCount: state.data.length,
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 4,
                             childAspectRatio: 1,

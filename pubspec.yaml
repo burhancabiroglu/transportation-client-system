@@ -14,12 +14,13 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   google_nav_bar: ^5.0.6
   font_awesome_flutter: ^10.7.0
-  flutter_form_builder: ^9.2.1
+  flutter_form_builder: ^9.3.0
   unicons: ^2.1.1
   flutter_bloc: ^8.1.4
-  webview_flutter: ^4.7.0
+  webview_flutter: ^4.8.0
   flutter_easyloading: ^3.0.5
-  firebase_core: ^2.31.0
+  firebase_core: ^2.31.1
+  firebase_messaging: ^14.9.3
   shared_preferences: ^2.2.2
   internet_connection_checker: ^1.0.0+1
   freezed: ^2.4.7

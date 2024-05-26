@@ -183,7 +183,7 @@ class _TransferApi implements TransferApi {
     )
             .compose(
               _dio.options,
-              '',
+              'query',
               queryParameters: queryParameters,
               data: _data,
             )
