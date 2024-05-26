@@ -5,7 +5,7 @@ abstract class TransferRequestState {
   const factory TransferRequestState.success({
     required String userId, 
     required String email, 
-    required int transferType, 
+    required String transferType, 
     required String date,
     required String fullname
   }) = TransferRequestStateSuccess;
@@ -27,7 +27,7 @@ class TransferRequestStateError extends TransferRequestState {
 class TransferRequestStateSuccess extends TransferRequestState {
     final String userId;
     final String email;
-    final int transferType;
+    final String transferType;
     final String date;
     final String fullname;
     const TransferRequestStateSuccess({

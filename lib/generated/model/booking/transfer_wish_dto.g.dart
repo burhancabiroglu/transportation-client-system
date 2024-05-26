@@ -12,7 +12,7 @@ _$TransferWishDtoImpl _$$TransferWishDtoImplFromJson(
       userId: json['userId'] as String,
       createdAt: json['createdAt'] as String,
       id: json['id'] as String,
-      transferType: (json['transferType'] as num).toInt(),
+      transferType: json['transferType'] as String,
       additionalNote: json['additionalNote'] as String,
       email: json['email'] as String,
       fullname: json['fullname'] as String,

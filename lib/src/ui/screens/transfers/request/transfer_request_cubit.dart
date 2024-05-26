@@ -39,7 +39,7 @@ class TransferRequestCubit extends Cubit<TransferRequestState> {
 
   TransferRequestStateSuccess get successState => state as TransferRequestStateSuccess;
 
-  void fetch(int typeId) {
+  void fetch(String typeId) {
     final auth = session.state as Authorized;
     final date = DateFormat.yMMMMd(localization.currentCode).format(DateTime.now());
     emit(TransferRequestState.success(

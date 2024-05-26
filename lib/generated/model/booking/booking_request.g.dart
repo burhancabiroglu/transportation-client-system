@@ -10,7 +10,7 @@ _$BookingRequestImpl _$$BookingRequestImplFromJson(Map<String, dynamic> json) =>
     _$BookingRequestImpl(
       json['userId'] as String,
       json['additionalNote'] as String,
-      (json['transferType'] as num).toInt(),
+      json['transferType'] as String,
     );
 
 Map<String, dynamic> _$$BookingRequestImplToJson(

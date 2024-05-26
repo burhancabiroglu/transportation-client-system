@@ -9,7 +9,7 @@ class TransferWishDto with _$TransferWishDto {
     required String userId,
     required String createdAt,
     required String id,
-    required int transferType,
+    required String transferType,
     required String additionalNote,
     required String email,
     required String fullname,

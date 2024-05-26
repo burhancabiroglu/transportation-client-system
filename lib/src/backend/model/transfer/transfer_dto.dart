@@ -7,11 +7,11 @@ part '../../../../generated/model/transfer/transfer_dto.g.dart';
 class TransferDto with _$TransferDto {
   const factory TransferDto(
     String id,
-    int transferType,
+    String transferType,
     String additionalNote,
     String plannedAt,
     int seatCount,
-    int status,
+    String transferStatus,
   ) = _TransferDto;
 
   factory TransferDto.fromJson(Map<String, dynamic> json) => _$TransferDtoFromJson(json);

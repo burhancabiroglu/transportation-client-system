@@ -8,12 +8,12 @@ class SeatReservation with _$SeatReservation {
   const factory SeatReservation({
     required String seatId,
     required String transferId,
-    required int status,
+    required String seatStatus,
     required String userId,
     required String fullname,
     required String email,
-    required int transferStatus,
-    required int transferType,
+    required String transferStatus,
+    required String transferType,
     required String plannedAt,
   }) = _SeatReservation;
 

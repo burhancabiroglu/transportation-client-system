@@ -1,5 +1,5 @@
 class TransferApproveArgs {
-  final int type;
+  final String type;
   final String seatId;
   final String plannedAt;
 

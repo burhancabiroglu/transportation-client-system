@@ -29,6 +29,8 @@ mixin _$User {
   bool get isAdmin => throw _privateConstructorUsedError;
   bool get emailVerified => throw _privateConstructorUsedError;
   bool get isBanned => throw _privateConstructorUsedError;
+  String? get fcmToken => throw _privateConstructorUsedError;
+  String? get apnsToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +51,9 @@ abstract class $UserCopyWith<$Res> {
       bool isApproved,
       bool isAdmin,
       bool emailVerified,
-      bool isBanned});
+      bool isBanned,
+      String? fcmToken,
+      String? apnsToken});
 }
 
 /// @nodoc
@@ -74,6 +78,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? isAdmin = null,
     Object? emailVerified = null,
     Object? isBanned = null,
+    Object? fcmToken = freezed,
+    Object? apnsToken = freezed,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -112,6 +118,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.isBanned
           : isBanned // ignore: cast_nullable_to_non_nullable
               as bool,
+      fcmToken: freezed == fcmToken
+          ? _value.fcmToken
+          : fcmToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      apnsToken: freezed == apnsToken
+          ? _value.apnsToken
+          : apnsToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -132,7 +146,9 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       bool isApproved,
       bool isAdmin,
       bool emailVerified,
-      bool isBanned});
+      bool isBanned,
+      String? fcmToken,
+      String? apnsToken});
 }
 
 /// @nodoc
@@ -154,6 +170,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? isAdmin = null,
     Object? emailVerified = null,
     Object? isBanned = null,
+    Object? fcmToken = freezed,
+    Object? apnsToken = freezed,
   }) {
     return _then(_$UserImpl(
       uid: null == uid
@@ -192,6 +210,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.isBanned
           : isBanned // ignore: cast_nullable_to_non_nullable
               as bool,
+      fcmToken: freezed == fcmToken
+          ? _value.fcmToken
+          : fcmToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      apnsToken: freezed == apnsToken
+          ? _value.apnsToken
+          : apnsToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -208,7 +234,9 @@ class _$UserImpl implements _User {
       required this.isApproved,
       required this.isAdmin,
       required this.emailVerified,
-      required this.isBanned});
+      required this.isBanned,
+      this.fcmToken,
+      this.apnsToken});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -231,10 +259,14 @@ class _$UserImpl implements _User {
   final bool emailVerified;
   @override
   final bool isBanned;
+  @override
+  final String? fcmToken;
+  @override
+  final String? apnsToken;
 
   @override
   String toString() {
-    return 'User(uid: $uid, name: $name, surname: $surname, email: $email, createdAt: $createdAt, isApproved: $isApproved, isAdmin: $isAdmin, emailVerified: $emailVerified, isBanned: $isBanned)';
+    return 'User(uid: $uid, name: $name, surname: $surname, email: $email, createdAt: $createdAt, isApproved: $isApproved, isAdmin: $isAdmin, emailVerified: $emailVerified, isBanned: $isBanned, fcmToken: $fcmToken, apnsToken: $apnsToken)';
   }
 
   @override
@@ -254,13 +286,28 @@ class _$UserImpl implements _User {
             (identical(other.emailVerified, emailVerified) ||
                 other.emailVerified == emailVerified) &&
             (identical(other.isBanned, isBanned) ||
-                other.isBanned == isBanned));
+                other.isBanned == isBanned) &&
+            (identical(other.fcmToken, fcmToken) ||
+                other.fcmToken == fcmToken) &&
+            (identical(other.apnsToken, apnsToken) ||
+                other.apnsToken == apnsToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, name, surname, email,
-      createdAt, isApproved, isAdmin, emailVerified, isBanned);
+  int get hashCode => Object.hash(
+      runtimeType,
+      uid,
+      name,
+      surname,
+      email,
+      createdAt,
+      isApproved,
+      isAdmin,
+      emailVerified,
+      isBanned,
+      fcmToken,
+      apnsToken);
 
   @JsonKey(ignore: true)
   @override
@@ -286,7 +333,9 @@ abstract class _User implements User {
       required final bool isApproved,
       required final bool isAdmin,
       required final bool emailVerified,
-      required final bool isBanned}) = _$UserImpl;
+      required final bool isBanned,
+      final String? fcmToken,
+      final String? apnsToken}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -308,6 +357,10 @@ abstract class _User implements User {
   bool get emailVerified;
   @override
   bool get isBanned;
+  @override
+  String? get fcmToken;
+  @override
+  String? get apnsToken;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

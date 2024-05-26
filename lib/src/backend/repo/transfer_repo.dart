@@ -9,11 +9,11 @@ abstract class TransferRepo {
   final TransferApi api;
   const TransferRepo({required this.api});
 
-	Future<AppResult<String>> updateSeat(String seatId, int status);
+	Future<AppResult<String>> updateSeat(String seatId, String status);
 	Future<AppResult<List<SeatDto>>> getSeatsByTransferId(String transferId);
-	Future<AppResult<List<TransferDto>>> getTransfersByType(int type);
-	Future<AppResult<List<TransferDto>>> getTransfersByStatus(int status);
-  Future<AppResult<List<TransferDto>>> getTransfersByQuery(int status, int type);
+	Future<AppResult<List<TransferDto>>> getTransfersByType(String type);
+	Future<AppResult<List<TransferDto>>> getTransfersByStatus(String status);
+  Future<AppResult<List<TransferDto>>> getTransfersByQuery(String status, String type);
   Future<AppResult<List<SeatReservation>>> getSeatReservations();
 }
 
@@ -26,22 +26,22 @@ class TransferRepoImpl extends TransferRepo {
   }
   
   @override
-  Future<AppResult<List<TransferDto>>> getTransfersByStatus(int status) {
+  Future<AppResult<List<TransferDto>>> getTransfersByStatus(String status) {
     return NetworkHandler.getSafeResult(() => api.getTransfersByStatus(status));
   }
   
   @override
-  Future<AppResult<List<TransferDto>>> getTransfersByType(int type) {
+  Future<AppResult<List<TransferDto>>> getTransfersByType(String type) {
     return NetworkHandler.getSafeResult(() => api.getTransfersByType(type));
   }
   
   @override
-  Future<AppResult<String>> updateSeat(String seatId, int status) {
+  Future<AppResult<String>> updateSeat(String seatId, String status) {
     return NetworkHandler.getSafeResult(() => api.updateSeat(seatId, status));
   }
   
   @override
-  Future<AppResult<List<TransferDto>>> getTransfersByQuery(int status, int type) {
+  Future<AppResult<List<TransferDto>>> getTransfersByQuery(String status, String type) {
     return NetworkHandler.getSafeResult(() => api.getTransfersByQuery(status, type));
   }
   

@@ -24,7 +24,7 @@ class _TransferApi implements TransferApi {
   @override
   Future<BaseResponse<String>> updateSeat(
     String seatId,
-    int status,
+    String status,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -93,7 +93,8 @@ class _TransferApi implements TransferApi {
   }
 
   @override
-  Future<BaseResponse<List<TransferDto>>> getTransfersByType(int type) async {
+  Future<BaseResponse<List<TransferDto>>> getTransfersByType(
+      String type) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -129,7 +130,7 @@ class _TransferApi implements TransferApi {
 
   @override
   Future<BaseResponse<List<TransferDto>>> getTransfersByStatus(
-      int status) async {
+      String status) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -165,13 +166,13 @@ class _TransferApi implements TransferApi {
 
   @override
   Future<BaseResponse<List<TransferDto>>> getTransfersByQuery(
-    int status,
-    int type,
+    String status,
+    String type,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'status': status,
-      r'type': type,
+      r'transferStatus': status,
+      r'transferType': type,
     };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

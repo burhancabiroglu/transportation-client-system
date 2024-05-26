@@ -47,7 +47,8 @@ class RegisterCubit extends Cubit<RegisterState> {
     final split = fullname.split(" ");
     final name = split[0];
     final surname = split.length > 1 ? split[1] : "";
-    repo.register(RegisterRequest(email, name, surname, password))
+    final request = RegisterRequest(email: email, name: name, surname: surname, password: password);
+    repo.register(request)
       .successListener((data) => routeToSuccess())
       .errorListener((error) => emit(RegisterState.error(message: error.message)))
       .completeListener((result) => EasyLoading.dismiss());

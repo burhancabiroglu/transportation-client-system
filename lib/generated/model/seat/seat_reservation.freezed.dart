@@ -22,12 +22,12 @@ SeatReservation _$SeatReservationFromJson(Map<String, dynamic> json) {
 mixin _$SeatReservation {
   String get seatId => throw _privateConstructorUsedError;
   String get transferId => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  String get seatStatus => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   String get fullname => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  int get transferStatus => throw _privateConstructorUsedError;
-  int get transferType => throw _privateConstructorUsedError;
+  String get transferStatus => throw _privateConstructorUsedError;
+  String get transferType => throw _privateConstructorUsedError;
   String get plannedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,12 +45,12 @@ abstract class $SeatReservationCopyWith<$Res> {
   $Res call(
       {String seatId,
       String transferId,
-      int status,
+      String seatStatus,
       String userId,
       String fullname,
       String email,
-      int transferStatus,
-      int transferType,
+      String transferStatus,
+      String transferType,
       String plannedAt});
 }
 
@@ -69,7 +69,7 @@ class _$SeatReservationCopyWithImpl<$Res, $Val extends SeatReservation>
   $Res call({
     Object? seatId = null,
     Object? transferId = null,
-    Object? status = null,
+    Object? seatStatus = null,
     Object? userId = null,
     Object? fullname = null,
     Object? email = null,
@@ -86,10 +86,10 @@ class _$SeatReservationCopyWithImpl<$Res, $Val extends SeatReservation>
           ? _value.transferId
           : transferId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
+      seatStatus: null == seatStatus
+          ? _value.seatStatus
+          : seatStatus // ignore: cast_nullable_to_non_nullable
+              as String,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -105,11 +105,11 @@ class _$SeatReservationCopyWithImpl<$Res, $Val extends SeatReservation>
       transferStatus: null == transferStatus
           ? _value.transferStatus
           : transferStatus // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       transferType: null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       plannedAt: null == plannedAt
           ? _value.plannedAt
           : plannedAt // ignore: cast_nullable_to_non_nullable
@@ -129,12 +129,12 @@ abstract class _$$SeatReservationImplCopyWith<$Res>
   $Res call(
       {String seatId,
       String transferId,
-      int status,
+      String seatStatus,
       String userId,
       String fullname,
       String email,
-      int transferStatus,
-      int transferType,
+      String transferStatus,
+      String transferType,
       String plannedAt});
 }
 
@@ -151,7 +151,7 @@ class __$$SeatReservationImplCopyWithImpl<$Res>
   $Res call({
     Object? seatId = null,
     Object? transferId = null,
-    Object? status = null,
+    Object? seatStatus = null,
     Object? userId = null,
     Object? fullname = null,
     Object? email = null,
@@ -168,10 +168,10 @@ class __$$SeatReservationImplCopyWithImpl<$Res>
           ? _value.transferId
           : transferId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
+      seatStatus: null == seatStatus
+          ? _value.seatStatus
+          : seatStatus // ignore: cast_nullable_to_non_nullable
+              as String,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -187,11 +187,11 @@ class __$$SeatReservationImplCopyWithImpl<$Res>
       transferStatus: null == transferStatus
           ? _value.transferStatus
           : transferStatus // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       transferType: null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       plannedAt: null == plannedAt
           ? _value.plannedAt
           : plannedAt // ignore: cast_nullable_to_non_nullable
@@ -206,7 +206,7 @@ class _$SeatReservationImpl implements _SeatReservation {
   const _$SeatReservationImpl(
       {required this.seatId,
       required this.transferId,
-      required this.status,
+      required this.seatStatus,
       required this.userId,
       required this.fullname,
       required this.email,
@@ -222,7 +222,7 @@ class _$SeatReservationImpl implements _SeatReservation {
   @override
   final String transferId;
   @override
-  final int status;
+  final String seatStatus;
   @override
   final String userId;
   @override
@@ -230,15 +230,15 @@ class _$SeatReservationImpl implements _SeatReservation {
   @override
   final String email;
   @override
-  final int transferStatus;
+  final String transferStatus;
   @override
-  final int transferType;
+  final String transferType;
   @override
   final String plannedAt;
 
   @override
   String toString() {
-    return 'SeatReservation(seatId: $seatId, transferId: $transferId, status: $status, userId: $userId, fullname: $fullname, email: $email, transferStatus: $transferStatus, transferType: $transferType, plannedAt: $plannedAt)';
+    return 'SeatReservation(seatId: $seatId, transferId: $transferId, seatStatus: $seatStatus, userId: $userId, fullname: $fullname, email: $email, transferStatus: $transferStatus, transferType: $transferType, plannedAt: $plannedAt)';
   }
 
   @override
@@ -249,7 +249,8 @@ class _$SeatReservationImpl implements _SeatReservation {
             (identical(other.seatId, seatId) || other.seatId == seatId) &&
             (identical(other.transferId, transferId) ||
                 other.transferId == transferId) &&
-            (identical(other.status, status) || other.status == status) &&
+            (identical(other.seatStatus, seatStatus) ||
+                other.seatStatus == seatStatus) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.fullname, fullname) ||
                 other.fullname == fullname) &&
@@ -264,7 +265,7 @@ class _$SeatReservationImpl implements _SeatReservation {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, seatId, transferId, status,
+  int get hashCode => Object.hash(runtimeType, seatId, transferId, seatStatus,
       userId, fullname, email, transferStatus, transferType, plannedAt);
 
   @JsonKey(ignore: true)
@@ -286,12 +287,12 @@ abstract class _SeatReservation implements SeatReservation {
   const factory _SeatReservation(
       {required final String seatId,
       required final String transferId,
-      required final int status,
+      required final String seatStatus,
       required final String userId,
       required final String fullname,
       required final String email,
-      required final int transferStatus,
-      required final int transferType,
+      required final String transferStatus,
+      required final String transferType,
       required final String plannedAt}) = _$SeatReservationImpl;
 
   factory _SeatReservation.fromJson(Map<String, dynamic> json) =
@@ -302,7 +303,7 @@ abstract class _SeatReservation implements SeatReservation {
   @override
   String get transferId;
   @override
-  int get status;
+  String get seatStatus;
   @override
   String get userId;
   @override
@@ -310,9 +311,9 @@ abstract class _SeatReservation implements SeatReservation {
   @override
   String get email;
   @override
-  int get transferStatus;
+  String get transferStatus;
   @override
-  int get transferType;
+  String get transferType;
   @override
   String get plannedAt;
   @override

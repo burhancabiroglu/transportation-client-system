@@ -3,6 +3,7 @@ import 'package:babiconsultancy/src/backend/model/login/login_response.dart';
 import 'package:babiconsultancy/src/backend/model/register/register_request.dart';
 import 'package:babiconsultancy/src/backend/model/response/base_response.dart';
 import 'package:babiconsultancy/src/backend/model/user/user.dart';
+import 'package:babiconsultancy/src/backend/model/user/user_fcm_dto.dart';
 import 'package:babiconsultancy/src/config/network_options.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
@@ -22,4 +23,7 @@ abstract class AuthApi {
 
   @GET("profile")
   Future<BaseResponse<User>> profile();
+
+  @PUT("fcm")
+  Future<BaseResponse<String>> updateCloudToken(@Body() UserFcmDto body);
 }

@@ -1,5 +1,5 @@
 class TransferRequestArgs {
-  final int transferTypeId;
+  final String transferTypeId;
 
   const TransferRequestArgs(this.transferTypeId);
 }

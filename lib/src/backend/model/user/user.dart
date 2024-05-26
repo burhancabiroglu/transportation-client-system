@@ -15,6 +15,8 @@ class User with _$User {
     required bool isAdmin,
     required bool emailVerified,
     required bool isBanned,
+    String? fcmToken,
+    String? apnsToken,
   }) = _User;
   
   factory User.fromJson(Map<String, dynamic> json) =>

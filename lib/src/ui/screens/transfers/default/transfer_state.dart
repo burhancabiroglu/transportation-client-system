@@ -23,7 +23,7 @@ class TransferSeatSelection  extends TransferState {
 
   bool get buttonState {
     for (var element in data.entries) { 
-      if(element.value.status == SeatBoxState.SELECTED.id) return true;
+      if(element.value.seatStatus == SeatBoxState.SELECTED.id) return true;
     }
     return false;
   }

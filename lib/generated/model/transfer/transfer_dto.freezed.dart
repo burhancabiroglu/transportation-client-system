@@ -21,11 +21,11 @@ TransferDto _$TransferDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TransferDto {
   String get id => throw _privateConstructorUsedError;
-  int get transferType => throw _privateConstructorUsedError;
+  String get transferType => throw _privateConstructorUsedError;
   String get additionalNote => throw _privateConstructorUsedError;
   String get plannedAt => throw _privateConstructorUsedError;
   int get seatCount => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  String get transferStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,11 +41,11 @@ abstract class $TransferDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      int transferType,
+      String transferType,
       String additionalNote,
       String plannedAt,
       int seatCount,
-      int status});
+      String transferStatus});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$TransferDtoCopyWithImpl<$Res, $Val extends TransferDto>
     Object? additionalNote = null,
     Object? plannedAt = null,
     Object? seatCount = null,
-    Object? status = null,
+    Object? transferStatus = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -76,7 +76,7 @@ class _$TransferDtoCopyWithImpl<$Res, $Val extends TransferDto>
       transferType: null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       additionalNote: null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
@@ -89,10 +89,10 @@ class _$TransferDtoCopyWithImpl<$Res, $Val extends TransferDto>
           ? _value.seatCount
           : seatCount // ignore: cast_nullable_to_non_nullable
               as int,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
+      transferStatus: null == transferStatus
+          ? _value.transferStatus
+          : transferStatus // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -107,11 +107,11 @@ abstract class _$$TransferDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      int transferType,
+      String transferType,
       String additionalNote,
       String plannedAt,
       int seatCount,
-      int status});
+      String transferStatus});
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ class __$$TransferDtoImplCopyWithImpl<$Res>
     Object? additionalNote = null,
     Object? plannedAt = null,
     Object? seatCount = null,
-    Object? status = null,
+    Object? transferStatus = null,
   }) {
     return _then(_$TransferDtoImpl(
       null == id
@@ -140,7 +140,7 @@ class __$$TransferDtoImplCopyWithImpl<$Res>
       null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
@@ -153,10 +153,10 @@ class __$$TransferDtoImplCopyWithImpl<$Res>
           ? _value.seatCount
           : seatCount // ignore: cast_nullable_to_non_nullable
               as int,
-      null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
+      null == transferStatus
+          ? _value.transferStatus
+          : transferStatus // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -165,7 +165,7 @@ class __$$TransferDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TransferDtoImpl implements _TransferDto {
   const _$TransferDtoImpl(this.id, this.transferType, this.additionalNote,
-      this.plannedAt, this.seatCount, this.status);
+      this.plannedAt, this.seatCount, this.transferStatus);
 
   factory _$TransferDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransferDtoImplFromJson(json);
@@ -173,7 +173,7 @@ class _$TransferDtoImpl implements _TransferDto {
   @override
   final String id;
   @override
-  final int transferType;
+  final String transferType;
   @override
   final String additionalNote;
   @override
@@ -181,11 +181,11 @@ class _$TransferDtoImpl implements _TransferDto {
   @override
   final int seatCount;
   @override
-  final int status;
+  final String transferStatus;
 
   @override
   String toString() {
-    return 'TransferDto(id: $id, transferType: $transferType, additionalNote: $additionalNote, plannedAt: $plannedAt, seatCount: $seatCount, status: $status)';
+    return 'TransferDto(id: $id, transferType: $transferType, additionalNote: $additionalNote, plannedAt: $plannedAt, seatCount: $seatCount, transferStatus: $transferStatus)';
   }
 
   @override
@@ -202,13 +202,14 @@ class _$TransferDtoImpl implements _TransferDto {
                 other.plannedAt == plannedAt) &&
             (identical(other.seatCount, seatCount) ||
                 other.seatCount == seatCount) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.transferStatus, transferStatus) ||
+                other.transferStatus == transferStatus));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, transferType, additionalNote,
-      plannedAt, seatCount, status);
+      plannedAt, seatCount, transferStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -227,11 +228,11 @@ class _$TransferDtoImpl implements _TransferDto {
 abstract class _TransferDto implements TransferDto {
   const factory _TransferDto(
       final String id,
-      final int transferType,
+      final String transferType,
       final String additionalNote,
       final String plannedAt,
       final int seatCount,
-      final int status) = _$TransferDtoImpl;
+      final String transferStatus) = _$TransferDtoImpl;
 
   factory _TransferDto.fromJson(Map<String, dynamic> json) =
       _$TransferDtoImpl.fromJson;
@@ -239,7 +240,7 @@ abstract class _TransferDto implements TransferDto {
   @override
   String get id;
   @override
-  int get transferType;
+  String get transferType;
   @override
   String get additionalNote;
   @override
@@ -247,7 +248,7 @@ abstract class _TransferDto implements TransferDto {
   @override
   int get seatCount;
   @override
-  int get status;
+  String get transferStatus;
   @override
   @JsonKey(ignore: true)
   _$$TransferDtoImplCopyWith<_$TransferDtoImpl> get copyWith =>

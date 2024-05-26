@@ -9,7 +9,7 @@ class SeatDto with _$SeatDto {
   const factory SeatDto({
     required String seatId,
     required String transferId,
-    required int status,
+    required String seatStatus,
     String? userId,
     String? fullname,
     String? email,

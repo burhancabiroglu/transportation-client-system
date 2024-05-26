@@ -48,12 +48,12 @@ class TransferCubit extends Cubit<TransferState> {
     SeatDto otherState
   ) {
     final currentState =  state as TransferSeatSelection;
-    if(otherState.status == SeatBoxState.OCCUPIED.id) return;
+    if(otherState.seatStatus == SeatBoxState.OCCUPIED.id) return;
       final Map<int, SeatDto> data = Map.from(currentState.data);
       data[index] = otherState;
       if(currentState.previousSelected != null) {
         final prev = data[currentState.previousSelected!]!;
-        data[currentState.previousSelected!] = prev.copyWith(status: SeatBoxState.AVAILABLE.id);
+        data[currentState.previousSelected!] = prev.copyWith(seatStatus: SeatBoxState.AVAILABLE.id);
       }
       emit(TransferSeatSelection(data: data, previousSelected: index));
   }

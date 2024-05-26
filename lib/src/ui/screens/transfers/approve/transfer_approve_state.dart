@@ -5,7 +5,7 @@ abstract class TransferApproveState {
   const factory TransferApproveState.success({
     required String userId, 
     required String email, 
-    required int transferType, 
+    required String transferType, 
     required String date,
     required String fullname,
     required String seatId,
@@ -29,7 +29,7 @@ class TransferApproveStateError extends TransferApproveState {
 class TransferApproveStateSuccess extends TransferApproveState {
     final String userId;
     final String email;
-    final int transferType;
+    final String transferType;
     final String date;
     final String fullname;
     final String seatId;

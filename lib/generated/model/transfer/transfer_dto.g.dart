@@ -9,11 +9,11 @@ part of '../../../src/backend/model/transfer/transfer_dto.dart';
 _$TransferDtoImpl _$$TransferDtoImplFromJson(Map<String, dynamic> json) =>
     _$TransferDtoImpl(
       json['id'] as String,
-      (json['transferType'] as num).toInt(),
+      json['transferType'] as String,
       json['additionalNote'] as String,
       json['plannedAt'] as String,
       (json['seatCount'] as num).toInt(),
-      (json['status'] as num).toInt(),
+      json['transferStatus'] as String,
     );
 
 Map<String, dynamic> _$$TransferDtoImplToJson(_$TransferDtoImpl instance) =>
@@ -23,5 +23,5 @@ Map<String, dynamic> _$$TransferDtoImplToJson(_$TransferDtoImpl instance) =>
       'additionalNote': instance.additionalNote,
       'plannedAt': instance.plannedAt,
       'seatCount': instance.seatCount,
-      'status': instance.status,
+      'transferStatus': instance.transferStatus,
     };

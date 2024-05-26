@@ -24,6 +24,8 @@ mixin _$RegisterRequest {
   String get name => throw _privateConstructorUsedError;
   String get surname => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+  String? get fcmToken => throw _privateConstructorUsedError;
+  String? get apnsToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +39,13 @@ abstract class $RegisterRequestCopyWith<$Res> {
           RegisterRequest value, $Res Function(RegisterRequest) then) =
       _$RegisterRequestCopyWithImpl<$Res, RegisterRequest>;
   @useResult
-  $Res call({String email, String name, String surname, String password});
+  $Res call(
+      {String email,
+      String name,
+      String surname,
+      String password,
+      String? fcmToken,
+      String? apnsToken});
 }
 
 /// @nodoc
@@ -57,6 +65,8 @@ class _$RegisterRequestCopyWithImpl<$Res, $Val extends RegisterRequest>
     Object? name = null,
     Object? surname = null,
     Object? password = null,
+    Object? fcmToken = freezed,
+    Object? apnsToken = freezed,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -75,6 +85,14 @@ class _$RegisterRequestCopyWithImpl<$Res, $Val extends RegisterRequest>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      fcmToken: freezed == fcmToken
+          ? _value.fcmToken
+          : fcmToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      apnsToken: freezed == apnsToken
+          ? _value.apnsToken
+          : apnsToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -87,7 +105,13 @@ abstract class _$$RegisterRequestImplCopyWith<$Res>
       __$$RegisterRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String name, String surname, String password});
+  $Res call(
+      {String email,
+      String name,
+      String surname,
+      String password,
+      String? fcmToken,
+      String? apnsToken});
 }
 
 /// @nodoc
@@ -105,24 +129,34 @@ class __$$RegisterRequestImplCopyWithImpl<$Res>
     Object? name = null,
     Object? surname = null,
     Object? password = null,
+    Object? fcmToken = freezed,
+    Object? apnsToken = freezed,
   }) {
     return _then(_$RegisterRequestImpl(
-      null == email
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      null == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      null == surname
+      surname: null == surname
           ? _value.surname
           : surname // ignore: cast_nullable_to_non_nullable
               as String,
-      null == password
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      fcmToken: freezed == fcmToken
+          ? _value.fcmToken
+          : fcmToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      apnsToken: freezed == apnsToken
+          ? _value.apnsToken
+          : apnsToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -131,7 +165,12 @@ class __$$RegisterRequestImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RegisterRequestImpl implements _RegisterRequest {
   const _$RegisterRequestImpl(
-      this.email, this.name, this.surname, this.password);
+      {required this.email,
+      required this.name,
+      required this.surname,
+      required this.password,
+      this.fcmToken,
+      this.apnsToken});
 
   factory _$RegisterRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$RegisterRequestImplFromJson(json);
@@ -144,10 +183,14 @@ class _$RegisterRequestImpl implements _RegisterRequest {
   final String surname;
   @override
   final String password;
+  @override
+  final String? fcmToken;
+  @override
+  final String? apnsToken;
 
   @override
   String toString() {
-    return 'RegisterRequest(email: $email, name: $name, surname: $surname, password: $password)';
+    return 'RegisterRequest(email: $email, name: $name, surname: $surname, password: $password, fcmToken: $fcmToken, apnsToken: $apnsToken)';
   }
 
   @override
@@ -159,12 +202,17 @@ class _$RegisterRequestImpl implements _RegisterRequest {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.surname, surname) || other.surname == surname) &&
             (identical(other.password, password) ||
-                other.password == password));
+                other.password == password) &&
+            (identical(other.fcmToken, fcmToken) ||
+                other.fcmToken == fcmToken) &&
+            (identical(other.apnsToken, apnsToken) ||
+                other.apnsToken == apnsToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, email, name, surname, password);
+  int get hashCode => Object.hash(
+      runtimeType, email, name, surname, password, fcmToken, apnsToken);
 
   @JsonKey(ignore: true)
   @override
@@ -182,8 +230,13 @@ class _$RegisterRequestImpl implements _RegisterRequest {
 }
 
 abstract class _RegisterRequest implements RegisterRequest {
-  const factory _RegisterRequest(final String email, final String name,
-      final String surname, final String password) = _$RegisterRequestImpl;
+  const factory _RegisterRequest(
+      {required final String email,
+      required final String name,
+      required final String surname,
+      required final String password,
+      final String? fcmToken,
+      final String? apnsToken}) = _$RegisterRequestImpl;
 
   factory _RegisterRequest.fromJson(Map<String, dynamic> json) =
       _$RegisterRequestImpl.fromJson;
@@ -196,6 +249,10 @@ abstract class _RegisterRequest implements RegisterRequest {
   String get surname;
   @override
   String get password;
+  @override
+  String? get fcmToken;
+  @override
+  String? get apnsToken;
   @override
   @JsonKey(ignore: true)
   _$$RegisterRequestImplCopyWith<_$RegisterRequestImpl> get copyWith =>

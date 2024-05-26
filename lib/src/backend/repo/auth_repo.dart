@@ -5,6 +5,7 @@ import 'package:babiconsultancy/src/backend/model/login/login_request.dart';
 import 'package:babiconsultancy/src/backend/model/login/login_response.dart';
 import 'package:babiconsultancy/src/backend/model/register/register_request.dart';
 import 'package:babiconsultancy/src/backend/model/user/user.dart';
+import 'package:babiconsultancy/src/backend/model/user/user_fcm_dto.dart';
 
 abstract class AuthRepo {
   final AuthApi api;
@@ -14,6 +15,7 @@ abstract class AuthRepo {
   Future<AppResult<LoginResponse>> login(LoginRequest body);
   Future<AppResult<String>> register(RegisterRequest body);
   Future<AppResult<User>> profile();
+  Future<AppResult<String>> updateCloudToken(UserFcmDto body);
 }
 
 class AuthRepoImpl extends AuthRepo {
@@ -32,5 +34,10 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<AppResult<String>> register(RegisterRequest body) {
     return NetworkHandler.getSafeResult(() => api.register(body));
+  }
+  
+  @override
+  Future<AppResult<String>> updateCloudToken(UserFcmDto body) {
+    return NetworkHandler.getSafeResult(() => api.updateCloudToken(body));
   }
 }

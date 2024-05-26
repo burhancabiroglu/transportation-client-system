@@ -16,20 +16,20 @@ class SeatBox extends CoreStatelessWidget {
     this.onStateChange,
   });
   SeatBoxState onTap() {
-    final SeatBoxState state = SeatBoxState.get(dto.status);
+    final SeatBoxState state = SeatBoxState.get(dto.seatStatus);
     final newState = switch(state) {
       SeatBoxState.SELECTED => SeatBoxState.AVAILABLE,
       SeatBoxState.OCCUPIED => SeatBoxState.OCCUPIED,
       SeatBoxState.AVAILABLE => SeatBoxState.SELECTED,
     };
     logger.e((newState));
-    onStateChange?.call(index,dto.copyWith(status: newState.id));
+    onStateChange?.call(index,dto.copyWith(seatStatus: newState.id));
     return newState;
   }
 
   @override
   Widget build(BuildContext context) {
-    final SeatBoxState state = SeatBoxState.get(dto.status);
+    final SeatBoxState state = SeatBoxState.get(dto.seatStatus);
     return InkWell(
       onTap: onTap,
       child: Stack(

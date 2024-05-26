@@ -11,12 +11,12 @@ _$SeatReservationImpl _$$SeatReservationImplFromJson(
     _$SeatReservationImpl(
       seatId: json['seatId'] as String,
       transferId: json['transferId'] as String,
-      status: (json['status'] as num).toInt(),
+      seatStatus: json['seatStatus'] as String,
       userId: json['userId'] as String,
       fullname: json['fullname'] as String,
       email: json['email'] as String,
-      transferStatus: (json['transferStatus'] as num).toInt(),
-      transferType: (json['transferType'] as num).toInt(),
+      transferStatus: json['transferStatus'] as String,
+      transferType: json['transferType'] as String,
       plannedAt: json['plannedAt'] as String,
     );
 
@@ -25,7 +25,7 @@ Map<String, dynamic> _$$SeatReservationImplToJson(
     <String, dynamic>{
       'seatId': instance.seatId,
       'transferId': instance.transferId,
-      'status': instance.status,
+      'seatStatus': instance.seatStatus,
       'userId': instance.userId,
       'fullname': instance.fullname,
       'email': instance.email,

@@ -22,7 +22,7 @@ BookingRequest _$BookingRequestFromJson(Map<String, dynamic> json) {
 mixin _$BookingRequest {
   String get userId => throw _privateConstructorUsedError;
   String get additionalNote => throw _privateConstructorUsedError;
-  int get transferType => throw _privateConstructorUsedError;
+  String get transferType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $BookingRequestCopyWith<$Res> {
           BookingRequest value, $Res Function(BookingRequest) then) =
       _$BookingRequestCopyWithImpl<$Res, BookingRequest>;
   @useResult
-  $Res call({String userId, String additionalNote, int transferType});
+  $Res call({String userId, String additionalNote, String transferType});
 }
 
 /// @nodoc
@@ -68,7 +68,7 @@ class _$BookingRequestCopyWithImpl<$Res, $Val extends BookingRequest>
       transferType: null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$BookingRequestImplCopyWith<$Res>
       __$$BookingRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId, String additionalNote, int transferType});
+  $Res call({String userId, String additionalNote, String transferType});
 }
 
 /// @nodoc
@@ -111,7 +111,7 @@ class __$$BookingRequestImplCopyWithImpl<$Res>
       null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -130,7 +130,7 @@ class _$BookingRequestImpl implements _BookingRequest {
   @override
   final String additionalNote;
   @override
-  final int transferType;
+  final String transferType;
 
   @override
   String toString() {
@@ -173,7 +173,7 @@ abstract class _BookingRequest implements BookingRequest {
   const factory _BookingRequest(
       final String userId,
       final String additionalNote,
-      final int transferType) = _$BookingRequestImpl;
+      final String transferType) = _$BookingRequestImpl;
 
   factory _BookingRequest.fromJson(Map<String, dynamic> json) =
       _$BookingRequestImpl.fromJson;
@@ -183,7 +183,7 @@ abstract class _BookingRequest implements BookingRequest {
   @override
   String get additionalNote;
   @override
-  int get transferType;
+  String get transferType;
   @override
   @JsonKey(ignore: true)
   _$$BookingRequestImplCopyWith<_$BookingRequestImpl> get copyWith =>

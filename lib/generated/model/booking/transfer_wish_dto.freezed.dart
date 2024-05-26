@@ -23,7 +23,7 @@ mixin _$TransferWishDto {
   String get userId => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  int get transferType => throw _privateConstructorUsedError;
+  String get transferType => throw _privateConstructorUsedError;
   String get additionalNote => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get fullname => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $TransferWishDtoCopyWith<$Res> {
       {String userId,
       String createdAt,
       String id,
-      int transferType,
+      String transferType,
       String additionalNote,
       String email,
       String fullname});
@@ -87,7 +87,7 @@ class _$TransferWishDtoCopyWithImpl<$Res, $Val extends TransferWishDto>
       transferType: null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       additionalNote: null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
@@ -116,7 +116,7 @@ abstract class _$$TransferWishDtoImplCopyWith<$Res>
       {String userId,
       String createdAt,
       String id,
-      int transferType,
+      String transferType,
       String additionalNote,
       String email,
       String fullname});
@@ -157,7 +157,7 @@ class __$$TransferWishDtoImplCopyWithImpl<$Res>
       transferType: null == transferType
           ? _value.transferType
           : transferType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       additionalNote: null == additionalNote
           ? _value.additionalNote
           : additionalNote // ignore: cast_nullable_to_non_nullable
@@ -196,7 +196,7 @@ class _$TransferWishDtoImpl implements _TransferWishDto {
   @override
   final String id;
   @override
-  final int transferType;
+  final String transferType;
   @override
   final String additionalNote;
   @override
@@ -252,7 +252,7 @@ abstract class _TransferWishDto implements TransferWishDto {
       {required final String userId,
       required final String createdAt,
       required final String id,
-      required final int transferType,
+      required final String transferType,
       required final String additionalNote,
       required final String email,
       required final String fullname}) = _$TransferWishDtoImpl;
@@ -267,7 +267,7 @@ abstract class _TransferWishDto implements TransferWishDto {
   @override
   String get id;
   @override
-  int get transferType;
+  String get transferType;
   @override
   String get additionalNote;
   @override

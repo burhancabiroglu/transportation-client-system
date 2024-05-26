@@ -22,7 +22,7 @@ SeatDto _$SeatDtoFromJson(Map<String, dynamic> json) {
 mixin _$SeatDto {
   String get seatId => throw _privateConstructorUsedError;
   String get transferId => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  String get seatStatus => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   String? get fullname => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $SeatDtoCopyWith<$Res> {
   $Res call(
       {String seatId,
       String transferId,
-      int status,
+      String seatStatus,
       String? userId,
       String? fullname,
       String? email,
@@ -63,7 +63,7 @@ class _$SeatDtoCopyWithImpl<$Res, $Val extends SeatDto>
   $Res call({
     Object? seatId = null,
     Object? transferId = null,
-    Object? status = null,
+    Object? seatStatus = null,
     Object? userId = freezed,
     Object? fullname = freezed,
     Object? email = freezed,
@@ -78,10 +78,10 @@ class _$SeatDtoCopyWithImpl<$Res, $Val extends SeatDto>
           ? _value.transferId
           : transferId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
+      seatStatus: null == seatStatus
+          ? _value.seatStatus
+          : seatStatus // ignore: cast_nullable_to_non_nullable
+              as String,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -112,7 +112,7 @@ abstract class _$$SeatDtoImplCopyWith<$Res> implements $SeatDtoCopyWith<$Res> {
   $Res call(
       {String seatId,
       String transferId,
-      int status,
+      String seatStatus,
       String? userId,
       String? fullname,
       String? email,
@@ -132,7 +132,7 @@ class __$$SeatDtoImplCopyWithImpl<$Res>
   $Res call({
     Object? seatId = null,
     Object? transferId = null,
-    Object? status = null,
+    Object? seatStatus = null,
     Object? userId = freezed,
     Object? fullname = freezed,
     Object? email = freezed,
@@ -147,10 +147,10 @@ class __$$SeatDtoImplCopyWithImpl<$Res>
           ? _value.transferId
           : transferId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
+      seatStatus: null == seatStatus
+          ? _value.seatStatus
+          : seatStatus // ignore: cast_nullable_to_non_nullable
+              as String,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -177,7 +177,7 @@ class _$SeatDtoImpl implements _SeatDto {
   const _$SeatDtoImpl(
       {required this.seatId,
       required this.transferId,
-      required this.status,
+      required this.seatStatus,
       this.userId,
       this.fullname,
       this.email,
@@ -191,7 +191,7 @@ class _$SeatDtoImpl implements _SeatDto {
   @override
   final String transferId;
   @override
-  final int status;
+  final String seatStatus;
   @override
   final String? userId;
   @override
@@ -203,7 +203,7 @@ class _$SeatDtoImpl implements _SeatDto {
 
   @override
   String toString() {
-    return 'SeatDto(seatId: $seatId, transferId: $transferId, status: $status, userId: $userId, fullname: $fullname, email: $email, informationGiven: $informationGiven)';
+    return 'SeatDto(seatId: $seatId, transferId: $transferId, seatStatus: $seatStatus, userId: $userId, fullname: $fullname, email: $email, informationGiven: $informationGiven)';
   }
 
   @override
@@ -214,7 +214,8 @@ class _$SeatDtoImpl implements _SeatDto {
             (identical(other.seatId, seatId) || other.seatId == seatId) &&
             (identical(other.transferId, transferId) ||
                 other.transferId == transferId) &&
-            (identical(other.status, status) || other.status == status) &&
+            (identical(other.seatStatus, seatStatus) ||
+                other.seatStatus == seatStatus) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.fullname, fullname) ||
                 other.fullname == fullname) &&
@@ -225,7 +226,7 @@ class _$SeatDtoImpl implements _SeatDto {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, seatId, transferId, status,
+  int get hashCode => Object.hash(runtimeType, seatId, transferId, seatStatus,
       userId, fullname, email, informationGiven);
 
   @JsonKey(ignore: true)
@@ -246,7 +247,7 @@ abstract class _SeatDto implements SeatDto {
   const factory _SeatDto(
       {required final String seatId,
       required final String transferId,
-      required final int status,
+      required final String seatStatus,
       final String? userId,
       final String? fullname,
       final String? email,
@@ -259,7 +260,7 @@ abstract class _SeatDto implements SeatDto {
   @override
   String get transferId;
   @override
-  int get status;
+  String get seatStatus;
   @override
   String? get userId;
   @override

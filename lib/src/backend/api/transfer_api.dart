@@ -13,20 +13,20 @@ abstract class TransferApi {
   factory TransferApi(Dio dio, {String baseUrl}) = _TransferApi;
 
 	@PUT("updateSeat")
-	Future<BaseResponse<String>> updateSeat(@Query("seatId") String seatId, @Query("status") int status);
+	Future<BaseResponse<String>> updateSeat(@Query("seatId") String seatId, @Query("status") String status);
 
 	@GET("seats/{id}")
 	Future<BaseResponse<List<SeatDto>>> getSeatsByTransferId(@Path("id") String transferId);
 
 
 	@GET("type/{type}")
-	Future<BaseResponse<List<TransferDto>>> getTransfersByType(@Path("type") int type);
+	Future<BaseResponse<List<TransferDto>>> getTransfersByType(@Path("type") String type);
 
 	@GET("status/:status")
-	Future<BaseResponse<List<TransferDto>>> getTransfersByStatus(@Path("status") int status);
+	Future<BaseResponse<List<TransferDto>>> getTransfersByStatus(@Path("status") String status);
 
 	@GET("query")
-  Future<BaseResponse<List<TransferDto>>> getTransfersByQuery(@Query("status") int status, @Query("type") int type);
+  Future<BaseResponse<List<TransferDto>>> getTransfersByQuery(@Query("transferStatus") String status, @Query("transferType") String type);
 
   @GET("reservation")
   Future<BaseResponse<List<SeatReservation>>> getSeatReservations();

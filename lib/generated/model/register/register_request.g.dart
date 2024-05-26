@@ -9,10 +9,12 @@ part of '../../../src/backend/model/register/register_request.dart';
 _$RegisterRequestImpl _$$RegisterRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$RegisterRequestImpl(
-      json['email'] as String,
-      json['name'] as String,
-      json['surname'] as String,
-      json['password'] as String,
+      email: json['email'] as String,
+      name: json['name'] as String,
+      surname: json['surname'] as String,
+      password: json['password'] as String,
+      fcmToken: json['fcmToken'] as String?,
+      apnsToken: json['apnsToken'] as String?,
     );
 
 Map<String, dynamic> _$$RegisterRequestImplToJson(
@@ -22,4 +24,6 @@ Map<String, dynamic> _$$RegisterRequestImplToJson(
       'name': instance.name,
       'surname': instance.surname,
       'password': instance.password,
+      'fcmToken': instance.fcmToken,
+      'apnsToken': instance.apnsToken,
     };

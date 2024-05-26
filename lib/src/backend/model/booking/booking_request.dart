@@ -9,7 +9,7 @@ class BookingRequest with _$BookingRequest {
   const factory BookingRequest(
     String userId,
     String additionalNote,
-    int transferType,
+    String transferType,
   ) = _BookingRequest;
 
   factory BookingRequest.fromJson(Map<String, dynamic> json) =>

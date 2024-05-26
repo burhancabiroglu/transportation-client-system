@@ -67,7 +67,7 @@ class TransferApproveScreen extends CoreStatelessWidget {
                       ImmutableTextField(
                         data: ImmutableTextFieldData(
                           label: localization.of(LocalizationKeys.TransferType_Label),
-                          text: localization.of(TransferType.get(args?.type??2).key)
+                          text: localization.of(TransferType.get(args?.type??"2").key)
                         ),
                       ),
                       SizedBox(height: 16.h),
