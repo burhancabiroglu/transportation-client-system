@@ -10,9 +10,9 @@ import 'package:babiconsultancy/src/ui/screens/main/main_nav_bloc.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/register/register_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/airport/airport_transfer_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/approve/transfer_approve_cubit.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_cubit.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/nodes/airport_transfer_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/nodes/default_transfer_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/request/transfer_request_cubit.dart';
 import 'package:babiconsultancy/src/ui/widgets/book_request/transfer_request_cubit.dart';
 import 'package:babiconsultancy/src/ui/widgets/ticket/transfer_box_cubit.dart';
@@ -59,8 +59,8 @@ class BabiConsultancyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => MainNavCubit()),
         BlocProvider(create: (_) => HomeCubit()),
-        BlocProvider(create: (_) => TransferCubit(repo: injector())),
-        BlocProvider(create: (_) => AirportTransferCubit(repo: injector())),
+        BlocProvider(create: (_) => DefaultTransferCubit(repo: injector(), session: injector())),
+        BlocProvider(create: (_) => AirportTransferCubit(repo: injector(), session: injector())),
         BlocProvider(create: (_) => TransferBoxCubit(repo: injector())),
         BlocProvider(create: (_) => TransferRequestBoxCubit(repo: injector())),
         BlocProvider(create: (_) => TransferRequestCubit(repo: injector(), session: injector())),

@@ -30,4 +30,7 @@ abstract class TransferApi {
 
   @GET("reservation")
   Future<BaseResponse<List<SeatReservation>>> getSeatReservations();
+
+  @GET("reserveSeat")
+	Future<BaseResponse<String>> reserveSeat(@Query("seatId") String seatId);
 }

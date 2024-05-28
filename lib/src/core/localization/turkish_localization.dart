@@ -37,6 +37,7 @@ class TurkishLocalization extends CoreLocalization {
     "TransferRequest.AdditionalNote": "İletmek istediğiniz ek not: ", 
     "TransferRequest.Button" : "Transfer Talep Et",
     "Transfer.NotFound": "Transfer Bulunamad\u0131",
+    "Transfer.AlreadyFound": "Transfer rezervasyonunuz mevcut. Rezervasyon detaylar\u0131n\u0131z\u0131 kontrol etmek veya herhangi bir değişiklik yapmak için lütfen bizimle iletişime geçin.",
     "More": "Daha fazla",
 
     "Profile.Title": "Profilim",

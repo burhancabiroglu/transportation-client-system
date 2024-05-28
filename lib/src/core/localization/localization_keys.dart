@@ -57,6 +57,7 @@ class LocalizationKeys {
   // TRANSFER SCREEN
   static const String Transfer_Title = "Transfer.Title";
   static const String Transfer_Not_Found = "Transfer.NotFound";
+  static const String Transfer_Already_Found = "Transfer.AlreadyFound";
 
 
   // AIRPORT TRANSFER SCREEN

@@ -1,4 +1,3 @@
-import 'package:babiconsultancy/main.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_dto.dart';
 import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/backend/model/seat/seat_box_state.dart';
@@ -22,7 +21,6 @@ class SeatBox extends CoreStatelessWidget {
       SeatBoxState.OCCUPIED => SeatBoxState.OCCUPIED,
       SeatBoxState.AVAILABLE => SeatBoxState.SELECTED,
     };
-    logger.e((newState));
     onStateChange?.call(index,dto.copyWith(seatStatus: newState.id));
     return newState;
   }

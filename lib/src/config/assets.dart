@@ -11,6 +11,7 @@ abstract class Assets {
 
   
   static const String result_not_found = "assets/images/vectors/result_not_found.svg";
+  static const String smile_seat = "assets/images/vectors/smile_seat.svg";
   static const String seat = "assets/images/vectors/seat.svg";
   static const String seat_disabled = "assets/images/vectors/seat_disabled.svg";
   static const String seat_selected = "assets/images/vectors/seat_selected.svg";

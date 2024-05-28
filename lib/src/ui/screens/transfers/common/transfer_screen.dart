@@ -2,10 +2,11 @@ import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_cubit.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_state.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/common/transfer_cubit.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/common/transfer_state.dart';
 import 'package:babiconsultancy/src/ui/screens/transfers/result/transfer_not_found.dart';
 import 'package:babiconsultancy/src/ui/widgets/buttons/primary.dart';
+import 'package:babiconsultancy/src/ui/widgets/dialogs/alert_dialog.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/shadow_overlay.dart';
 import 'package:babiconsultancy/src/ui/widgets/seat/seat_box.dart';
 import 'package:babiconsultancy/src/ui/widgets/tool/toolset.dart';
@@ -14,20 +15,24 @@ import 'package:babiconsultancy/src/ui/widgets/layouts/rounded_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TransferScreen extends CoreStatelessWidget {
-  static const route = "/main/transfers";
+abstract class TransferScreen<TCubit extends TransferCubit> extends CoreStatelessWidget {
 
   const TransferScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final cubit = BlocProvider.of<TransferCubit>(context);
+    final cubit = BlocProvider.of<TCubit>(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.darken,
       appBar: CoreAppBar(title: Text(localization.of(localization.of(cubit.transferType.title)))),
       body: RoundedBody(
-        child: BlocBuilder<TransferCubit,TransferState>(
+        child: BlocConsumer<TCubit,TransferState>(
           bloc: cubit,
+          listener:(context, state) {
+            if(state is TransferSeatSelection && state.alreadyFound){
+              alertDialog(title: localization.of(LocalizationKeys.Transfer_Already_Found));
+            }
+          },
           builder: (context,state) {
             if(state is TransferStateEmpty){
                return TransferNotFoundView(type: cubit.transferType);
@@ -43,7 +48,7 @@ class TransferScreen extends CoreStatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      LocalizationKeys.lorem,
+                      state.transfer?.additionalNote ?? "",
                       style: theme.textStyle.footnote02,
                     ),
                     const SeatToolsetWidget(),
@@ -74,7 +79,7 @@ class TransferScreen extends CoreStatelessWidget {
                       ),
                     ),
                     PrimaryButton(
-                      isEnabled: state.buttonState,
+                      isEnabled: state.buttonState && !state.alreadyFound,
                       text: localization.of(LocalizationKeys.Transfer_Request_Choose_Seat),
                       onClick: cubit.navigateToApprove
                     )

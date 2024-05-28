@@ -3,7 +3,7 @@ import 'package:babiconsultancy/src/core/base/core_stateless_widget.dart';
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/core/window/window_extension.dart';
 import 'package:babiconsultancy/src/core/window/window_guide.dart';
-import 'package:babiconsultancy/src/ui/dialogs/bottom_sheet_dialog.dart';
+import 'package:babiconsultancy/src/ui/widgets/dialogs/bottom_sheet_dialog.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_cubit.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_state.dart';

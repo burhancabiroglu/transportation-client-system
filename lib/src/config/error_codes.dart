@@ -3,4 +3,5 @@ abstract class ErrorCodes {
   static const String RECORD_NOT_FOUND = "auth_error.record_not_found";
   static const String USER_NOT_CONFIRMED = "auth_error.user_not_confirmed";
   static const String EMAIL_ALREADY_USED = "auth_error.email_already_used";
+  static const String TRANSFER_ERROR = "transfer_error.transfer_already_found";
 }

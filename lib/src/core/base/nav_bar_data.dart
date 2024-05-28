@@ -3,8 +3,8 @@
 import 'package:babiconsultancy/src/core/localization/localization_keys.dart';
 import 'package:babiconsultancy/src/ui/screens/home/home_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/profile/profile_screen.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/airport/airport_transfer_screen.dart';
-import 'package:babiconsultancy/src/ui/screens/transfers/default/transfer_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/nodes/airport_transfer_screen.dart';
+import 'package:babiconsultancy/src/ui/screens/transfers/nodes/default_transfer_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:unicons/unicons.dart';
@@ -50,7 +50,7 @@ class NavBarData {
 
   static const NavBarData TRANSFERS = NavBarData._(
     order: 1,
-    route: TransferScreen.route,
+    route: DefaultTransferScreen.route,
     key: LocalizationKeys.Transfer_Title,
     navBarkey: LocalizationKeys.Transfer_Title,
     icon: FontAwesomeIcons.bus,

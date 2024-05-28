@@ -1,7 +1,6 @@
 import 'package:babiconsultancy/src/backend/handler/app_result.dart';
 import 'package:babiconsultancy/src/backend/handler/session/session_manager.dart';
 import 'package:babiconsultancy/src/backend/handler/session/session_state.dart';
-import 'package:babiconsultancy/src/backend/model/seat/seat_box_state.dart';
 import 'package:babiconsultancy/src/backend/model/user/user.dart';
 import 'package:babiconsultancy/src/backend/repo/transfer_repo.dart';
 import 'package:babiconsultancy/src/config/assets.dart';
@@ -90,7 +89,7 @@ class TransferApproveCubit extends Cubit<TransferApproveState> {
   void submit() {
     final current = state as TransferApproveStateSuccess;
     EasyLoading.show();
-    repo.updateSeat(current.seatId,SeatBoxState.SELECTED.id)
+    repo.reserveSeat(current.seatId)
        .successListener((data) => routeToSuccess())
       .errorListener((_) => 
         emit(const TransferApproveState.error(message: LocalizationKeys.TransferRequest_Error_Description)))

@@ -9,12 +9,12 @@ abstract class TransferRepo {
   final TransferApi api;
   const TransferRepo({required this.api});
 
-	Future<AppResult<String>> updateSeat(String seatId, String status);
 	Future<AppResult<List<SeatDto>>> getSeatsByTransferId(String transferId);
 	Future<AppResult<List<TransferDto>>> getTransfersByType(String type);
 	Future<AppResult<List<TransferDto>>> getTransfersByStatus(String status);
   Future<AppResult<List<TransferDto>>> getTransfersByQuery(String status, String type);
   Future<AppResult<List<SeatReservation>>> getSeatReservations();
+  Future<AppResult<String>> reserveSeat(String seatId);
 }
 
 class TransferRepoImpl extends TransferRepo {
@@ -36,11 +36,6 @@ class TransferRepoImpl extends TransferRepo {
   }
   
   @override
-  Future<AppResult<String>> updateSeat(String seatId, String status) {
-    return NetworkHandler.getSafeResult(() => api.updateSeat(seatId, status));
-  }
-  
-  @override
   Future<AppResult<List<TransferDto>>> getTransfersByQuery(String status, String type) {
     return NetworkHandler.getSafeResult(() => api.getTransfersByQuery(status, type));
   }
@@ -49,5 +44,9 @@ class TransferRepoImpl extends TransferRepo {
   Future<AppResult<List<SeatReservation>>> getSeatReservations() {
     return NetworkHandler.getSafeResult(() => api.getSeatReservations());
   }
-
+  
+  @override
+  Future<AppResult<String>> reserveSeat(String seatId) {
+   return NetworkHandler.getSafeResult(() => api.reserveSeat(seatId));
+  }
 }
