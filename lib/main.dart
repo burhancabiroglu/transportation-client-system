@@ -55,6 +55,7 @@ class BabiConsultancyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WindowSize.init(MediaQuery.of(context).size);
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => MainNavCubit()),
