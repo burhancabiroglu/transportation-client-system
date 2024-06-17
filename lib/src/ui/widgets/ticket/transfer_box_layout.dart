@@ -27,7 +27,7 @@ class TransfersBoxLayout extends CoreStatelessWidget {
            return Column(
             children: [
               SizedBox(
-                height: 200.h,
+                height: 220.h,
                 width: double.infinity,
                 child: PageView.builder(
                   controller: pageController,
@@ -40,18 +40,19 @@ class TransfersBoxLayout extends CoreStatelessWidget {
               SizedBox(height: 12.h),
               Container(
                 alignment: Alignment.center,
-                margin: const EdgeInsets.symmetric(vertical: 10),
+                margin: EdgeInsets.symmetric(vertical: 8.h),
                 width: double.infinity,
                 child: SmoothPageIndicator(
                   controller: pageController,
                   count: state.reservations.length,
                   textDirection: TextDirection.ltr,
                   effect: JumpingDotEffect(
-                    dotHeight: 12,
-                    dotWidth: 20,
+                    dotHeight: 12.h,
+                    dotWidth: 20.w,
                     dotColor: theme.colorScheme.primary.withAlpha(100),
                     activeDotColor: theme.colorScheme.primary,
-                    spacing: 8),
+                    spacing: 8.w
+                  ),
                   onDotClicked: (val) {},
                 ),
               ),

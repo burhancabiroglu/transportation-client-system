@@ -25,6 +25,7 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
   Widget build(BuildContext context) {
     final cubit = BlocProvider.of<LoginCubit>(context);
     return GestureDetector(
+      onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
         backgroundColor: theme.colorScheme.container,
         body: SafeArea(
@@ -42,11 +43,9 @@ class LoginScreenState extends CoreWidgetState<LoginScreen> {
                   padding: EdgeInsets.symmetric(horizontal: WindowDefaults.wall),
                   child: Column(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(500),
-                        child: Assets.app_logo.toSquareImage(size: 180.h),
-                      ),
-                      SizedBox(height: 100.h),
+                      SizedBox(height: 20.h),
+                      Assets.app_logo.toSquareImage(size: 300.h),
+                      SizedBox(height: 40.h),
                       LoginForm(cubit: cubit),
                       SizedBox(height: 100.h),
                       AnimatedOpacity(

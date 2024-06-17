@@ -14,7 +14,7 @@ class TurkishLocalization extends CoreLocalization {
     "No": "Hay\u0131r",
     "Logout.Dialog": "Ç\u0131k\u0131ş yapmak istediğinize emin misiniz?",
 
-    "Splash.Description": "Babi\nEğitim Koçluğu\nYurt D\u0131ş\u0131 Dan\u0131şmanl\u0131k",
+    "Splash.Description": "Tensorware\nSoftware Labs",
     "Home.Title": "Ana Sayfa",
     "Home.Transfers": "Transferlerim",
     "Home.TransferRequests": "Transferler Taleplerim",

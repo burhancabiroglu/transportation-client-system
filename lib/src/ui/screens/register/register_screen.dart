@@ -24,6 +24,7 @@ class RegisterScreenState extends CoreWidgetState<RegisterScreen> {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<RegisterCubit>(context);
     return GestureDetector(
+      onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
         backgroundColor: theme.colorScheme.container,
         body: SafeArea(
@@ -37,18 +38,14 @@ class RegisterScreenState extends CoreWidgetState<RegisterScreen> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: SingleChildScrollView(
-              reverse: true,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: WindowDefaults.wall),
                   child: Column(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(500),
-                        child: Assets.app_logo.toSquareImage(size: 120.h),
-                      ),
+                      Assets.app_logo.toSquareImage(size: 200.h),
                       SizedBox(height: 72.h),
                       RegisterForm(cubit: bloc),
-                      SizedBox(height: 100.h),
+                      SizedBox(height: 120.h),
                       AnimatedOpacity(
                         opacity: isKeyboardOpened ? 0 : 1, 
                         duration: const Duration(milliseconds: 400),

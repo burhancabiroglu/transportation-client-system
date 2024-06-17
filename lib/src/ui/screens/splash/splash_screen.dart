@@ -6,6 +6,7 @@ import 'package:babiconsultancy/src/ui/routes/core_router.dart';
 import 'package:babiconsultancy/src/ui/screens/login/login_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/main/main_screen.dart';
 import 'package:babiconsultancy/src/ui/screens/splash/splash_cubit.dart';
+import 'package:babiconsultancy/src/ui/widgets/snackbar/core_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'splash_state.dart';
@@ -30,23 +31,21 @@ class SplashScreen extends CoreStatelessWidget {
             CoreRouter.main.popAndPushNamed(MainScreen.route);
             break;
           case SplashState.NETWORK_NOT_FOUND:
+            CoreSnackBar.error(message: "Connection Not Found").show(context);
             break; 
           case SplashState.ERROR:
             break; 
         }
       },
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(backgroundColor: theme.colorScheme.white),
         backgroundColor: theme.colorScheme.white,
         body: SafeArea(
           child: Stack(
             children: [
               Center(
                 heightFactor: 2.4,
-                child: ClipRRect(
-                borderRadius: BorderRadius.circular(500),
-                child: Assets.app_logo.toSquareImage(size: 300.h),
-                )
+                child: Assets.splash_logo.toSquareImage(size: 320.h),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 30.h),

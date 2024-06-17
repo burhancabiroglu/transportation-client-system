@@ -12,16 +12,17 @@ class AboutUsBox extends CoreStatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: Image.asset(Assets.aboutUsJpeg, height: 130.h),
+          child: Image.asset(Assets.aboutUsJpeg, height: 90.h),
         ),
         SizedBox(width: 16.w),
         Expanded(
           child: Text(
             localization.of(LocalizationKeys.About_Us_Text),
-            maxLines: 5,
+            maxLines: 3,
             overflow: TextOverflow.ellipsis,
             style: theme.textStyle.footnote02.copyWith(
               color: theme.colorScheme.textSecondary

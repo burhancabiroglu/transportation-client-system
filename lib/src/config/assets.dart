@@ -4,7 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 abstract class Assets {
-  static const String app_logo = "assets/images/logo/app_logo.jpeg";
+  static const String splash_logo = "assets/images/logo/main_logo.jpeg";
+  static const String app_logo = "assets/images/logo/app_logo.png";
   static const String lock = "assets/images/vectors/lock.svg";
   static const String successAnim = "assets/animation/success_anim.json";  
   static const String owlAnim = "assets/animation/owl_info_anim.json";  
