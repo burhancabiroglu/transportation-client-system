@@ -9,7 +9,7 @@ import 'package:babiconsultancy/src/ui/widgets/buttons/more.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/app_bar.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/date_widget.dart';
 import 'package:babiconsultancy/src/ui/widgets/layouts/rounded_body.dart';
-import 'package:babiconsultancy/src/ui/widgets/ticket/transfer_box.dart';
+import 'package:babiconsultancy/src/ui/widgets/ticket/transfer_box_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -39,7 +39,7 @@ class HomeScreen extends CoreStatelessWidget {
                 children: [
                   Text(localization.of(LocalizationKeys.Home_Transfers), style: theme.textStyle.body04),
                   SizedBox(height: 12.h),
-                  const TransfersBox()
+                  const TransfersBoxLayout()
                 ],
               ),
             ),
