@@ -1,5 +1,7 @@
+import 'package:babiconsultancy/src/config/assets.dart';
 import 'package:babiconsultancy/src/config/config.dart';
 import 'package:babiconsultancy/src/core/theme/app_theme.dart';
+import 'package:babiconsultancy/src/core/utils/image_cache.dart';
 import 'package:babiconsultancy/src/core/window/window_size.dart';
 import 'package:babiconsultancy/src/module/injection.dart';
 import 'package:babiconsultancy/src/ui/routes/core_router.dart';
@@ -30,6 +32,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   initializeDateFormatting();
   initScreenSize();
+  await loadImage(const AssetImage(Assets.splash_logo));
   await setup();
   runApp(const BabiConsultancyApp());
 }

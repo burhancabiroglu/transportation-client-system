@@ -24,9 +24,7 @@ class AboutUsBox extends CoreStatelessWidget {
             localization.of(LocalizationKeys.About_Us_Text),
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
-            style: theme.textStyle.footnote02.copyWith(
-              color: theme.colorScheme.textSecondary
-            ),
+            style: textStyle.footnote02.copyWith(color: colorScheme.textSecondary),
           ),
         )
       ],

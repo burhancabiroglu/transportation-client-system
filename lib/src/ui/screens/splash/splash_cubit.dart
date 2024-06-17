@@ -1,5 +1,6 @@
 import 'package:babiconsultancy/src/backend/handler/app_result.dart';
 import 'package:babiconsultancy/src/backend/handler/session/session_manager.dart';
+import 'package:babiconsultancy/src/core/utils/delay_utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -20,6 +21,9 @@ class SplashCubit extends Cubit<SplashState> {
     }
     session.checkLoggedIn()
       .successListener((data) => emit(SplashState.USER_AUTHORIZED))
-      .errorListener((data) => emit(SplashState.UNAUTHORIZED));
+      .errorListener((data) async {
+        await delay(1000);
+        emit(SplashState.UNAUTHORIZED);
+      });
   }
 }
